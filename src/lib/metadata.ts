@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SEO } from './seo-config';
 
 export function generateMetadata(
   title: string,
@@ -10,7 +11,7 @@ export function generateMetadata(
     openGraph: {
       title,
       description,
-      url: "https://perlogy.africa",
+      url: SEO.siteUrl,
       siteName: "Perlogy Technologies",
       locale: "en_AE",
       type: "website",
