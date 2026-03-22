@@ -1,26 +1,160 @@
 @import "tailwindcss";
 
+/* ============================================
+   Perlogy Technologies — Brand Design System
+   ============================================ */
+
+/* ── CSS Custom Properties ────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand colours */
+  --brand-blue:         #1635D4;
+  --brand-blue-dark:    #0D1FB5;
+  --brand-navy:         #07102B;
+  --brand-navy-mid:     #0F1E45;
+  --brand-orange:       #F25C1A;
+  --brand-orange-light: #FF7A3D;
+
+  /* Neutrals */
+  --brand-white:         #FFFFFF;
+  --brand-gray-text:     #374151;
+  --brand-gray-muted:    #6B7280;
+  --brand-gray-border:   #E5E7EB;
+  --brand-light-blue-bg: #E8EEFF;
+
+  /* Semantic aliases */
+  --background: var(--brand-white);
+  --foreground: var(--brand-gray-text);
 }
 
+/* ── Tailwind v4 theme tokens ─────────────── */
 @theme inline {
+  /* Colours */
+  --color-brand-blue:         var(--brand-blue);
+  --color-brand-blue-dark:    var(--brand-blue-dark);
+  --color-brand-navy:         var(--brand-navy);
+  --color-brand-navy-mid:     var(--brand-navy-mid);
+  --color-brand-orange:       var(--brand-orange);
+  --color-brand-orange-light: var(--brand-orange-light);
+  --color-brand-white:        var(--brand-white);
+  --color-brand-gray-text:    var(--brand-gray-text);
+  --color-brand-gray-muted:   var(--brand-gray-muted);
+  --color-brand-gray-border:  var(--brand-gray-border);
+  --color-brand-light-blue-bg:var(--brand-light-blue-bg);
+
+  /* Background / foreground shortcuts */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  /* Font */
+  --font-sans: var(--font-nexa-pro);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Base typography ──────────────────────── */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-nexa-pro), ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* ── Utility: accent-bar ─────────────────── */
+/* 4 px blue-to-orange gradient stripe — use on top of hero / navbar */
+.accent-bar {
+  position: relative;
+}
+
+.accent-bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--brand-blue) 0%,
+    var(--brand-orange) 100%
+  );
+  z-index: 50;
+}
+
+/* ── Decorative Background Patterns ──────── */
+.pixel-grid {
+  background-image: radial-gradient(circle, #F25C1A 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
+}
+
+.hero-section {
+  position: relative;
+}
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/decorative/pixel-texture.png');
+  background-size: repeat;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.si-banner {
+  position: relative;
+  overflow: hidden;
+}
+.si-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/decorative/cta-background.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 1; /* Image has 10-15% opacity shapes natively */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Brand Wall Animations ───────────────── */
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes authorisedPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(22, 53, 212, 0); }
+  50%       { box-shadow: 0 0 12px 2px rgba(22, 53, 212, 0.35); }
+}
+
+.authorised-tile {
+  animation: authorisedPulse 3s ease-in-out infinite;
+}
+
+.logo-wall-row {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Pause animations for reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .logo-wall-row {
+    animation-play-state: paused !important;
+  }
+  .authorised-tile {
+    animation: none;
+  }
+}
+
