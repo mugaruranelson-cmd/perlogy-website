@@ -35,7 +35,7 @@ const nexaPro = localFont({
 
 // ── ROOT METADATA ─────────────────────────────────
 export const metadata: Metadata = {
-  metadataBase: new URL(SEO.siteUrl),
+  metadataBase: new URL('https://perlogy.co.ke'),
 
   title: {
     default:  SEO.defaultTitle,

@@ -251,6 +251,149 @@ export const CASE_STUDIES: CaseStudy[] = [
       'Full in-room display supply for DoubleTree by Hilton in Asaba, Nigeria. ' +
       'Delivered on schedule to Hilton brand standards.',
   },
+
+  // ─── Embassy in Nairobi ──────────────────────────────────────
+
+  {
+    id:            'embassy-nairobi',
+    slug:          'embassy-nairobi',
+    isFlagship:    false,
+    name:          'Embassy in Nairobi',
+    fullName:      'Embassy in Nairobi — Unilumin LSK P2.9 Outdoor LED Display',
+    location:      'Nairobi, Kenya',
+    locationShort: 'Kenya',
+    sector:        'Digital Signage',
+    client:        'Embassy in Nairobi, Kenya',
+    projectValue:  'USD 150,000',
+    completedYear: '2025',
+    headline:
+      'Embassy in Nairobi — Kenya\'s first ultra-slim curved outdoor LED display.',
+    heroTagline:
+      'Digital Signage · Kenya · Unilumin LSK P2.9',
+    recordClaim:
+      'Kenya\'s first Unilumin LSK P2.9 curved outdoor LED installation',
+    heroParagraph:
+      'The design and supply of Kenya\'s first Unilumin P2.9 curved outdoor ' +
+      'LED display — installed in an outdoor auditorium at an Embassy in ' +
+      'Nairobi. 28 square metres, 7,000mm × 4,000mm, USD 150,000. Supplied ' +
+      'by Perlogy Technologies and installed by a local Kenyan system integrator.',
+    challenge:
+      'The brief required a large-format outdoor LED display capable of ' +
+      'operating reliably in Nairobi\'s outdoor environment — exposed to ' +
+      'direct sunlight, rain, dust, and variable temperatures — while ' +
+      'delivering high-definition image quality worthy of a prestigious ' +
+      'diplomatic installation. The curved configuration added a further ' +
+      'design challenge, requiring a custom engineering approach to ensure ' +
+      'seamless panel alignment across the full 28 SQM screen area.',
+    ourRole:
+      'Perlogy Technologies, operating as the authorised Unilumin distributor ' +
+      'for sub-Saharan Africa, designed the display solution and specified the ' +
+      'Unilumin LSK P2.9 as the correct model for this installation. Perlogy ' +
+      'supplied the full hardware complement directly to the local Kenyan ' +
+      'system integrator and provided full technical advisory support throughout ' +
+      'specification, procurement, and commissioning.',
+    result:
+      'The Unilumin LSK P2.9 curved outdoor LED display was successfully ' +
+      'installed and commissioned at the Embassy outdoor auditorium in ' +
+      'Nairobi — Kenya\'s first installation of this product at this scale. ' +
+      'The 28 SQM display delivers ultra-high-definition imagery at 3,840Hz ' +
+      'refresh rate and 14-bit grayscale, with IP69K waterproof protection ' +
+      'ensuring reliable operation in all weather conditions.',
+    directorQuote:
+      'We are proud to have delivered Kenya\'s first installation of this ' +
+      'calibre — a project that demonstrates exactly what is possible when ' +
+      'the right technology partners, the right manufacturer, and a skilled ' +
+      'local SI work together across the African market.',
+    directorName:  'Nelson Mandela Mugarura',
+    directorTitle: 'Director, Perlogy Technologies LLC · MBA, MSc, BSc',
+    stats: [
+      { value: 'USD 150K',    label: 'Project value'      },
+      { value: '28 SQM',      label: 'Screen area'        },
+      { value: '7000×4000mm', label: 'Dimensions'         },
+      { value: 'P2.9',        label: 'Pixel pitch'        },
+      { value: 'IP69K',       label: 'Protection rating'  },
+    ],
+    specs: [
+      {
+        label:  'Display model',
+        value:  'Unilumin LSK Series — P2.9',
+        detail:
+          'LSK Series outdoor HD LED. Available in P2.6, P2.9, P3.9, P4.8, ' +
+          'and P5.9. Cabinet sizes: 500mm × 1,000mm and 500mm × 750mm. The ' +
+          'P2.9 was selected for this installation for its combination of ' +
+          'high resolution, outdoor durability, and curved configuration support.',
+      },
+      {
+        label:  'Screen dimensions',
+        value:  '7,000mm × 4,000mm — 28 SQM',
+        detail:
+          'Custom curved configuration engineered to the architectural ' +
+          'requirements of the outdoor auditorium setting at the Embassy grounds.',
+      },
+      {
+        label:  'Cabinet',
+        value:  '500×1,000mm · 82mm thick · 14.2 kg/panel',
+        detail:
+          'Ultra-slim, ultra-light cabinet. At 82mm thickness and 14.2kg per ' +
+          'panel, the LSK Series significantly reduces transport and labour ' +
+          'costs for the installing SI partner compared to conventional ' +
+          'outdoor LED cabinets.',
+      },
+      {
+        label:  'Image quality',
+        value:  '3,840Hz refresh rate · 14-bit grayscale',
+        detail:
+          'Cinema-quality outdoor imagery with zero visible flicker even in ' +
+          'direct Nairobi sunlight. 14-bit grayscale produces 16× more tonal ' +
+          'gradations than standard 10-bit outdoor LED products.',
+      },
+      {
+        label:  'Protection rating',
+        value:  'IP69K — highest available',
+        detail:
+          'Tested at 80–100 bar water pressure, 80°C water temperature, ' +
+          'at multiple spray angles. Complete protection against dust, water ' +
+          'ingress, and high-pressure wash-down in all conditions.',
+      },
+      {
+        label:       'Application',
+        value:       'Outdoor auditorium · Embassy grounds · Nairobi, Kenya',
+        detail:
+          'Permanent outdoor installation serving official presentations, ' +
+          'events, and public programming at a diplomatic facility in Nairobi. ' +
+          'Designed for continuous operation across all seasons.',
+        isFullWidth: true,
+      },
+    ],
+    partners: [
+      {
+        name:     'Unilumin Group',
+        role:     'LED display manufacturer · LSK Series',
+        dotColor: '#1635D4',
+      },
+      {
+        name:     'Perlogy Technologies LLC',
+        role:     'Authorised Unilumin distributor · Design & supply',
+        dotColor: '#F25C1A',
+      },
+      {
+        name:     'Local Kenyan SI',
+        role:     'Installation & commissioning partner',
+        dotColor: '#059669',
+      },
+    ],
+    seoTitle:
+      'Embassy in Nairobi LED Display | Unilumin LSK P2.9 | Perlogy Kenya',
+    seoDescription:
+      'Perlogy Technologies supplied Kenya\'s first Unilumin LSK P2.9 curved ' +
+      'outdoor LED display for an Embassy in Nairobi — 28 SQM, 7,000mm × ' +
+      '4,000mm, USD 150,000, IP69K rated. Installed by a local Kenyan SI.',
+    cardHeadline:
+      'Kenya\'s first Unilumin LSK P2.9 outdoor LED — Embassy in Nairobi.',
+    cardBody:
+      'A 28 SQM curved outdoor LED installation at an Embassy in Nairobi. ' +
+      'USD 150,000 · IP69K · 3,840Hz · designed and supplied by Perlogy.',
+  },
 ]
 
 // Helpers

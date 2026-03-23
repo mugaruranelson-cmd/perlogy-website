@@ -94,10 +94,10 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:info@perlogy.africa"
+                  href="mailto:info@perlogy.co.ke"
                   className="transition-colors hover:text-brand-blue"
                 >
-                  info@perlogy.africa
+                  info@perlogy.co.ke
                 </a>
               </li>
               <li>

@@ -16,6 +16,8 @@ const RADIO_OPTIONS = [
 function ContactPageContent() {
   const searchParams = useSearchParams();
   const brandId = searchParams.get("brand");
+  const project = searchParams.get("project");
+  const interest = searchParams.get("interest");
   const prefilledBrand = brandId ? BRANDS.find((b) => b.id === brandId) : null;
 
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -46,6 +48,12 @@ function ContactPageContent() {
 
   const defaultMessage = prefilledBrand
     ? `I would like to enquire about ${prefilledBrand.name} products and pricing.`
+    : project === 'embassy-nairobi'
+    ? 'I would like to enquire about the Unilumin LSK Series ' +
+      'outdoor LED display for a project in Kenya / Africa.'
+    : interest === 'unilumin-lsk'
+    ? 'I would like to enquire about Unilumin LSK Series ' +
+      'outdoor LED solutions.'
     : "";
 
   return (
@@ -67,8 +75,8 @@ function ContactPageContent() {
               </p>
               <div className="mb-4 space-y-1 text-sm font-medium text-brand-navy">
                 <div>
-                  <a href="mailto:partners@perlogy.africa" className="hover:text-brand-blue transition-colors">
-                    partners@perlogy.africa
+                  <a href="mailto:partners@perlogy.co.ke" className="hover:text-brand-blue transition-colors">
+                    partners@perlogy.co.ke
                   </a>
                 </div>
                 <div>
@@ -90,8 +98,8 @@ function ContactPageContent() {
               </p>
               <div className="space-y-1 text-sm font-medium text-brand-navy">
                 <div>
-                  <a href="mailto:info@perlogy.africa" className="hover:text-brand-blue transition-colors">
-                    info@perlogy.africa
+                  <a href="mailto:info@perlogy.co.ke" className="hover:text-brand-blue transition-colors">
+                    info@perlogy.co.ke
                   </a>
                 </div>
                 <div>
@@ -110,13 +118,13 @@ function ContactPageContent() {
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className="inline-block rounded-full bg-brand-light-blue-bg px-3 py-1 text-xs font-semibold text-brand-blue">
-                  East Africa
+                   East Africa
                 </span>
                 <span className="inline-block rounded-full bg-brand-light-blue-bg px-3 py-1 text-xs font-semibold text-brand-blue">
-                  West Africa
+                   West Africa
                 </span>
                 <span className="inline-block rounded-full bg-brand-light-blue-bg px-3 py-1 text-xs font-semibold text-brand-blue">
-                  Southern Africa
+                   Southern Africa
                 </span>
               </div>
             </div>
@@ -124,6 +132,17 @@ function ContactPageContent() {
 
           {/* ─── Right Column: Contact Form ─── */}
           <div>
+            {/* Context notice banner */}
+            {project === 'embassy-nairobi' && (
+              <div className="bg-[#1635D4]/8 border border-[#1635D4]/25
+                rounded-lg px-4 py-3 mb-6">
+                <p className="text-[12px] text-[#1635D4] font-medium">
+                  Enquiring about: Embassy in Nairobi —
+                  Unilumin LSK P2.9 LED display
+                </p>
+              </div>
+            )}
+
             <div className="rounded-xl border border-brand-gray-border bg-white shadow-md overflow-hidden">
               {/* Header */}
               <div className="bg-brand-navy px-6 py-5 text-white">
