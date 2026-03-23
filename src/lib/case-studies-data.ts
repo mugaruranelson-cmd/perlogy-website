@@ -262,6 +262,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     fullName:      'Embassy in Nairobi — Unilumin LSK P2.9 Outdoor LED Display',
     location:      'Nairobi, Kenya',
     locationShort: 'Kenya',
+    image:         '/images/case-studies/embassy-nairobi-01.png',
     sector:        'Digital Signage',
     client:        'Embassy in Nairobi, Kenya',
     projectValue:  'USD 150,000',

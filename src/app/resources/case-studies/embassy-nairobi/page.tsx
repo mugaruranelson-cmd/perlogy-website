@@ -96,21 +96,13 @@ const breadcrumbSchema = {
 // Drop embassy-nairobi-01.jpg into public/images/case-studies/
 // to activate the photo — no code changes needed.
 function HeroImagePanel() {
-  // Spec badges shown in both modes
-  const specBadges = ['28 SQM', 'P2.9 · 2.9mm', 'IP69K', '3,840Hz', '82mm slim']
-
   return (
     <div className="relative mx-7 mb-0 overflow-hidden
       rounded-t-xl bg-brand-navy-mid
       border border-white/8 border-b-0">
 
-      {/*
-        PHOTO MODE:
-        When embassy-nairobi-01.jpg is available, uncomment
-        this block and remove the spec panel below.
-
         <img
-          src="/images/case-studies/embassy-nairobi-01.jpg"
+          src="/images/case-studies/embassy-nairobi-01.png"
           alt="Unilumin LSK P2.9 outdoor LED display at the Embassy in Nairobi"
           className="w-full h-[300px] object-cover opacity-80"
         />
@@ -124,46 +116,6 @@ function HeroImagePanel() {
             Unilumin LSK P2.9 · 28 SQM · Nairobi, Kenya
           </p>
         </div>
-      */}
-
-      {/* SPEC PANEL (default until photography is added) */}
-      <div className="px-8 py-8
-        grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-6
-        items-center">
-
-        {/* Left: product identity */}
-        <div>
-          <p className="text-[9px] font-bold tracking-[0.2em]
-            uppercase text-[#F25C1A] mb-3">
-            Installed product
-          </p>
-          <p className="text-[20px] font-medium text-white mb-2">
-            Unilumin LSK Series — P2.9
-          </p>
-          <p className="text-[13px] text-white/45 leading-[1.7]
-            max-w-[380px]">
-            Outdoor HD LED display · Ultra-slim 82mm cabinet ·
-            IP69K waterproof · 3,840Hz refresh rate ·
-            Kenya&apos;s first installation at this scale
-          </p>
-        </div>
-
-        {/* Right: key spec badges */}
-        <div className="flex flex-wrap sm:flex-col gap-2">
-          {specBadges.map((badge) => (
-            <div
-              key={badge}
-              className="bg-[#1635D4]/20 border border-[#1635D4]/35
-                rounded-lg px-4 py-2 text-center min-w-[90px]"
-            >
-              <span className="text-[12px] font-medium
-                text-white whitespace-nowrap">
-                {badge}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
     </div>
   )
 }
