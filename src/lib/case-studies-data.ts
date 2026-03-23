@@ -26,6 +26,7 @@ export interface CaseStudy {
   fullName:      string           // full formal name
   location:      string           // city, country
   locationShort: string           // country only
+  image?:        string           // project thumbnail
   sector:        string           // for tags
   client:        string
   projectValue:  string           // formatted: 'USD 1.4M'

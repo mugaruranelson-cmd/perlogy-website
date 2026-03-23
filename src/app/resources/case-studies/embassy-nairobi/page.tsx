@@ -324,6 +324,31 @@ export default function EmbassyNairobiCaseStudyPage() {
                 </p>
               </div>
             ))}
+
+            {/* Gallery Section */}
+            <div className="mt-12">
+              <p className="text-[10px] font-semibold
+                tracking-[0.2em] uppercase
+                text-[#1635D4] mb-4">
+                Project gallery
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="rounded-xl overflow-hidden border border-white/8 bg-brand-navy-mid">
+                  <img
+                    src="/images/case-studies/embassy-nairobi-02.png"
+                    alt="Embassy in Nairobi installation detailing"
+                    className="w-full h-[200px] object-cover opacity-90 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+                <div className="rounded-xl overflow-hidden border border-white/8 bg-brand-navy-mid">
+                  <img
+                    src="/images/case-studies/embassy-nairobi-03.png"
+                    alt="Unilumin LSK series performance at Embassy"
+                    className="w-full h-[200px] object-cover opacity-90 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* ── SIDEBAR (right) ──────── */}
