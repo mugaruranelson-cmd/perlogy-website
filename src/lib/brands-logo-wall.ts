@@ -26,6 +26,7 @@ export const LOGO_WALL_BRANDS: LogoWallBrand[] = [
   { id: 'guesttek', name: 'Guesttek', domain: 'guesttek.com',       isAuthorised: false, logoType: 'logo'   },
   { id: 'aopen',    name: 'Aopen',    domain: 'aopen.com',          isAuthorised: false, logoType: 'logo'   },
   { id: 'alpha',    name: 'Alpha Acoustics', domain: 'alphacoustics.com', isAuthorised: false, logoType: 'logo' },
+  { id: 'lampro',   name: 'Lampro',   domain: 'lampro.net',        isAuthorised: true,  logoType: 'logo' },
 ]
 
 // Pre-split into rows for the wall
@@ -37,7 +38,7 @@ export const ROW_CONFIGS = [
     id: 'row1',
     direction: 'left' as const,   // scroll direction
     duration: 18,                  // seconds per loop
-    brands: ['lg', 'samsung', 'benq', 'absen', 'unilumin', 'kramer', 'displax'],
+    brands: ['lg', 'samsung', 'benq', 'absen', 'unilumin', 'lampro', 'kramer', 'displax'],
   },
   {
     id: 'row2',
@@ -55,7 +56,7 @@ export const ROW_CONFIGS = [
     id: 'row4',
     direction: 'right' as const,
     duration: 20,
-    brands: ['aopen', 'alpha', 'kramer', 'absen', 'vview', 'unilumin', 'displax'],
+    brands: ['aopen', 'alpha', 'lampro', 'kramer', 'absen', 'vview', 'unilumin', 'displax'],
   },
   {
     id: 'row5',

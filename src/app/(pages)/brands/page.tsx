@@ -12,17 +12,17 @@ import { buildCanonical, SEO } from '@/lib/seo-config'
 import { StructuredData } from '@/components/seo/StructuredData'
 
 export const metadata: Metadata = {
-  title: 'Brand Portfolio | LG, Unilumin & 11 Premium ProAV Brands | Perlogy',
+  title: 'Brand Portfolio | LG, Unilumin, Lampro & 11 Premium ProAV Brands | Perlogy',
   description:
-    'Perlogy distributes 13 world-class ProAV and ICT brands across Africa. ' +
-    'Authorised LG and Unilumin distributor. Supporting system integrators ' +
+    'Perlogy distributes 14 world-class ProAV and ICT brands across Africa. ' +
+    'Authorised LG, Unilumin and Lampro distributor. Supporting system integrators ' +
     'with genuine stock and technical expertise.',
   alternates: { canonical: buildCanonical('/brands') },
   openGraph: {
     title: 'Perlogy Brand Portfolio — 13 Leading ProAV & ICT Brands',
     description:
       'The complete technology stack from screens to control systems. ' +
-      'Authorised distribution for LG and Unilumin in Africa.',
+      'Authorised distribution for LG, Unilumin and Lampro in Africa.',
     url: buildCanonical('/brands'),
   },
 }
@@ -58,10 +58,10 @@ export default function BrandsPage() {
             Authorised representatives
           </div>
           <h2 className="text-3xl font-extrabold text-brand-navy">
-            Our two flagship partnerships.
+            Our three flagship partnerships.
           </h2>
           <p className="mt-4 max-w-3xl text-sm leading-relaxed text-brand-gray-text sm:text-base">
-            Perlogy holds full authorised representative status for LG Electronics and Unilumin across English-speaking East, West, and Southern Africa — meaning direct manufacturer pricing, full product range access, and manufacturer-backed technical support.
+            Perlogy holds full authorised representative status for LG Electronics, Unilumin, and Lampro across English-speaking East, West, and Southern Africa — meaning direct manufacturer pricing, full product range access, and manufacturer-backed technical support.
           </p>
         </div>
 
@@ -144,7 +144,7 @@ export default function BrandsPage() {
             </div>
             <h2 className="text-3xl font-extrabold text-brand-navy">
               One relationship. <br className="hidden sm:block" />
-              <span className="text-brand-blue">All 13 brands.</span>
+              <span className="text-brand-blue">All 14 brands.</span>
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-brand-gray-text sm:text-base">
               Registered Perlogy SI partners across English-speaking East, West, and Southern Africa get access to our complete brand portfolio through a single partner relationship — one agreement, one point of contact, one invoice.

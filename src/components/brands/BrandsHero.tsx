@@ -50,7 +50,7 @@ export function BrandsHero() {
           {/* H1 */}
           <h1 className="text-[24px] sm:text-[28px] lg:text-[32px] font-medium text-white
             leading-[1.18] mb-3 max-w-[500px]">
-            13 world-class brands.{' '}
+            14 world-class brands.{' '}
             <em className="not-italic text-[#7B9AFF]">
               One trusted African distribution partner.
             </em>
@@ -58,7 +58,7 @@ export function BrandsHero() {
 
           {/* Subtext */}
           <p className="text-[13px] text-white/50 leading-[1.75] mb-5 max-w-full lg:max-w-[420px]">
-            Authorised distribution of LG Electronics and Unilumin, plus 11 leading
+            Authorised distribution of LG Electronics, Unilumin and Lampro, plus 11 leading
             ProAV and ICT brands — available exclusively through Perlogy&apos;s SI
             partner network across English-speaking Africa.
           </p>

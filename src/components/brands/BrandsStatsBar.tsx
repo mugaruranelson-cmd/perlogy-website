@@ -2,8 +2,8 @@
 import React from 'react'
 
 const STATS = [
-  { num: '13',     label: 'Partner brands'        },
-  { num: '2',      label: 'Authorised reps'        },
+  { num: '11',     label: 'Partner brands'        },
+  { num: '3',      label: 'Authorised reps'        },
   { num: '5',      label: 'Tech categories'        },
   { num: '3',      label: 'African regions'        },
   { num: 'SI only', label: 'No direct sales, ever' },

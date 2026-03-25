@@ -78,6 +78,31 @@ export const BRANDS: Brand[] = [
     websiteUrl: 'https://www.unilumin.com',
   },
 
+  {
+    id: 'lampro',
+    name: 'Lampro',
+    domain: 'lampro.net',
+    tier: 'authorised',
+    categories: ['displays-led'],
+    tagline: 'Professional LED Display Solutions — A Unilumin Brand',
+    description:
+      'A leading manufacturer of LED display solutions and a subsidiary of Unilumin. Perlogy holds direct authority to distribute and represent Lampro\'s professional LED portfolio across our markets.',
+    fullDescription:
+      'Lampro, a flagship brand under the Unilumin Group, specializes in providing high-quality LED display solutions for a wide range of applications, including commercial display, high-end retail, and corporate environments. As an authorised representative, Perlogy provides direct access to Lampro\'s innovative LED technology, ensuring competitive pricing, genuine manufacturer support, and specialized technical expertise for our partners across Africa. Lampro combines Unilumin\'s world-class engineering with a focused portfolio designed for versatility and performance.',
+    products: [
+      'Commercial LED Displays',
+      'Retail LED Solutions',
+      'Fine-Pitch LED',
+      'Outdoor LED',
+      'Indoor LED Cabinets',
+    ],
+    geoScope:
+      'Directly represented and distributed by Perlogy across English-speaking East, West, and Southern Africa. Full manufacturer backing and technical support.',
+    authorityNote:
+      'Perlogy holds direct authority to represent and distribute Lampro LED solutions across our markets.',
+    websiteUrl: 'https://www.lampro.net/',
+  },
+
   // ─── PORTFOLIO PARTNERS ───────────────────────────────────────
 
   {

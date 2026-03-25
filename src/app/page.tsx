@@ -96,15 +96,15 @@ export const metadata: Metadata = {
   title: 'ProAV & ICT Distribution Across Africa',
   description:
     'Perlogy Technologies distributes world-class ProAV and ICT technology ' +
-    'across English-speaking Africa — authorised LG Electronics and Unilumin ' +
-    'partner, serving 13 brands across East, West, and Southern Africa ' +
+    'across English-speaking Africa — authorised LG Electronics, Unilumin ' +
+    'and Lampro partner, serving 14 brands across East, West, and Southern Africa ' +
     'exclusively through system integrators.',
   alternates: { canonical: buildCanonical('/') },
   openGraph: {
     title: 'Perlogy Technologies | ProAV & ICT Distribution Across Africa',
     description:
-      'Authorised LG Electronics and Unilumin distributor for English-speaking ' +
-      'Africa. 13 world-class ProAV brands. Exclusively through SI partners.',
+      'Authorised LG Electronics, Unilumin and Lampro distributor for English-speaking ' +
+      'Africa. 14 world-class ProAV brands. Exclusively through SI partners.',
     url: buildCanonical('/'),
   },
 }
