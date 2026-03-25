@@ -31,7 +31,7 @@ export const SEO = {
       'through authorised partnerships with LG Electronics and Unilumin, ' +
       'and a portfolio of 13 leading technology brands.',
     foundingYear:  '2019',
-    email:         'info@perlogy.co.ke',
+    email:         'info@perlogy.africa',
     phone:         '+254792651241',
     address: {
       street:      'Jebel Ali',

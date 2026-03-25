@@ -75,8 +75,8 @@ function ContactPageContent() {
               </p>
               <div className="mb-4 space-y-1 text-sm font-medium text-brand-navy">
                 <div>
-                  <a href="mailto:partners@perlogy.co.ke" className="hover:text-brand-blue transition-colors">
-                    partners@perlogy.co.ke
+                  <a href="mailto:info@perlogy.africa" className="hover:text-brand-blue transition-colors">
+                    info@perlogy.africa
                   </a>
                 </div>
                 <div>
@@ -98,8 +98,8 @@ function ContactPageContent() {
               </p>
               <div className="space-y-1 text-sm font-medium text-brand-navy">
                 <div>
-                  <a href="mailto:info@perlogy.co.ke" className="hover:text-brand-blue transition-colors">
-                    info@perlogy.co.ke
+                  <a href="mailto:info@perlogy.africa" className="hover:text-brand-blue transition-colors">
+                    info@perlogy.africa
                   </a>
                 </div>
                 <div>
