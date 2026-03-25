@@ -29,7 +29,7 @@ export const SEO = {
     description:
       'ProAV and ICT distribution company serving English-speaking Africa ' +
       'through authorised partnerships with LG Electronics and Unilumin, ' +
-      'and a portfolio of 13 leading technology brands.',
+      'and a portfolio of 14 leading technology brands.',
     foundingYear:  '2019',
     email:         'info@perlogy.africa',
     phone:         '+254792651241',

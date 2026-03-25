@@ -8,7 +8,7 @@ export interface LogoWallBrand {
   logoType: 'logo' | 'symbol'  // Brandfetch logo type
 }
 
-// All 13 brands — order determines row assignment
+// All 14 brands — order determines row assignment
 export const LOGO_WALL_BRANDS: LogoWallBrand[] = [
   // Row 1 (left → right, 18s)
   { id: 'lg',       name: 'LG',       domain: 'lg.com',            isAuthorised: true,  logoType: 'logo' },
