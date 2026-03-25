@@ -4,57 +4,17 @@ import DarkHero from "@/components/ui/DarkHero";
 import StatBar from "@/components/ui/StatBar";
 import FeatureCard from "@/components/ui/FeatureCard";
 import SIBanner from "@/components/ui/SIBanner";
+import Image from "next/image";
+
 
 import { CaseStudyCard } from '@/components/case-studies/CaseStudyCard'
 import { getAllCaseStudies } from '@/lib/case-studies-data'
 import { PROJECT_VIDEOS } from '@/lib/project-videos'
 
-/* ─────────────────────────────────────────────
-   Icons for Solutions cards (inline SVGs)
-   ───────────────────────────────────────────── */
+import hospitalityImg from "../../public/images/solutions/hospitality.png";
+import signageImg from "../../public/images/solutions/digital-signage.png";
+import corporateImg from "../../public/images/solutions/corporate.png";
 
-function HospitalityIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M3 21h18" />
-      <path d="M5 21V7l7-4 7 4v14" />
-      <path d="M9 21v-4h6v4" />
-      <path d="M9 9h1" />
-      <path d="M14 9h1" />
-      <path d="M9 13h1" />
-      <path d="M14 13h1" />
-    </svg>
-  );
-}
-
-function SignageIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-      <rect x="2" y="3" width="20" height="14" rx="2" />
-      <path d="M8 21h8" />
-      <path d="M12 17v4" />
-      <path d="M7 8h5" />
-      <path d="M7 12h10" />
-    </svg>
-  );
-}
-
-function CorporateIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M2 22V6l10-4 10 4v16" />
-      <path d="M6 10h1" />
-      <path d="M11 10h1" />
-      <path d="M16 10h1" />
-      <path d="M6 14h1" />
-      <path d="M11 14h1" />
-      <path d="M16 14h1" />
-      <path d="M6 18h1" />
-      <path d="M11 18h1" />
-      <path d="M16 18h1" />
-    </svg>
-  );
-}
 
 /* ─────────────────────────────────────────────
    Solutions card data
@@ -62,17 +22,17 @@ function CorporateIcon({ className }: { className?: string }) {
 
 const solutions = [
   {
-    icon: HospitalityIcon,
+    image: hospitalityImg,
     title: "Hospitality",
     body: "In-room displays, lobby signage, IPTV, and guest-facing technology for hotels and resorts across Africa.",
   },
   {
-    icon: SignageIcon,
+    image: signageImg,
     title: "Digital Signage",
     body: "Indoor and outdoor LED, video walls, menu boards, and content management for retail, QSR, and corporate spaces.",
   },
   {
-    icon: CorporateIcon,
+    image: corporateImg,
     title: "Airports & Corporate",
     body: "Flight information displays, wayfinding, meeting room solutions, and enterprise-grade AV distribution.",
   },
@@ -256,8 +216,14 @@ export default function Home() {
                 className="group overflow-hidden rounded-xl border border-brand-gray-border bg-white shadow-sm transition-shadow hover:shadow-md"
               >
                 {/* Thumbnail area */}
-                <div className="flex items-center justify-center bg-brand-navy p-8">
-                  <s.icon className="h-12 w-12 text-brand-orange transition-transform group-hover:scale-110" />
+                <div className="relative h-48 overflow-hidden bg-brand-navy">
+                  <Image
+                    src={s.image}
+                    alt={s.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-brand-navy/10 group-hover:bg-transparent transition-colors" />
                 </div>
 
                 {/* Body */}
