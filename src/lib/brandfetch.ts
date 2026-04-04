@@ -15,6 +15,10 @@ export function getBrandLogoUrl(
   width = 200,
   height = 80
 ): string {
+  if (domain === 'absen.com') {
+    return '/images/brands/absen.svg'
+  }
+
   if (!CLIENT_ID) {
     console.warn('NEXT_PUBLIC_BRANDFETCH_CLIENT_ID is not set')
     return '' // triggers onError → shows initials fallback
@@ -23,6 +27,7 @@ export function getBrandLogoUrl(
 }
 
 export function getBrandIconUrl(domain: string, size = 64): string {
+  if (domain === 'absen.com') return '/images/brands/absen.svg'
   if (!CLIENT_ID) return ''
   return `https://cdn.brandfetch.io/${domain}/w/${size}/h/${size}/icon?c=${CLIENT_ID}&fallback=monogram`
 }
