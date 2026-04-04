@@ -103,6 +103,32 @@ export const BRANDS: Brand[] = [
     websiteUrl: 'https://www.lampro.net/',
   },
 
+  {
+    id: 'absen',
+    name: 'Absen',
+    domain: 'absen.com',
+    tier: 'authorised',
+    categories: ['displays-led'],
+    tagline: 'Professional LED Display Solutions',
+    description:
+      'World-leading LED display manufacturer. Perlogy holds direct authority to distribute and represent Absen\'s professional LED portfolio across our markets.',
+    fullDescription:
+      'Absen is a world-leading LED display manufacturer with over 20 years of expertise and installations across 130+ countries. Their product range covers the full spectrum of professional LED applications — from high-resolution fine-pitch panels for broadcast and corporate control rooms, to ruggedised rental and staging LED for live events, to high-brightness outdoor products for billboards and stadium perimeters. Absen products are trusted by major broadcasters, international event production companies, and large-format outdoor advertising operators. As an authorised representative, Perlogy provides direct access to Absen\'s innovative LED technology, ensuring competitive pricing and genuine manufacturer support.',
+    products: [
+      'Fine-Pitch LED',
+      'Rental & Staging LED',
+      'Outdoor LED',
+      'Broadcast LED',
+      'Stadium & Sport',
+      'Corporate LED',
+    ],
+    geoScope:
+      'Directly represented and distributed by Perlogy across English-speaking East, West, and Southern Africa. Full manufacturer backing and technical support.',
+    authorityNote:
+      'Perlogy holds direct authority to represent and distribute Absen LED solutions across our markets.',
+    websiteUrl: 'https://www.absen.com',
+  },
+
   // ─── PORTFOLIO PARTNERS ───────────────────────────────────────
 
   {
@@ -153,29 +179,7 @@ export const BRANDS: Brand[] = [
     websiteUrl: 'https://www.benq.com',
   },
 
-  {
-    id: 'absen',
-    name: 'Absen',
-    domain: 'absen.com',
-    tier: 'partner',
-    categories: ['displays-led'],
-    tagline: 'Professional LED Display Solutions',
-    description:
-      'World-leading LED display manufacturer with over 20 years of expertise across fine-pitch, rental, outdoor, and broadcast LED applications globally.',
-    fullDescription:
-      'Absen is a world-leading LED display manufacturer with over 20 years of expertise and installations across 130+ countries. Their product range covers the full spectrum of professional LED applications — from high-resolution fine-pitch panels for broadcast and corporate control rooms, to ruggedised rental and staging LED for live events, to high-brightness outdoor products for billboards and stadium perimeters. Absen products are trusted by major broadcasters, international event production companies, and large-format outdoor advertising operators.',
-    products: [
-      'Fine-Pitch LED',
-      'Rental & Staging LED',
-      'Outdoor LED',
-      'Broadcast LED',
-      'Stadium & Sport',
-      'Corporate LED',
-    ],
-    geoScope:
-      'Available through Perlogy to registered SI partners in English-speaking East, West, and Southern Africa.',
-    websiteUrl: 'https://www.absen.com',
-  },
+
 
   {
     id: 'displax',
