@@ -24,17 +24,17 @@ const solutions = [
   {
     image: hospitalityImg,
     title: "Hospitality",
-    body: "In-room displays, lobby signage, IPTV, and guest-facing technology for hotels and resorts across Africa.",
+    body: "Enterprise-grade Hotel TVs, Hospitality IPTV systems, and automation solutions for luxury resorts and corporate hotels.",
   },
   {
     image: signageImg,
     title: "Digital Signage",
-    body: "Indoor and outdoor LED, video walls, menu boards, and content management for retail, QSR, and corporate spaces.",
+    body: "Commercial indoor and outdoor LED displays, video walls, and digital menu boards for retail and QSR spaces.",
   },
   {
     image: corporateImg,
     title: "Airports & Corporate",
-    body: "Flight information displays, wayfinding, meeting room solutions, and enterprise-grade AV distribution.",
+    body: "Boardroom audio-visual systems, meeting room displays, flight information displays, and enterprise AV distribution.",
   },
 ] as const;
 
@@ -53,18 +53,18 @@ import { buildCanonical, SEO } from '@/lib/seo-config'
 import { StructuredData } from '@/components/seo/StructuredData'
 
 export const metadata: Metadata = {
-  title: 'ProAV & ICT Distribution Across Africa',
+  title: 'B2B ProAV & ICT Distributor East Africa | LED & AV Solutions',
   description:
-    'Perlogy Technologies distributes world-class ProAV and ICT technology ' +
-    'across English-speaking Africa — authorised LG Electronics, Unilumin ' +
-    'and Lampro partner, serving 14 brands across East, West, and Southern Africa ' +
-    'exclusively through system integrators.',
+    'Perlogy is East Africa\'s leading B2B distributor of ProAV, LED displays, ' +
+    'and boardroom audio-visual systems. Authorised LG & Unilumin supplier ' +
+    'in Kenya, Uganda & beyond.',
   alternates: { canonical: buildCanonical('/') },
   openGraph: {
-    title: 'Perlogy Technologies | ProAV & ICT Distribution Across Africa',
+    title: 'B2B ProAV & ICT Distributor East Africa | LED & AV Solutions',
     description:
-      'Authorised LG Electronics, Unilumin and Lampro distributor for English-speaking ' +
-      'Africa. 14 world-class ProAV brands. Exclusively through SI partners.',
+      'Perlogy is East Africa\'s leading B2B distributor of ProAV, LED displays, ' +
+      'and boardroom audio-visual systems. Authorised LG & Unilumin supplier ' +
+      'in Kenya, Uganda & beyond.',
     url: buildCanonical('/'),
   },
 }
@@ -106,7 +106,7 @@ export default function Home() {
         tag="ProAV & ICT Distribution · Africa"
         title={
           <>
-            Africa&apos;s technology distribution partner.{" "}
+            Africa&apos;s Leading B2B ProAV & ICT Distribution Partner.{" "}
             Built to make you{" "}
             <span className="text-brand-blue">stronger.</span>
           </>
@@ -206,7 +206,7 @@ export default function Home() {
           <SectionTag>Solutions</SectionTag>
 
           <h2 className="mt-4 text-2xl font-extrabold text-brand-navy sm:text-3xl">
-            Technology for Africa&apos;s fastest-growing sectors.
+            Audio-Visual Solutions for Corporate, Hospitality & Retail Sectors.
           </h2>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

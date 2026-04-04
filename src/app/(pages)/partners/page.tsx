@@ -45,6 +45,22 @@ const partnersFAQSchema = {
         text: 'We serve English-speaking East, West, and Southern Africa, including Kenya, Nigeria, Ghana, South Africa, Uganda, and Tanzania.',
       },
     },
+    {
+      '@type': 'Question',
+      name: 'Do you sell directly to end-users?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. Perlogy operates strictly on a Business-to-Business (B2B) model. If end users contact us directly, we refer the project to one of our authorised SI partners.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How quickly can systems integrators get quotes?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We guarantee a 24-hour response Service Level Agreement (SLA) for our registered partners to ensure your project proposals keep moving forward without delay.',
+      },
+    },
   ],
 }
 
@@ -293,6 +309,50 @@ export default function PartnersPage() {
               </footer>
             </blockquote>
           </div>
+        </div>
+      </section>
+
+      {/* ─── Frequently Asked Questions ─── */}
+      <section className="mx-auto max-w-4xl px-4 py-16 lg:px-8">
+        <div className="text-center mb-12">
+          <SectionTag className="mx-auto">FAQs</SectionTag>
+          <h2 className="mt-4 text-2xl font-extrabold text-brand-navy sm:text-3xl">
+            Frequently Asked Questions
+          </h2>
+        </div>
+        <div className="space-y-4">
+          {[
+            {
+              question: "Who can join the Perlogy partner programme?",
+              answer: "We exclusively partner with registered system integrators, AV consultants, and ICT resellers. We do not sell to end users."
+            },
+            {
+              question: "Which regions does Perlogy cover?",
+              answer: "We serve English-speaking East, West, and Southern Africa, including Kenya, Nigeria, Ghana, South Africa, Uganda, and Tanzania."
+            },
+            {
+              question: "Do you sell directly to end-users?",
+              answer: "No. Perlogy operates strictly on a Business-to-Business (B2B) model. If end users contact us directly, we refer the project to one of our authorised SI partners."
+            },
+            {
+              question: "How quickly can systems integrators get quotes?",
+              answer: "We guarantee a 24-hour response Service Level Agreement (SLA) for our registered partners to ensure your project proposals keep moving forward without delay."
+            }
+          ].map((faq, i) => (
+            <details key={i} className="group rounded-xl border border-brand-gray-border bg-white [&_summary::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-xl p-6 text-brand-navy font-bold">
+                {faq.question}
+                <span className="shrink-0 transition duration-300 group-open:-rotate-180">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-brand-orange" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </span>
+              </summary>
+              <div className="px-6 pb-6 text-brand-gray-text leading-relaxed">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
         </div>
       </section>
 

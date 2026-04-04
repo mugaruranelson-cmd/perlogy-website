@@ -56,7 +56,7 @@ export function SolutionsHero() {
               that uses 600 weight. All other headings: 500.   */}
           <h1 className="text-[24px] sm:text-[28px] lg:text-[32px] font-semibold text-white
             leading-[1.2] max-w-[620px] mx-auto mb-4">
-            AV & ICT technology for Africa&apos;s{' '}
+            B2B ProAV & ICT Solutions for Africa&apos;s{' '}
             <em className="not-italic text-[#F25C1A]">fastest-growing</em>{' '}
             sectors.
           </h1>

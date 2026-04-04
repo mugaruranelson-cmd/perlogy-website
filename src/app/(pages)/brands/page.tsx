@@ -12,7 +12,7 @@ import { buildCanonical, SEO } from '@/lib/seo-config'
 import { StructuredData } from '@/components/seo/StructuredData'
 
 export const metadata: Metadata = {
-  title: 'Brand Portfolio | LG, Unilumin, Lampro & 11 Premium ProAV Brands | Perlogy',
+  title: 'Authorised ProAV Brands | LG, Unilumin & Lampro Distributor Africa',
   description:
     'Perlogy distributes 14 world-class ProAV and ICT brands across Africa. ' +
     'Authorised LG, Unilumin and Lampro distributor. Supporting system integrators ' +
@@ -58,7 +58,7 @@ export default function BrandsPage() {
             Authorised representatives
           </div>
           <h2 className="text-3xl font-extrabold text-brand-navy">
-            Our four flagship partnerships.
+            Authorised Distributors for LG, Unilumin, Lampro & Leading AV Brands.
           </h2>
           <p className="mt-4 max-w-3xl text-sm leading-relaxed text-brand-gray-text sm:text-base">
             Perlogy holds full authorised representative status for LG Electronics, Unilumin, Lampro, and Absen across English-speaking East, West, and Southern Africa — meaning direct manufacturer pricing, full product range access, and manufacturer-backed technical support.

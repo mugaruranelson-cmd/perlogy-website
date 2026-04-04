@@ -36,7 +36,8 @@ export const SOLUTIONS: SolutionVertical[] = [
     headline: 'Hospitality',
     tagline: '★ Strongest vertical · Reference: Hilton Asaba, Nigeria',
     description:
-      'In-room entertainment, IPTV, lobby AV, conference systems, and guest Wi-Fi for hotels and resorts across Africa — powered by LG Pro:Centric, Uniguest, and Guesttek.',
+      'In-room entertainment, IPTV, lobby AV, conference systems, and guest Wi-Fi for hotels and resorts across Africa — powered by LG Pro:Centric, Uniguest, and Guesttek. ' +
+      'Use Cases: Seamlessly integrating hospitality IPTV platforms with hotel Property Management Systems (PMS), deploying high-brightness luxury displays in sunlit lobby areas, and providing robust guest Wi-Fi distribution for premium corporate resorts.',
     href: '/solutions/hospitality',
     iconPath:
       'M3 21h18M3 7l9-4 9 4M4 7v14M20 7v14M9 21v-4a3 3 0 016 0v4',
@@ -60,7 +61,8 @@ export const SOLUTIONS: SolutionVertical[] = [
     headline: 'Digital Signage',
     tagline: 'LED · Commercial · Outdoor',
     description:
-      'LED video walls, commercial displays, and outdoor screens — powered by our official Unilumin distribution partnership for sub-Saharan Africa and backed by Samsung, Absen, and Displax.',
+      'LED video walls, commercial displays, and outdoor screens — powered by our official Unilumin distribution partnership for sub-Saharan Africa and backed by Samsung, Absen, and Displax. ' +
+      'Use Cases: High-brightness LED for retail shopfronts and malls, robust outdoor digital billboards for OOH advertising, and seamless fine-pitch video walls for corporate entrance foyers.',
     href: '/solutions/digital-signage',
     iconPath: 'M2 3h20v14H2zM8 21h8M12 17v4',
     iconColor: '#1635D4',
@@ -82,7 +84,8 @@ export const SOLUTIONS: SolutionVertical[] = [
     headline: 'Corporate AV / ICT',
     tagline: 'Boardroom · Education · Enterprise',
     description:
-      'Boardroom displays, video conferencing, digital signage networks, and enterprise AV infrastructure for the modern African workplace — from single meeting rooms to full campuses.',
+      'Boardroom displays, video conferencing, digital signage networks, and enterprise AV infrastructure for the modern African workplace — from single meeting rooms to full campuses. ' +
+      'Use Cases: Zoom and Microsoft Teams Rooms integration, interactive touch displays for collaborative boardroom audio-visual, and campus-wide unified communications signage.',
     href: '/solutions/corporate',
     iconPath:
       'M2 4h20v16H2zM8 4V2M16 4V2M2 10h20',

@@ -109,15 +109,18 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-            <div className="mt-4 flex flex-wrap gap-1.5">
-              {['East Africa', 'West Africa', 'South Africa'].map((r) => (
-                <span
-                  key={r}
-                  className="inline-block rounded-full border border-brand-gray-border bg-gray-50 px-2.5 py-1 text-[10px] font-medium text-brand-gray-muted"
-                >
-                  {r}
-                </span>
-              ))}
+            <div className="mt-4">
+              <span className="block text-[10px] font-semibold uppercase tracking-wider text-brand-navy/70 mb-2">Regions Served</span>
+              <div className="flex flex-wrap gap-1.5">
+                {['Nairobi', 'Kenya', 'Uganda', 'Tanzania', 'Nigeria', 'Ghana', 'Zambia', 'Rwanda', 'Cameroon'].map((r) => (
+                  <span
+                    key={r}
+                    className="inline-block rounded-full border border-brand-gray-border bg-gray-50 px-2.5 py-1 text-[10px] font-medium text-brand-gray-muted"
+                  >
+                    {r}
+                  </span>
+                ))}
+              </div>
             </div>
 
             {/* Social icons */}
