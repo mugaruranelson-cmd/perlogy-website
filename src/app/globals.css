@@ -65,10 +65,9 @@ body {
 }
 
 /* ── Utility: accent-bar ─────────────────── */
-/* 4 px blue-to-orange gradient stripe — use on top of hero / navbar */
-.accent-bar {
-  position: relative;
-}
+/* 4 px blue-to-orange gradient stripe — use on top of hero / navbar.
+   No explicit position: relative needed; fixed/sticky parents already
+   create a containing block for the ::before pseudo-element. */
 
 .accent-bar::before {
   content: "";

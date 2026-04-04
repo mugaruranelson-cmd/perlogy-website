@@ -28,7 +28,18 @@ export default function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const dropdownRef = useRef<HTMLLIElement>(null);
+
+  // Track scroll position for floating nav effect
+  useEffect(() => {
+    function onScroll() {
+      setScrolled(window.scrollY > 10);
+    }
+    onScroll(); // set initial state
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -51,10 +62,14 @@ export default function Navbar() {
     pathname === href || pathname.startsWith(href + "/");
 
   return (
-    <header className="sticky top-0 z-50 accent-bar">
+    <header className="fixed top-0 left-0 right-0 z-50 accent-bar">
       {/* ── Main bar ── */}
       <nav
-        className="bg-white/90 backdrop-blur-md border-b border-brand-gray-border"
+        className={`backdrop-blur-md border-b transition-all duration-300 ${
+          scrolled
+            ? "bg-white/95 border-brand-gray-border shadow-md"
+            : "bg-white/90 border-brand-gray-border"
+        }`}
         style={{ height: 58 }}
       >
         <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4 lg:px-8">
