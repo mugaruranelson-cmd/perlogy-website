@@ -58,10 +58,10 @@ export default function BrandsPage() {
             Authorised representatives
           </div>
           <h2 className="text-3xl font-extrabold text-brand-navy">
-            Our three flagship partnerships.
+            Our four flagship partnerships.
           </h2>
           <p className="mt-4 max-w-3xl text-sm leading-relaxed text-brand-gray-text sm:text-base">
-            Perlogy holds full authorised representative status for LG Electronics, Unilumin, and Lampro across English-speaking East, West, and Southern Africa — meaning direct manufacturer pricing, full product range access, and manufacturer-backed technical support.
+            Perlogy holds full authorised representative status for LG Electronics, Unilumin, Lampro, and Absen across English-speaking East, West, and Southern Africa — meaning direct manufacturer pricing, full product range access, and manufacturer-backed technical support.
           </p>
         </div>
 
