@@ -21,7 +21,11 @@ export function BrandLogo({
   className = '',
 }: BrandLogoProps) {
   const [imgError, setImgError] = useState(false)
-  const src = getBrandLogoUrl(domain, type, width * 2, height * 2) // 2x for retina
+  let src = getBrandLogoUrl(domain, type, width * 2, height * 2) // 2x for retina
+
+  if (domain === 'absen.com') {
+    src = '/images/brands/absen.svg'
+  }
 
   if (imgError || !src) {
     // Fallback: brand initials if Brandfetch fails
