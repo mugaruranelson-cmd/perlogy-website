@@ -93,7 +93,7 @@ export default function PrivacyPage() {
             <p>If you have questions about this Privacy Policy, please contact us:</p>
             <p className="mt-4 font-medium text-brand-navy">Perlogy Technologies LLC</p>
             <p>Westlands, Nairobi, Kenya</p>
-            <p>Email: <a href="mailto:hello@perlogy.africa" className="text-brand-blue hover:underline">hello@perlogy.africa</a></p>
+            <p>Email: <a href="mailto:info@perlogy.africa" className="text-brand-blue hover:underline">info@perlogy.africa</a></p>
           </div>
         </div>
       </section>
