@@ -108,10 +108,10 @@ export function SolutionsHero() {
       <div className="flex items-stretch bg-brand-navy-mid border-b border-white/6 overflow-x-auto min-w-full">
         <div className="flex items-stretch min-w-max mx-auto px-4 sm:px-0">
           {[
-            { num: '4',      label: 'Solution verticals'    },
-            { num: '13',     label: 'Partner brands'        },
-            { num: '220+',   label: 'Hotel rooms delivered' },
-            { num: '5+',     label: 'African markets'       },
+            { num: '15+',    label: 'African markets'       },
+            { num: '14',     label: 'Partner brands'        },
+            { num: '2000+',  label: 'Hotel rooms delivered' },
+            { num: '500m2+', label: 'LED supplied'          },
             { num: 'SI only', label: 'No direct sales'     },
           ].map((stat, i, arr) => (
             <div
