@@ -42,7 +42,7 @@ const STEPS = [
 ] as const;
 
 export default function PartnerApplyPage() {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [sectors, setSectors] = useState<string[]>([]);
 
   function toggleSector(s: string) {
@@ -51,10 +51,33 @@ export default function PartnerApplyPage() {
     );
   }
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    setStatus("submitting");
+
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+    
+    // Add sectors separately
+    data.sectors = sectors.join(", ");
+    data.application_type = "Partner Application";
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -67,7 +90,7 @@ export default function PartnerApplyPage() {
 
       {/* ─── Form + Sidebar ─── */}
       <section className="mx-auto max-w-6xl px-4 py-16 lg:px-8 lg:py-24">
-        {submitted ? (
+        {status === "success" ? (
           /* ─── Success state ─── */
           <div className="mx-auto max-w-xl rounded-xl border border-green-200 bg-green-50 p-10 text-center">
             <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-green-100">
@@ -104,20 +127,21 @@ export default function PartnerApplyPage() {
               <form onSubmit={handleSubmit} className="mt-8 space-y-6">
                 {/* Company + Name */}
                 <div className="grid gap-6 md:grid-cols-2">
-                  <Field label="Company name" required />
-                  <Field label="Your name" required />
+                  <Field label="Company name" name="company" required />
+                  <Field label="Your name" name="name" required />
                 </div>
 
                 {/* Email + Phone */}
                 <div className="grid gap-6 md:grid-cols-2">
-                  <Field label="Email" type="email" required />
-                  <Field label="Phone / WhatsApp" type="tel" required />
+                  <Field label="Email" name="email" type="email" required />
+                  <Field label="Phone / WhatsApp" name="phone" type="tel" required />
                 </div>
 
                 {/* Country */}
                 <div>
                   <Label text="Country" required />
                   <select
+                    name="country"
                     required
                     defaultValue=""
                     className="mt-1.5 block w-full rounded-lg border border-brand-gray-border bg-white px-4 py-2.5 text-sm text-brand-gray-text outline-none transition focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20"
@@ -135,6 +159,7 @@ export default function PartnerApplyPage() {
                 <div>
                   <Label text="Business type" />
                   <select
+                    name="business_type"
                     defaultValue=""
                     className="mt-1.5 block w-full rounded-lg border border-brand-gray-border bg-white px-4 py-2.5 text-sm text-brand-gray-text outline-none transition focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20"
                   >
@@ -189,6 +214,7 @@ export default function PartnerApplyPage() {
                 <div>
                   <Label text="Current or upcoming pipeline" />
                   <textarea
+                    name="pipeline"
                     rows={4}
                     placeholder="Tell us about the projects you're working on or planning…"
                     className="mt-1.5 block w-full rounded-lg border border-brand-gray-border px-4 py-2.5 text-sm text-brand-gray-text outline-none transition placeholder:text-brand-gray-muted/60 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20"
@@ -196,7 +222,7 @@ export default function PartnerApplyPage() {
                 </div>
 
                 {/* How you heard */}
-                <Field label="How did you hear about us?" />
+                <Field name="heard_about" label="How did you hear about us?" />
 
                 {/* Trust signals */}
                 <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-brand-gray-muted">
@@ -205,9 +231,13 @@ export default function PartnerApplyPage() {
                   <span>✓ Confidential</span>
                 </div>
 
+                {status === "error" && (
+                  <p className="text-sm text-red-600">Something went wrong. Please try again.</p>
+                )}
+
                 {/* Submit */}
-                <Button type="submit" variant="primary" className="w-full sm:w-auto">
-                  Submit application →
+                <Button type="submit" disabled={status === "submitting"} variant="primary" className="w-full sm:w-auto">
+                  {status === "submitting" ? "Sending..." : "Submit application →"}
                 </Button>
               </form>
             </div>
@@ -265,10 +295,12 @@ function Label({ text, required }: { text: string; required?: boolean }) {
 
 function Field({
   label,
+  name,
   type = "text",
   required,
 }: {
   label: string;
+  name: string;
   type?: string;
   required?: boolean;
 }) {
@@ -276,6 +308,7 @@ function Field({
     <div>
       <Label text={label} required={required} />
       <input
+        name={name}
         type={type}
         required={required}
         className="mt-1.5 block w-full rounded-lg border border-brand-gray-border px-4 py-2.5 text-sm text-brand-gray-text outline-none transition placeholder:text-brand-gray-muted/60 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20"
