@@ -5,7 +5,8 @@ import Button from "@/components/ui/Button";
 
 /* ── Stats ── */
 const stats = [
-  { value: "5+", label: "Countries" },
+  { value: "15+", label: "Countries" },
+  { value: "500+ SQM", label: "LED supplied" },
   { value: "15+", label: "Brands" },
   { value: "2000+", label: "Hotel rooms equipped" },
   { value: "0", label: "Direct sales to end-users" },
@@ -85,7 +86,7 @@ import teamAtWorkImg from "../../../../public/images/people/team-at-work.webp";
 import Image from "next/image";
 
 // The globally generated AI vector asset
-import africaMapImg from "../../../../public/images/decorative/africa-map.png";
+import africaMapConnectedImg from "../../../../public/images/decorative/africa-map-connected.png";
 
 export default function AboutPage() {
   return (
@@ -147,7 +148,7 @@ export default function AboutPage() {
 
               <p>
                 Today, Perlogy supplies technology into hotels, airports, corporate
-                campuses, and retail environments across more than five African
+                campuses, and retail environments across more than fifteen African
                 countries — all through our network of system integrator partners.
                 We never sell direct. The channel is our customer, and the
                 project&apos;s success is our measure.
@@ -159,10 +160,10 @@ export default function AboutPage() {
           <div className="flex w-full flex-col gap-8 self-start lg:w-[360px] xl:w-[400px]">
             {/* Stat Grid */}
             <div className="grid grid-cols-2 gap-4">
-              {stats.map((s) => (
+              {stats.map((s, idx) => (
                 <div
                   key={s.label}
-                  className="flex flex-col items-center justify-center rounded-xl border border-brand-gray-border bg-white px-4 py-6 text-center shadow-sm"
+                  className={`flex flex-col items-center justify-center rounded-xl border border-brand-gray-border bg-white px-4 py-6 text-center shadow-sm ${idx === stats.length - 1 ? 'col-span-2' : ''}`}
                 >
                   <div className="text-2xl font-extrabold text-brand-navy sm:text-3xl">
                     {s.value}
@@ -207,17 +208,50 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ─── Connectivity Map ─── */}
-      <section className="mx-auto max-w-5xl px-4 py-8 lg:px-8">
-        <div className="relative h-[300px] sm:h-[500px] w-full overflow-hidden rounded-2xl bg-brand-navy">
-          <Image 
-            src={africaMapImg} 
-            alt="Perlogy Africa Connectivity Map" 
-            fill 
-            className="object-cover object-center pointer-events-none" 
-            placeholder="blur"
-            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
-          />
+      {/* ─── Connectivity Map & Countries Served ─── */}
+      <section className="bg-white border-t border-brand-gray-border py-16 lg:py-24">
+        <div className="mx-auto max-w-5xl px-4 lg:px-8">
+          <SectionTag>Regions</SectionTag>
+          <h2 className="mt-4 text-2xl font-extrabold text-brand-navy sm:text-3xl">
+            Countries Served
+          </h2>
+          <p className="mt-4 max-w-2xl text-brand-gray-muted leading-relaxed">
+            Our operational presence spanning the continent. Nairobi, Kenya operates as 
+            our central technical support and distribution hub, projecting capability across East, 
+            West, and Southern Africa.
+          </p>
+
+          <div className="mt-12 grid gap-8 lg:grid-cols-[1fr_300px] items-start">
+            {/* Map Visual */}
+            <div className="relative h-[400px] sm:h-[500px] w-full overflow-hidden rounded-2xl bg-[#0F1626] shadow-xl border border-brand-navy/10">
+              <Image 
+                src={africaMapConnectedImg} 
+                alt="Perlogy Africa Connectivity Map with Nairobi Support Base" 
+                fill 
+                className="object-cover object-center pointer-events-none" 
+                placeholder="blur"
+              />
+            </div>
+
+            {/* Country List */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-1 gap-3 rounded-2xl bg-brand-light-blue-bg/50 border border-brand-blue/10 p-6 shadow-sm">
+              <div className="col-span-full mb-3 pb-3 border-b border-brand-gray-border/70">
+                <h4 className="text-sm font-bold text-brand-navy uppercase tracking-wider">Active Markets</h4>
+              </div>
+              {[
+                "Kenya", "Uganda", "Tanzania", "Nigeria", 
+                "Ghana", "Zambia", "Rwanda", "Cameroon", 
+                "Ethiopia", "DRC", "Seychelles", "South Africa"
+              ].map((country) => (
+                <div key={country} className="flex items-center gap-2.5">
+                  <span className={`h-2 w-2 rounded-full ${country === 'Kenya' ? 'bg-brand-orange animate-pulse' : 'bg-brand-blue/60'}`} />
+                  <span className={`text-sm ${country === 'Kenya' ? 'font-bold text-brand-navy' : 'font-medium text-brand-gray-text'}`}>
+                    {country} {country === 'Kenya' && <span className="text-[10px] font-normal text-brand-orange ml-1">(Support Base)</span>}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -294,7 +328,7 @@ export default function AboutPage() {
         <SIBanner
           headline="Want to work with Perlogy?"
           subtext="Whether you're an integrator, consultant, or project owner — we'd love to hear about your next project."
-          statValue="5+"
+          statValue="15+"
           statLabel="Countries served"
         >
           <Button variant="orange" href="/partners/apply">

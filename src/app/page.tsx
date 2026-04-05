@@ -130,8 +130,9 @@ export default function Home() {
         <StatBar
           dark
           stats={[
+            { value: "15+", label: "Countries" },
+            { value: "500+ SQM", label: "LED supplied" },
             { value: "2000+", label: "Hotel rooms supplied" },
-            { value: "5+", label: "African markets" },
             { value: "0", label: "Direct sales — ever" },
           ]}
           className="bg-brand-navy-mid"
