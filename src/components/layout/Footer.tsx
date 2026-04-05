@@ -76,12 +76,13 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3 text-sm text-brand-gray-muted">
               <li>
-                <span className="block text-[11px] font-semibold uppercase tracking-wider text-brand-navy/70">Warehouse</span>
-                Jebel Ali, Dubai
+                <span className="block text-[11px] font-bold uppercase tracking-[0.2em] text-brand-blue">Headquarters</span>
+                Nairobi, Kenya
+                <span className="block text-[10px] text-brand-gray-muted/60 mt-0.5">Registered in Kenya</span>
               </li>
               <li>
-                <span className="block text-[11px] font-semibold uppercase tracking-wider text-brand-navy/70">Support Teams</span>
-                Nairobi, Kenya
+                <span className="block text-[11px] font-semibold uppercase tracking-wider text-brand-navy/70">Warehouse</span>
+                Jebel Ali, Dubai
               </li>
               <li>
                 <span className="block text-[11px] font-semibold uppercase tracking-wider text-brand-navy/70">Telephone</span>

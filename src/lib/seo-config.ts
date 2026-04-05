@@ -34,10 +34,10 @@ export const SEO = {
     email:         'hello@perlogy.africa',
     phone:         '+254792651241',
     address: {
-      street:      'Dubai',
-      city:        'Dubai',
-      country:     'United Arab Emirates',
-      countryCode: 'AE',
+      street:      'Westlands',
+      city:        'Nairobi',
+      country:     'Kenya',
+      countryCode: 'KE',
     },
     logo:          'https://perlogy.africa/perlogy_logo.svg',
     socialProfiles: [
