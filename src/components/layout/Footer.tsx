@@ -109,22 +109,7 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-            <div className="mt-4">
-              <span className="block text-[10px] font-semibold uppercase tracking-wider text-brand-navy/70 mb-2">Regions Served</span>
-              <div className="flex flex-wrap gap-1.5">
-                {['Nairobi', 'Kenya', 'Uganda', 'Tanzania', 'Nigeria', 'Ghana', 'Zambia', 'Rwanda', 'Cameroon', 'Ethiopia', 'DRC', 'Seychelles'].map((r) => (
-                  <span
-                    key={r}
-                    className="inline-block rounded-full border border-brand-gray-border bg-gray-50 px-2.5 py-1 text-[10px] font-medium text-brand-gray-muted"
-                  >
-                    {r}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Social icons */}
-            <div className="mt-4 flex items-center gap-3">
+            <div className="mt-6 flex items-center gap-3">
               {/* Facebook */}
               <a
                 href="https://www.facebook.com/PerlogyTechnologies"
@@ -161,6 +146,41 @@ export default function Footer() {
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                 </svg>
               </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Regions Served (Full Width) ── */}
+      <div className="border-t border-brand-gray-border/50 bg-gray-50/30">
+        <div className="mx-auto max-w-7xl px-4 py-8 lg:px-8">
+          <div className="flex flex-col items-center justify-between gap-6 lg:flex-row">
+            <div className="flex-shrink-0">
+              <h4 className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-navy/60 text-center lg:text-left">
+                Direct distribution covering
+              </h4>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+              {[
+                "South Africa",
+                "Kenya",
+                "Nigeria",
+                "Ghana",
+                "Ethiopia",
+                "Uganda",
+                "Tanzania",
+                "Rwanda",
+                "Zambia",
+                "DRC",
+                "Seychelles",
+              ].map((country) => (
+                <span
+                  key={country}
+                  className="text-sm font-semibold tracking-wide text-brand-navy/80 transition-colors hover:text-brand-blue sm:text-base"
+                >
+                  {country}
+                </span>
+              ))}
             </div>
           </div>
         </div>
