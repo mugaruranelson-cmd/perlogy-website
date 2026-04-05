@@ -15,6 +15,7 @@ export const metadata: Metadata = {
       'Inquire about LG, Unilumin, or any of our 13 world-class brands. ' +
       'Our team in Dubai and Nairobi is ready to support your next project.',
     url: buildCanonical('/contact'),
+    images: [{ url: '/og/default.png', width: 1200, height: 630 }],
   },
 }
 

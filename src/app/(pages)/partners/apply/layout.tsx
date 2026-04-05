@@ -15,6 +15,7 @@ export const metadata: Metadata = {
       'Join our network of elite system integrators and access premium ProAV ' +
       'brands with full technical and margin support.',
     url: buildCanonical('/partners/apply'),
+    images: [{ url: '/og/partners.png', width: 1200, height: 630 }],
   },
 }
 

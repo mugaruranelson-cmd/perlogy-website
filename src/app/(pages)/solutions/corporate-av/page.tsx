@@ -14,6 +14,7 @@ export const metadata: Metadata = {
       'Seamless presentation tools, ultra-wide screens, and integrated ' +
       'boardroom solutions for the African corporate sector.',
     url: buildCanonical('/solutions/corporate-av'),
+    images: [{ url: '/og/solutions-corporate.png', width: 1200, height: 630 }],
   },
 }
 

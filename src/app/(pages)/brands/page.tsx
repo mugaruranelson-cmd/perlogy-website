@@ -24,6 +24,7 @@ export const metadata: Metadata = {
       'The complete technology stack from screens to control systems. ' +
       'Authorised distribution for LG, Unilumin and Lampro in Africa.',
     url: buildCanonical('/brands'),
+    images: [{ url: '/og/brands.png', width: 1200, height: 630 }],
   },
 }
 

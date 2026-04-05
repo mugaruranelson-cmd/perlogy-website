@@ -40,6 +40,7 @@ export const metadata: Metadata = {
       'Fine-pitch indoor LED, outdoor panels, and commercial displays across ' +
       'East, West, and Southern Africa.',
     url: buildCanonical('/solutions/digital-signage'),
+    images: [{ url: '/og/solutions-signage.png', width: 1200, height: 630 }],
   },
 }
 

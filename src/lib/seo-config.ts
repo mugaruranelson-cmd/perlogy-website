@@ -4,7 +4,7 @@
 export const SEO = {
   // ── Site identity ──────────────────────────────
   siteName:      'Perlogy Technologies',
-  siteUrl:       'https://perlogy.co.ke',
+  siteUrl:       'https://perlogy.africa',
   locale:        'en_US',
   twitterHandle: '@perlogyT',
 
@@ -30,16 +30,16 @@ export const SEO = {
       'ProAV and ICT distribution company serving English-speaking Africa ' +
       'through authorised partnerships with LG Electronics and Unilumin, ' +
       'and a portfolio of 14 leading technology brands.',
-    foundingYear:  '2019',
-    email:         'info@perlogy.africa',
+    foundingYear:  '2020',
+    email:         'hello@perlogy.africa',
     phone:         '+254792651241',
     address: {
-      street:      'Jebel Ali',
+      street:      'Dubai',
       city:        'Dubai',
       country:     'United Arab Emirates',
       countryCode: 'AE',
     },
-    logo:          'https://perlogy.co.ke/perlogy_logo.svg',
+    logo:          'https://perlogy.africa/perlogy_logo.svg',
     socialProfiles: [
       'https://www.linkedin.com/company/perlogy/',
       'https://x.com/perlogyT',
@@ -48,6 +48,7 @@ export const SEO = {
     areaServed: [
       'Kenya', 'Nigeria', 'Ghana', 'South Africa',
       'Uganda', 'Tanzania', 'Zimbabwe', 'Rwanda', 'Zambia',
+      'Ethiopia', 'DRC', 'Seychelles',
     ],
   },
 

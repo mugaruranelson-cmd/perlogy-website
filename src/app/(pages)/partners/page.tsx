@@ -22,6 +22,7 @@ export const metadata: Metadata = {
       'Margin protection, technical support, and the world\'s leading ProAV ' +
       'brands. Exclusively for system integrators.',
     url: buildCanonical('/partners'),
+    images: [{ url: '/og/partners.png', width: 1200, height: 630 }],
   },
 }
 

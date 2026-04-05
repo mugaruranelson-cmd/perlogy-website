@@ -14,6 +14,7 @@ export const metadata: Metadata = {
       'High-visibility flight information displays and terminal signage solutions ' +
       'for Africa\'s fastest-growing airports.',
     url: buildCanonical('/solutions/airports'),
+    images: [{ url: '/og/solutions-airports.png', width: 1200, height: 630 }],
   },
 }
 

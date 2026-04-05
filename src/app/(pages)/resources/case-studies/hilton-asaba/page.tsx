@@ -21,6 +21,14 @@ export async function generateMetadata(): Promise<Metadata> {
       title:       study.seoTitle,
       description: study.seoDescription,
       url:         buildCanonical(`/resources/case-studies/${study.slug}`),
+      images: [
+        {
+          url:    '/images/case-studies/hotel-lobby.webp',
+          width:  1200,
+          height: 630,
+          alt:    study.fullName,
+        },
+      ],
     },
   }
 }

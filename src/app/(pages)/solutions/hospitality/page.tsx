@@ -21,6 +21,7 @@ export const metadata: Metadata = {
       'LG Pro:Centric, Uniguest IPTV, and full hospitality AV stack. ' +
       'Delivered through specialist SI partners.',
     url: buildCanonical('/solutions/hospitality'),
+    images: [{ url: '/og/solutions-hospitality.png', width: 1200, height: 630 }],
   },
 }
 
@@ -60,6 +61,7 @@ import hiltonRoomImg from "../../../../../public/images/case-studies/hilton-room
 export default function HospitalityPage() {
   return (
     <>
+      <StructuredData data={[hospitalityServiceSchema, hospitalityBreadcrumb]} />
       {/* ─── 2-Column Hero ─── */}
       <section className="relative overflow-hidden bg-brand-navy px-4 py-20 text-white lg:px-8 lg:py-28">
         <Image src={hotelLobbyImg} alt="Five-star African hotel lobby" fill priority className="object-cover opacity-30 pointer-events-none" placeholder="blur" />

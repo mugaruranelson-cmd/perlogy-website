@@ -20,6 +20,7 @@ export const metadata: Metadata = {
       'Real-world implementations of LG, Unilumin, and premium AV technology ' +
       'across the continent.',
     url: buildCanonical('/resources/case-studies'),
+    images: [{ url: '/og/case-studies.png', width: 1200, height: 630 }],
   },
 }
 
