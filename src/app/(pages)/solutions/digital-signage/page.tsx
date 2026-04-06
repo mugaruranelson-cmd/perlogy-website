@@ -28,19 +28,19 @@ import { buildCanonical, SEO } from '@/lib/seo-config'
 import { StructuredData } from '@/components/seo/StructuredData'
 
 export const metadata: Metadata = {
-  title: 'LED & Digital Signage Distribution Africa | Unilumin | Perlogy',
+  title: 'LED Video Walls Nairobi | Unilumin Distributor Kenya | Perlogy',
   description:
     'Unilumin LED video walls, commercial displays, and outdoor screens for ' +
-    'retail, corporate, and airport environments across English-speaking Africa. ' +
+    'retail, corporate, and airport environments across Kenya and Africa. ' +
     'Perlogy is the authorised Unilumin distributor for sub-Saharan Africa.',
   alternates: { canonical: buildCanonical('/solutions/digital-signage') },
   openGraph: {
-    title: 'LED & Digital Signage Africa | Authorised Unilumin Distributor | Perlogy',
+    title: 'LED Video Walls & Digital Signage Nairobi | Unilumin Distributor | Perlogy',
     description:
       'Fine-pitch indoor LED, outdoor panels, and commercial displays across ' +
-      'East, West, and Southern Africa.',
+      'Nairobi, Kenya and East, West, and Southern Africa.',
     url: buildCanonical('/solutions/digital-signage'),
-    images: [{ url: '/og/solutions-signage.png', width: 1200, height: 630 }],
+    images: [{ url: '/opengraph-image.png', width: 1200, height: 630 }],
   },
 }
 

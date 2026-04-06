@@ -9,19 +9,19 @@ import { buildCanonical, SEO } from '@/lib/seo-config'
 import { StructuredData } from '@/components/seo/StructuredData'
 
 export const metadata: Metadata = {
-  title: 'ProAV & ICT Solutions for Africa | Hospitality, Signage, Airports',
+  title: 'ProAV Solutions Nairobi | LED, Hotel TV & Boardroom AV | Perlogy',
   description:
-    'ProAV and ICT solutions for hospitality, digital signage, airports, ' +
-    'and corporate AV across English-speaking Africa. Distributed through ' +
-    'specialist SI partners with authorised LG and Unilumin supply.',
+    'ProAV and ICT solutions for hospitality, digital signage, airports, and ' +
+    'corporate AV across Kenya and English-speaking Africa. LG & Unilumin ' +
+    'authorised supply through specialist SI partners in Nairobi & East Africa.',
   alternates: { canonical: buildCanonical('/solutions') },
   openGraph: {
-    title: 'Perlogy Solutions — ProAV & ICT for Africa\'s Fastest-Growing Sectors',
+    title: 'Perlogy ProAV Solutions — LED, Hotel TV & Boardroom AV Across Africa',
     description:
       'From hotel IPTV to LED video walls and airport displays — the complete ' +
       'AV stack across East, West, and Southern Africa.',
     url: buildCanonical('/solutions'),
-    images: [{ url: '/og/solutions.png', width: 1200, height: 630 }],
+    images: [{ url: '/opengraph-image.png', width: 1200, height: 630 }],
   },
 }
 

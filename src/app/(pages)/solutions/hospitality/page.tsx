@@ -9,19 +9,19 @@ import { buildCanonical, SEO } from '@/lib/seo-config'
 import { StructuredData } from '@/components/seo/StructuredData'
 
 export const metadata: Metadata = {
-  title: 'Hotel AV & IPTV Systems Africa | LG Pro:Centric | Perlogy',
+  title: 'Hotel TV & IPTV Systems Kenya & Africa | LG Pro:Centric | Perlogy',
   description:
     'Perlogy supplies LG Pro:Centric hospitality TVs, IPTV systems, and hotel ' +
-    'AV for properties across East, West, and Southern Africa. Authorised LG ' +
-    'distributor. Reference: DoubleTree by Hilton Asaba, 220 rooms.',
+    'AV for properties across Kenya, Nigeria, and East Africa. Authorised LG ' +
+    'distributor in Nairobi. Reference: DoubleTree by Hilton Asaba, 220 rooms.',
   alternates: { canonical: buildCanonical('/solutions/hospitality') },
   openGraph: {
-    title: 'Hotel AV & IPTV Solutions Across Africa | Perlogy',
+    title: 'Hotel AV & IPTV Solutions Kenya & Africa | Perlogy',
     description:
       'LG Pro:Centric, Uniguest IPTV, and full hospitality AV stack. ' +
-      'Delivered through specialist SI partners.',
+      'Distributed through specialist SI partners in Kenya & Africa.',
     url: buildCanonical('/solutions/hospitality'),
-    images: [{ url: '/og/solutions-hospitality.png', width: 1200, height: 630 }],
+    images: [{ url: '/opengraph-image.png', width: 1200, height: 630 }],
   },
 }
 

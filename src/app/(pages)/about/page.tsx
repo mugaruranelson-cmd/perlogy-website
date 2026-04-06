@@ -41,18 +41,18 @@ import { buildCanonical, SEO } from '@/lib/seo-config'
 import { StructuredData } from '@/components/seo/StructuredData'
 
 export const metadata: Metadata = {
-  title: 'About Perlogy — Our Story, Mission & Leadership',
+  title: 'About Perlogy Technologies | B2B AV Distributor Nairobi, Kenya',
   description:
-    'Perlogy Technologies was founded in Dubai with a single purpose: to be ' +
-    'the ProAV distribution partner Africa always needed. Led by Director ' +
-    'Nelson Mandela Mugarura MBA MSc BSc, we serve English-speaking Africa ' +
-    'through authorised LG and Unilumin partnerships.',
+    'Perlogy Technologies is a B2B ProAV distribution company based in ' +
+    'Nairobi, Kenya. Founded to serve Africa\'s system integrators with ' +
+    'authorised LG & Unilumin supply, technical support, and zero direct sales. ' +
+    'Director: Nelson Mandela Mugarura MBA MSc.',
   alternates: { canonical: buildCanonical('/about') },
   openGraph: {
-    title: 'About Perlogy Technologies — ProAV Distribution Built for Africa',
+    title: 'About Perlogy Technologies | ProAV Distributor Built for Africa',
     description:
-      'Founded in Dubai, focused on Africa. The story behind East Africa\'s ' +
-      'most significant AV installation partner.',
+      'Based in Nairobi, Kenya — focused on all of Africa. The story behind ' +
+      'East Africa\'s most significant ProAV distribution partner.',
     url: buildCanonical('/about'),
   },
 }

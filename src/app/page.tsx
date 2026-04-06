@@ -24,16 +24,22 @@ const solutions = [
   {
     image: hospitalityImg,
     title: "Hospitality",
+    href: "/solutions/hospitality",
+    alt: "Five-star hotel lobby with LG hospitality TV and IPTV — Kenya & Africa",
     body: "Enterprise-grade Hotel TVs, Hospitality IPTV systems, and automation solutions for luxury resorts and corporate hotels.",
   },
   {
     image: signageImg,
     title: "Digital Signage",
+    href: "/solutions/digital-signage",
+    alt: "Indoor LED video wall installation in African shopping mall — Unilumin display",
     body: "Commercial indoor and outdoor LED displays, video walls, and digital menu boards for retail and QSR spaces.",
   },
   {
     image: corporateImg,
     title: "Airports & Corporate",
+    href: "/solutions/corporate-av",
+    alt: "Modern corporate boardroom with AV display system — Nairobi, Kenya",
     body: "Boardroom audio-visual systems, meeting room displays, flight information displays, and enterprise AV distribution.",
   },
 ] as const;
@@ -53,18 +59,18 @@ import { buildCanonical, SEO } from '@/lib/seo-config'
 import { StructuredData } from '@/components/seo/StructuredData'
 
 export const metadata: Metadata = {
-  title: 'B2B ProAV & ICT Distributor East Africa | LED & AV Solutions',
+  title: 'Perlogy | ProAV & LED Display Distributor Kenya & Africa',
   description:
-    'Perlogy is East Africa\'s leading B2B distributor of ProAV, LED displays, ' +
-    'and boardroom audio-visual systems. Authorised LG & Unilumin supplier ' +
-    'in Kenya, Uganda & beyond.',
+    'Perlogy Technologies — B2B ProAV & LED display distributor based in ' +
+    'Nairobi, Kenya. Authorised LG & Unilumin supplier for East, West & ' +
+    'Southern Africa. Exclusively through system integrators. 24hr response.',
   alternates: { canonical: buildCanonical('/') },
   openGraph: {
-    title: 'B2B ProAV & ICT Distributor East Africa | LED & AV Solutions',
+    title: 'Perlogy | ProAV & LED Display Distributor Kenya & Africa',
     description:
-      'Perlogy is East Africa\'s leading B2B distributor of ProAV, LED displays, ' +
-      'and boardroom audio-visual systems. Authorised LG & Unilumin supplier ' +
-      'in Kenya, Uganda & beyond.',
+      'Perlogy Technologies — B2B ProAV & LED display distributor based in ' +
+      'Nairobi, Kenya. Authorised LG & Unilumin supplier for East, West & ' +
+      'Southern Africa. Exclusively through system integrators. 24hr response.',
     url: buildCanonical('/'),
   },
 }
@@ -87,6 +93,60 @@ const homeBreadcrumb = {
   ],
 }
 
+const homeFAQSchema = {
+  '@context': 'https://schema.org',
+  '@type':    'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name:    'What does Perlogy Technologies distribute?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text:
+          'Perlogy distributes world-class ProAV and ICT technology across ' +
+          'English-speaking Africa — including LED video walls, hotel IPTV ' +
+          'systems, boardroom AV, and airport displays — through authorised ' +
+          'partnerships with LG Electronics and Unilumin, plus a portfolio ' +
+          'of 14 leading technology brands.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name:    'Does Perlogy sell directly to end users?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text:
+          'No. Perlogy operates strictly on a B2B model and distributes ' +
+          'exclusively through registered system integrators (SIs), AV ' +
+          'consultants, and ICT resellers. We never sell direct to end users.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name:    'Which countries does Perlogy serve?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text:
+          'Perlogy serves 15+ countries across East, West, and Southern ' +
+          'Africa — including Kenya, Uganda, Tanzania, Nigeria, Ghana, South ' +
+          'Africa, Zambia, Rwanda, Ethiopia, DRC, and Seychelles. Our ' +
+          'technical support hub is based in Nairobi, Kenya.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name:    'How do I become a Perlogy distribution partner?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text:
+          'Registered system integrators can apply online via the Perlogy ' +
+          'partner programme. We respond to all SI enquiries within 24 hours. ' +
+          'Partnership application takes less than one week to process.',
+      },
+    },
+  ],
+}
+
 import homepageHero from "../../public/images/heroes/homepage-hero.webp";
 
 export default function Home() {
@@ -97,7 +157,7 @@ export default function Home() {
 
   return (
     <>
-      <StructuredData data={[websiteSchema, homeBreadcrumb]} />
+      <StructuredData data={[websiteSchema, homeBreadcrumb, homeFAQSchema]} />
       {/* ────────────────────────────────────
           1 · HERO
           ──────────────────────────────────── */}
@@ -212,15 +272,16 @@ export default function Home() {
 
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {solutions.map((s) => (
-              <div
+              <a
                 key={s.title}
+                href={s.href}
                 className="group overflow-hidden rounded-xl border border-brand-gray-border bg-white shadow-sm transition-shadow hover:shadow-md"
               >
                 {/* Thumbnail area */}
                 <div className="relative h-48 overflow-hidden bg-brand-navy">
                   <Image
                     src={s.image}
-                    alt={s.title}
+                    alt={s.alt}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
@@ -233,8 +294,11 @@ export default function Home() {
                   <p className="mt-2 text-sm leading-relaxed text-brand-gray-muted">
                     {s.body}
                   </p>
+                  <span className="mt-4 inline-block text-xs font-bold text-brand-blue group-hover:underline">
+                    Learn more →
+                  </span>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>

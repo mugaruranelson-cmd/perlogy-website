@@ -87,7 +87,7 @@ export const metadata: Metadata = {
   },
 
   verification: {
-    google: 'REPLACE_WITH_GOOGLE_SEARCH_CONSOLE_VERIFICATION_TOKEN',
+    google: 'mMlwsJHEu0utFZVLSMgIDKjyhKAAjgFJgNX4BooA97Q',
   },
 
   icons: {
@@ -100,7 +100,7 @@ export const metadata: Metadata = {
 // ── Organization structured data (global) ─────────
 const organizationSchema = {
   '@context':   'https://schema.org',
-  '@type':      'Organization',
+  '@type':      ['Organization', 'ProfessionalService'],
   '@id':        `${SEO.siteUrl}/#organization`,
   name:         SEO.company.name,
   legalName:    SEO.company.legalName,
@@ -114,10 +114,26 @@ const organizationSchema = {
   description:  SEO.company.description,
   foundingDate: SEO.company.foundingYear,
   address: {
-    '@type':         'PostalAddress',
-    addressLocality:  SEO.company.address.city,
-    addressCountry:   SEO.company.address.countryCode,
+    '@type':            'PostalAddress',
+    streetAddress:      'Westlands',
+    addressLocality:    SEO.company.address.city,
+    addressRegion:      'Nairobi County',
+    postalCode:         '00100',
+    addressCountry:     SEO.company.address.countryCode,
   },
+  geo: {
+    '@type':    'GeoCoordinates',
+    latitude:   -1.2673,
+    longitude:  36.8050,
+  },
+  openingHoursSpecification: {
+    '@type':       'OpeningHoursSpecification',
+    dayOfWeek:     ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens:         '08:00',
+    closes:        '17:00',
+  },
+  priceRange:         '$$$$',
+  currenciesAccepted: 'KES, USD',
   contactPoint: {
     '@type':            'ContactPoint',
     telephone:          SEO.company.phone,
@@ -153,7 +169,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${nexaPro.variable} h-full`}>
+    <html lang="en-KE" className={`${nexaPro.variable} h-full`}>
       <body className="min-h-full flex flex-col">
         <Navbar />
         <FloatingWhatsApp />

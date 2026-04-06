@@ -3,7 +3,7 @@ import type { MetadataRoute } from 'next'
 import { SEO } from '@/lib/seo-config'
 import { getAllCaseStudies } from '@/lib/case-studies-data'
 
-const SITE_LAST_UPDATED = new Date('2025-03-22')
+const SITE_LAST_UPDATED = new Date('2026-04-06')
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = SEO.siteUrl
@@ -85,6 +85,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified:    SITE_LAST_UPDATED,
       changeFrequency: 'yearly',
       priority:        0.7,
+    },
+    // Tier 5: Legal
+    {
+      url:             `${base}/privacy`,
+      lastModified:    SITE_LAST_UPDATED,
+      changeFrequency: 'yearly',
+      priority:        0.3,
+    },
+    {
+      url:             `${base}/terms`,
+      lastModified:    SITE_LAST_UPDATED,
+      changeFrequency: 'yearly',
+      priority:        0.3,
     },
   ]
 

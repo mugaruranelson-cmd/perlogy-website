@@ -4,8 +4,8 @@
 export const SEO = {
   // ── Site identity ──────────────────────────────
   siteName:      'Perlogy Technologies',
-  siteUrl:       'https://perlogy.africa',
-  locale:        'en_US',
+  siteUrl:       'https://www.perlogy.co.ke',
+  locale:        'en_KE',
   twitterHandle: '@perlogyT',
 
   // ── Default metadata ───────────────────────────
@@ -39,7 +39,7 @@ export const SEO = {
       country:     'Kenya',
       countryCode: 'KE',
     },
-    logo:          'https://perlogy.africa/perlogy_logo.svg',
+    logo:          'https://www.perlogy.co.ke/perlogy_logo.svg',
     socialProfiles: [
       'https://www.linkedin.com/company/perlogy/',
       'https://x.com/perlogyT',

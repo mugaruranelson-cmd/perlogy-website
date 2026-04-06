@@ -12,19 +12,19 @@ import { buildCanonical, SEO } from '@/lib/seo-config'
 import { StructuredData } from '@/components/seo/StructuredData'
 
 export const metadata: Metadata = {
-  title: 'Authorised ProAV Brands | LG, Unilumin & Lampro Distributor Africa',
+  title: 'LG & Unilumin Authorised Distributor Kenya | 14 ProAV Brands | Perlogy',
   description:
-    'Perlogy distributes 14 world-class ProAV and ICT brands across Africa. ' +
-    'Authorised LG, Unilumin and Lampro distributor. Supporting system integrators ' +
-    'with genuine stock and technical expertise.',
+    'Perlogy distributes 14 world-class ProAV and ICT brands across Kenya and ' +
+    'Africa. Authorised LG, Unilumin & Lampro representative in Nairobi. ' +
+    'Supporting system integrators with genuine stock and technical expertise.',
   alternates: { canonical: buildCanonical('/brands') },
   openGraph: {
-    title: 'Perlogy Brand Portfolio — 13 Leading ProAV & ICT Brands',
+    title: 'Perlogy Brand Portfolio — 14 Leading ProAV & ICT Brands',
     description:
       'The complete technology stack from screens to control systems. ' +
-      'Authorised distribution for LG, Unilumin and Lampro in Africa.',
+      'Authorised distribution for LG, Unilumin and Lampro in Kenya & Africa.',
     url: buildCanonical('/brands'),
-    images: [{ url: '/og/brands.png', width: 1200, height: 630 }],
+    images: [{ url: '/opengraph-image.png', width: 1200, height: 630 }],
   },
 }
 

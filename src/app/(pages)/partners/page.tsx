@@ -11,18 +11,19 @@ import { buildCanonical, SEO } from '@/lib/seo-config'
 import { StructuredData } from '@/components/seo/StructuredData'
 
 export const metadata: Metadata = {
-  title: 'Join the Perlogy Partner Programme | ProAV & ICT Distribution Africa',
+  title: 'SI Partner Programme Kenya & Africa | ProAV Distribution | Perlogy',
   description:
-    'Scale your SI business with Perlogy. Direct access to 11+ brands, LG and ' +
-    'Unilumin authorised supply, and project protection. We never sell to end users.',
+    'Scale your AV business with Perlogy in Kenya and East Africa. Direct ' +
+    'access to 14 brands, LG & Unilumin authorised supply, and project ' +
+    'protection. Nairobi-based support. 24hr response. We never sell to end users.',
   alternates: { canonical: buildCanonical('/partners') },
   openGraph: {
-    title: 'Partner With Perlogy | Africa\'s Most Pro-SI Distribution Partner',
+    title: 'Partner With Perlogy | Africa\'s Most Pro-Channel ProAV Distributor',
     description:
       'Margin protection, technical support, and the world\'s leading ProAV ' +
-      'brands. Exclusively for system integrators.',
+      'brands. Exclusively for system integrators in Kenya & Africa.',
     url: buildCanonical('/partners'),
-    images: [{ url: '/og/partners.png', width: 1200, height: 630 }],
+    images: [{ url: '/opengraph-image.png', width: 1200, height: 630 }],
   },
 }
 

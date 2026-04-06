@@ -3,19 +3,19 @@ import { buildCanonical, SEO } from '@/lib/seo-config'
 import { StructuredData } from '@/components/seo/StructuredData'
 
 export const metadata: Metadata = {
-  title: 'Contact Perlogy Technologies | ProAV & ICT Distribution Africa',
+  title: 'Contact Perlogy | Get a Quote for ProAV & ICT in Africa',
   description:
-    'Get in touch with Perlogy for project support, brand inquiries, or ' +
-    'partnership details. Serving system integrators across Kenya, Nigeria, ' +
-    'Ghana, South Africa, and more.',
+    'Contact Perlogy Technologies in Nairobi, Kenya for ProAV and ICT ' +
+    'project enquiries across East Africa. System integrators receive a ' +
+    '24-hour guaranteed response. Email, WhatsApp, or use the enquiry form.',
   alternates: { canonical: buildCanonical('/contact') },
   openGraph: {
-    title: 'Contact Perlogy Technologies | Africa\'s ProAV Distribution Partner',
+    title: 'Contact Perlogy — Start Your ProAV Project Today',
     description:
-      'Inquire about LG, Unilumin, or any of our 13 world-class brands. ' +
-      'Our team in Dubai and Nairobi is ready to support your next project.',
+      'Reach the Perlogy team in Nairobi for ProAV supply enquiries, SI ' +
+      'partnership applications, and project consultations across Africa.',
     url: buildCanonical('/contact'),
-    images: [{ url: '/og/default.png', width: 1200, height: 630 }],
+    images: [{ url: '/opengraph-image.png', width: 1200, height: 630 }],
   },
 }
 
