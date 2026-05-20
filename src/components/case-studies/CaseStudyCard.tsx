@@ -122,11 +122,6 @@ export function CaseStudyCard({
         'group transition-all duration-200 hover:-translate-y-0.5',
       ].join(' ')}
     >
-      {highlighted && (
-        <div className="absolute top-2.5 right-2.5 bg-brand-orange text-white text-[8px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full z-10 shadow-sm">
-          Landmark Remote Support
-        </div>
-      )}
       {/* Thumbnail if available */}
       {thumbnail && (
         <div className="relative overflow-hidden h-36 bg-brand-navy">
@@ -149,6 +144,11 @@ export function CaseStudyCard({
       )}
 
       <div className="p-5">
+        {highlighted && (
+          <span className="inline-block bg-brand-orange text-white text-[8px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full mb-3 shadow-sm">
+            Landmark Remote Support
+          </span>
+        )}
         <h3 className="text-[14px] font-semibold
           text-[var(--color-text-primary)] mb-2 leading-[1.35]">
           {study.cardHeadline}
