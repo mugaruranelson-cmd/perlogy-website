@@ -152,7 +152,9 @@ import homepageHero from "../../public/images/heroes/homepage-hero.webp";
 export default function Home() {
   const allStudies   = getAllCaseStudies()
   const flagship     = allStudies.find(s => s.isFlagship)!
-  const secondary    = allStudies.find(s => !s.isFlagship)!
+  const cameroon     = allStudies.find(s => s.slug === 'cameroon-lg-procentric-hospitality-iptv-project')!
+  const turkana      = allStudies.find(s => s.slug === 'lake-turkana-wind-power-hospitality-project')!
+  const asaba        = allStudies.find(s => s.slug === 'hilton-asaba')!
   const flagshipVid  = PROJECT_VIDEOS.uhuruGardens
 
   return (
@@ -323,7 +325,7 @@ export default function Home() {
         </p>
 
         {/* Flagship: Uhuru Gardens — full width */}
-        <div className="mb-3.5">
+        <div className="mb-6">
           <CaseStudyCard
             study={flagship}
             videoId={flagshipVid.youtubeId}
@@ -331,11 +333,11 @@ export default function Home() {
           />
         </div>
 
-        {/* Secondary: Hilton Asaba — right aligned, 50% width */}
-        <div className="flex justify-end">
-          <div className="w-full sm:w-[calc(50%-7px)]">
-            <CaseStudyCard study={secondary} />
-          </div>
+        {/* Landmark Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <CaseStudyCard study={cameroon} highlighted={true} />
+          <CaseStudyCard study={turkana} />
+          <CaseStudyCard study={asaba} />
         </div>
       </section>
 

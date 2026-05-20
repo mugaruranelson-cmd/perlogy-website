@@ -3,15 +3,17 @@ import { getYouTubeThumbnail } from '@/lib/project-videos'
 import type { CaseStudy } from '@/lib/case-studies-data'
 
 interface CaseStudyCardProps {
-  study:     CaseStudy
+  study:       CaseStudy
   videoId?:  string
   featured?: boolean  // flagship treatment
+  highlighted?: boolean // highlight standard card
 }
 
 export function CaseStudyCard({
   study,
   videoId,
   featured = false,
+  highlighted = false,
 }: CaseStudyCardProps) {
   const thumbnail = videoId
     ? getYouTubeThumbnail(videoId, 'hq')
@@ -113,12 +115,18 @@ export function CaseStudyCard({
     <Link
       href={`/resources/case-studies/${study.slug}`}
       className={[
-        'block rounded-xl overflow-hidden',
-        'border border-[var(--color-border-tertiary)]',
-        'group transition-all duration-200',
-        'hover:border-[#1635D4] hover:-translate-y-0.5',
+        'block rounded-xl overflow-hidden relative',
+        highlighted
+          ? 'border-2 border-brand-orange/60 hover:border-brand-orange'
+          : 'border border-[var(--color-border-tertiary)] hover:border-[#1635D4]',
+        'group transition-all duration-200 hover:-translate-y-0.5',
       ].join(' ')}
     >
+      {highlighted && (
+        <div className="absolute top-2.5 right-2.5 bg-brand-orange text-white text-[8px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full z-10 shadow-sm">
+          Landmark Remote Support
+        </div>
+      )}
       {/* Thumbnail if available */}
       {thumbnail && (
         <div className="relative overflow-hidden h-36 bg-brand-navy">
