@@ -493,6 +493,98 @@ export const CASE_STUDIES: CaseStudy[] = [
     cardHeadline:  '158 LG Hospitality TVs supplied for Turkana 5-Star Hotel Development',
     cardBody:      'Successful large-scale hospitality technology deployment in Turkana, Kenya, in partnership with Bakyson Enterprises LTD.',
   },
+  {
+    id:            'cameroon-lg-procentric-hospitality',
+    slug:          'cameroon-lg-procentric-hospitality-iptv-project',
+    isFlagship:    false,
+    name:          'Cameroon IPTV Transformation',
+    fullName:      'Cameroon Hospitality IPTV Transformation with LG Pro:Centric',
+    location:      'Yaoundé, Cameroon',
+    locationShort: 'Cameroon',
+    image:         '/images/case-studies/cameroon-iptv-hero.png',
+    sector:        'Hospitality Technology',
+    client:        'Hospitality / Hotel Industry Partner',
+    projectValue:  'Confidential',
+    completedYear: '2026',
+    headline:      'Transforming Hospitality IPTV Experiences in Cameroon',
+    heroTagline:   'IPTV Solutions · Cameroon · LG Pro:Centric',
+    recordClaim:   '170 Displays Supported Remotely',
+    heroParagraph:
+      'Perlogy Technologies remotely supported local system integrator ROOT IT in deploying a fully ' +
+      'interactive LG Pro:Centric IPTV solution for 170 hotel displays using LG commercial hospitality technologies.',
+    challenge:
+      'The hotel initially deployed domestic LG NanoCell televisions, which lacked the essential enterprise ' +
+      'hospitality IPTV functionality required to deliver a modern, interactive guest experience. Converting a domestic ' +
+      'display deployment into a secure, managed hospitality network posed a unique challenge. Additionally, ' +
+      'coordinating the project remotely over multiple countries—Cameroon, Kenya, and Dubai—added technical and logistical ' +
+      'complexity, particularly in securing the appropriate commercial licensing and configuring the central management servers ' +
+      'remotely under strict schedules.',
+    ourRole:
+      'Perlogy Technologies advised the implementation of professional hospitality IPTV architecture by integrating LG STB-6500 ' +
+      'commercial set-top boxes with the existing domestic LG NanoCell TVs. Throughout the execution phase, we provided remote support ' +
+      'to local system integrator ROOT IT. This included detailed guidance on IPTV system architecture, Pro:Centric platform deployment, ' +
+      'commercial STB configuration, guest interactivity setup, coordination with the LG Dubai office for commercial license activation, ' +
+      'and critical server reset and recovery support to achieve full commissioning.',
+    result:
+      'The deployment transformed the hotel\'s in-room entertainment systems into a fully interactive hospitality platform across all ' +
+      '170 screens. The integration of LG STB-6500 boxes successfully enabled premium interactive guest services, customized local ' +
+      'welcome messages, and remote administration. This project demonstrates Perlogy\'s advanced capability to support complex, cross-border ' +
+      'hospitality technology installations remotely across Africa through strategic technical alliances.',
+    directorQuote:
+      'By bridging domestic hardware limitations with commercial LG set-top boxes and remote systems engineering, we successfully ' +
+      'delivered a premium interactive IPTV platform in Yaoundé, demonstrating Perlogy\'s remote technical reach across the African continent.',
+    directorName:  'Nelson Mandela Mugarura',
+    directorTitle: 'Director, Perlogy Technologies LLC · MBA, MSc, BSc',
+    stats: [
+      { value: '170',      label: 'Hotel TVs Supported' },
+      { value: 'STB-6500', label: 'Commercial Hardware' },
+      { value: 'Dubai',    label: 'Licensing Partner' },
+      { value: 'Remote',   label: 'Technical Support' },
+    ],
+    specs: [
+      {
+        label:  'Commercial Hardware',
+        value:  'LG STB-6500',
+        detail: 'LG Pro:Centric Smart Commercial Set-Top Box converting domestic screens into full-fledged interactive smart hospitality displays.',
+      },
+      {
+        label:  'IPTV Platform',
+        value:  'LG Pro:Centric IPTV',
+        detail: 'Centralized guest interactivity system enabling custom branding, welcome messages, localized weather, and server-side administration.',
+      },
+      {
+        label:  'System Integrator',
+        value:  'ROOT IT',
+        detail: 'The appointed local Cameroon system integration partner who handled on-site deployment, cabling, and hardware mounts.',
+      },
+      {
+        label:  'Original Screens',
+        value:  'LG NanoCell Domestic TVs',
+        detail: '170 domestic LG television screens successfully upgraded to commercial specs using set-top box hardware.',
+      },
+    ],
+    partners: [
+      {
+        name:     'LG Electronics Gulf',
+        role:     'Dubai Office - Licensing & Tech Support',
+        dotColor: '#A50034',
+      },
+      {
+        name:     'ROOT IT Cameroon',
+        role:     'Local System Integrator',
+        dotColor: '#1635D4',
+      },
+      {
+        name:     'Perlogy Technologies LLC',
+        role:     'Lead Architect & Remote Support',
+        dotColor: '#F25C1A',
+      },
+    ],
+    seoTitle:      'LG Pro:Centric Africa | Cameroon Hotel IPTV Integration | Perlogy',
+    seoDescription: 'Perlogy Technologies remotely supported ROOT IT in Cameroon to deploy an LG Pro:Centric IPTV hospitality solution for 170 hotel TVs using LG STB-6500 set-top boxes.',
+    cardHeadline:  'LG Pro:Centric IPTV Commissioned for 170 Hotel displays in Cameroon',
+    cardBody:      'Converting domestic LG NanoCell displays into a professional hospitality IPTV network via LG STB-6500 set-top boxes with remote support.',
+  },
 ]
 
 // Helpers
