@@ -393,8 +393,105 @@ export const CASE_STUDIES: CaseStudy[] = [
     cardHeadline:
       'Kenya\'s first Unilumin LSK P2.9 outdoor LED — Embassy in Nairobi.',
     cardBody:
-      'A 28 SQM curved outdoor LED installation at an Embassy in Nairobi. ' +
       'USD 150,000 · IP69K · 3,840Hz · designed and supplied by Perlogy.',
+  },
+  {
+    id:            'lake-turkana-wind-power',
+    slug:          'lake-turkana-wind-power-hospitality-project',
+    isFlagship:    false,
+    name:          'Lake Turkana Wind Power',
+    fullName:      'Lake Turkana Wind Power — Hospitality Technology Deployment',
+    location:      'Turkana, Kenya',
+    locationShort: 'Kenya',
+    image:         '/images/case-studies/turkana-hospitality-hero.png',
+    sector:        'Hospitality',
+    client:        'Lake Turkana Wind Power Limited',
+    projectValue:  'Confidential',
+    completedYear: '2026',
+    headline:      'Powering Premium Hospitality Experiences in Turkana',
+    heroTagline:   'Hospitality · Kenya · LG Commercial',
+    recordClaim:   '158 LG Hospitality TVs Supplied',
+    heroParagraph:
+      'Perlogy Technologies supplied and supported 158 LG Hospitality TVs for the prestigious ' +
+      'Lake Turkana Wind Power hotel development in partnership with Bakyson Enterprises LTD.',
+    challenge:
+      'Deploying enterprise-grade technology in remote areas like Turkana presents significant logistical ' +
+      'challenges. For a prestigious new five-star hospitality development, the requirement was to establish ' +
+      'a high-end in-room entertainment network across all guest suites. Due to the remote location, coordination ' +
+      'of delicate commercial displays over rugged terrain required meticulous planning. The client demanded ' +
+      'reliable hospitality-grade display technology that met international standards, along with professional ' +
+      'integration support to ensure flawless installation on a strict schedule, maintaining top-tier enterprise ' +
+      'standards in remote regions of Kenya.',
+    ourRole:
+      'As a leading commercial display and AV distributor, Perlogy Technologies successfully supplied 158 ' +
+      'genuine LG Hospitality TVs model 55UK660H along with 158 matching heavy-duty TV wall mount brackets. ' +
+      'Working in close collaboration with Bakyson Enterprises LTD, the appointed system integrator and a high-level ' +
+      'integration partner for Perlogy Technologies, we provided comprehensive project logistics and technical advisory ' +
+      'support. We ensured that the LG 55UK660H Hospitality TVs and mounting solutions were delivered safely and met the ' +
+      'high-end project specifications, delivering unmatched hospitality technology integration and support without ' +
+      'competing with our integration partner.',
+    result:
+      'The successful deployment of 158 LG commercial displays establishes a robust, premium digital infrastructure ' +
+      'for the new five-star hotel development, greatly enhancing the guest experience in Turkana. Through the seamless ' +
+      'collaboration between Perlogy and Bakyson, the installation was completed on schedule and to full enterprise ' +
+      'standards. This project showcases Perlogy Technologies\' capability to support large-scale hospitality technology ' +
+      'deployments across East Africa, driving tourism, hospitality growth, and commercial technology infrastructure ' +
+      'in emerging regions of Kenya.',
+    directorQuote:
+      'This milestone deployment in Turkana demonstrates Perlogy\'s capability to deliver large-scale commercial ' +
+      'hospitality technology deployments across the most remote regions of Kenya, ensuring world-class standards through ' +
+      'close collaboration with our integration partner Bakyson.',
+    directorName:  'Nelson Mandela Mugarura',
+    directorTitle: 'Director, Perlogy Technologies LLC · MBA, MSc, BSc',
+    stats: [
+      { value: '158',      label: 'LG Hospitality TVs' },
+      { value: '158',      label: 'Wall Mount Brackets' },
+      { value: '5-Star',   label: 'Project Standard' },
+      { value: 'Turkana',  label: 'Deployment Region' },
+    ],
+    specs: [
+      {
+        label:  'Display model',
+        value:  'LG 55UK660H',
+        detail: 'LG Smart Commercial Hospitality TV featuring custom welcome screens, Pro:Centric management capability, and 4K UHD resolution.',
+      },
+      {
+        label:  'Mounting System',
+        value:  'Heavy-Duty Wall Brackets',
+        detail: '158 custom heavy-duty TV wall mount brackets ensuring secure, clean-profile installation in all guest suites.',
+      },
+      {
+        label:  'System Integrator',
+        value:  'Bakyson Enterprises LTD',
+        detail: 'Appointed high-level AV system integration partner for Perlogy Technologies, leading the professional on-site deployment.',
+      },
+      {
+        label:  'Location & Site',
+        value:  'Turkana, Kenya',
+        detail: 'Lake Turkana Wind Power Limited guest lodge and luxury five-star hospitality development in northern Kenya.',
+      },
+    ],
+    partners: [
+      {
+        name:     'LG Electronics',
+        role:     'Display Technology Manufacturer',
+        dotColor: '#A50034',
+      },
+      {
+        name:     'Bakyson Enterprises LTD',
+        role:     'AV System Integrator & High-Level Partner',
+        dotColor: '#1635D4',
+      },
+      {
+        name:     'Perlogy Technologies LLC',
+        role:     'Technology Distributor & Logistics Partner',
+        dotColor: '#F25C1A',
+      },
+    ],
+    seoTitle:      'LG Hospitality TVs Kenya | Turkana Hotel Display Solutions | Perlogy',
+    seoDescription: 'Perlogy Technologies supplied 158 LG hospitality TVs (model 55UK660H) and mounting brackets for the 5-star Lake Turkana Wind Power hotel development, integrated by Bakyson.',
+    cardHeadline:  '158 LG Hospitality TVs supplied for Turkana 5-Star Hotel Development',
+    cardBody:      'Successful large-scale hospitality technology deployment in Turkana, Kenya, in partnership with Bakyson Enterprises LTD.',
   },
 ]
 

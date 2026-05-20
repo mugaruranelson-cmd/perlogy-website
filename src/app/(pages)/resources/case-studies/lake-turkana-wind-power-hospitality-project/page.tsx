@@ -1,0 +1,565 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import Image from 'next/image'
+import { AccentBar } from '@/components/ui/AccentBar'
+import { StructuredData } from '@/components/seo/StructuredData'
+import { SpecSidebar } from '@/components/case-studies/SpecSidebar'
+import { getCaseStudyBySlug } from '@/lib/case-studies-data'
+import { buildCanonical, SEO } from '@/lib/seo-config'
+import { 
+  Building2, 
+  MapPin, 
+  Tv, 
+  Users, 
+  Wrench, 
+  ShieldCheck, 
+  ArrowRight,
+  Layers,
+  Truck,
+  CheckCircle2,
+  Lock
+} from 'lucide-react'
+
+const study = getCaseStudyBySlug('lake-turkana-wind-power-hospitality-project')!
+const pageUrl = buildCanonical('/resources/case-studies/lake-turkana-wind-power-hospitality-project')
+
+// ── METADATA ─────────────────────────────────────────────────
+export const metadata: Metadata = {
+  title: 'LG Hospitality TVs Kenya | Turkana Hotel Display Solutions | Perlogy',
+  description: 'Perlogy Technologies supplied 158 LG hospitality TVs (model 55UK660H) and mounting brackets for the 5-star Lake Turkana Wind Power hotel development, integrated by Bakyson.',
+  alternates: { canonical: pageUrl },
+  openGraph: {
+    title: 'LG Hospitality TVs Kenya | Turkana Hotel Display Solutions | Perlogy',
+    description: 'Perlogy Technologies supplied 158 LG hospitality TVs (model 55UK660H) and mounting brackets for the 5-star Lake Turkana Wind Power hotel development, integrated by Bakyson.',
+    url: pageUrl,
+    type: 'article',
+    images: [{
+      url: '/images/case-studies/turkana-hospitality-hero.png',
+      width: 1200,
+      height: 630,
+      alt: 'Lake Turkana Wind Power Hospitality Technology Deployment — LG Hospitality TVs',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'LG Hospitality TVs Kenya | Turkana Hotel Display Solutions | Perlogy',
+    description: 'Perlogy Technologies supplied 158 LG hospitality TVs (model 55UK660H) and mounting brackets for the 5-star Lake Turkana Wind Power hotel development, integrated by Bakyson.',
+    images: ['/images/case-studies/turkana-hospitality-hero.png'],
+  },
+}
+
+// ── STRUCTURED DATA ───────────────────────────────────────────
+const caseStudySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  '@id': `${pageUrl}#casestudy`,
+  additionalType: 'https://schema.org/Report',
+  name: study.fullName,
+  headline: study.headline,
+  description: study.heroParagraph,
+  url: pageUrl,
+  datePublished: '2026-05-20',
+  dateModified: new Date().toISOString().split('T')[0],
+  image: `${SEO.siteUrl}/images/case-studies/turkana-hospitality-hero.png`,
+  author: {
+    '@type': 'Person',
+    '@id': `${SEO.siteUrl}/#person-nmm`,
+    name: study.directorName,
+  },
+  publisher: { '@id': `${SEO.siteUrl}/#organization` },
+  about: [
+    { '@type': 'Place', name: 'Turkana, Kenya' },
+    { '@type': 'Organization', name: 'Lake Turkana Wind Power Limited' },
+    { '@type': 'Organization', name: 'Bakyson Enterprises LTD' },
+    { '@type': 'Organization', name: 'Perlogy Technologies' },
+  ],
+  offers: {
+    '@type': 'Offer',
+    priceSpecification: {
+      '@type': 'PriceSpecification',
+      priceCurrency: 'USD',
+      description: 'Project value: Confidential',
+    },
+  },
+  keywords: [
+    'LG Hospitality TVs Kenya',
+    'Hospitality TV solutions Africa',
+    'Commercial display solutions Kenya',
+    'Hotel TV installation Kenya',
+    'LG commercial displays',
+    'Hospitality technology integration',
+    'AV system integration Kenya',
+    'Perlogy Technologies',
+    'Turkana hospitality project',
+    'Hotel technology solutions Africa'
+  ].join(', '),
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SEO.siteUrl },
+    { '@type': 'ListItem', position: 2, name: 'Case Studies', item: `${SEO.siteUrl}/resources/case-studies` },
+    { '@type': 'ListItem', position: 3, name: study.fullName, item: pageUrl },
+  ],
+}
+
+export default function TurkanaHospitalityCaseStudyPage() {
+  return (
+    <main className="min-h-screen bg-[var(--color-background-primary)] text-[var(--color-text-primary)]">
+      <AccentBar />
+      <StructuredData data={[caseStudySchema, breadcrumbSchema]} />
+
+      {/* ══════════════════════════
+          1. HERO SECTION
+          ══════════════════════════ */}
+      <section className="relative bg-brand-navy text-white overflow-hidden py-24 sm:py-32">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/case-studies/turkana-hospitality-hero.png"
+            alt="Lake Turkana Wind Power Hotel Suite — LG Hospitality TV"
+            fill
+            className="object-cover opacity-35"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/60 to-transparent" />
+          <div className="absolute inset-0 pixel-grid opacity-[0.035] pointer-events-none" />
+        </div>
+
+        <div className="relative z-10 px-7 max-w-7xl mx-auto">
+          {/* Breadcrumb */}
+          <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 mb-8 text-[11px] text-white/45">
+            <Link href="/" className="hover:text-white/70 transition-colors">
+              Home
+            </Link>
+            <span>/</span>
+            <Link href="/resources/case-studies" className="hover:text-white/70 transition-colors">
+              Case studies
+            </Link>
+            <span>/</span>
+            <span className="text-white/60 truncate max-w-[200px] sm:max-w-none">
+              Lake Turkana Wind Power
+            </span>
+          </nav>
+
+          {/* Tags */}
+          <div className="flex items-center gap-2 flex-wrap mb-6">
+            <span className="bg-brand-orange text-white text-[9px] font-bold tracking-[0.2em] uppercase px-3 py-1 rounded-full">
+              Case study
+            </span>
+            <span className="bg-white/6 border border-white/12 text-white/65 text-[9px] font-semibold tracking-[0.15em] uppercase px-3 py-1 rounded-full">
+              Hospitality TV solutions Africa
+            </span>
+            <span className="bg-brand-blue/30 border border-brand-blue/40 text-[#7B9AFF] text-[9px] font-semibold tracking-[0.12em] uppercase px-3 py-1 rounded-full">
+              158 LG Commercial Displays
+            </span>
+          </div>
+
+          {/* Title & Subhead */}
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium leading-[1.15] max-w-[760px] mb-6">
+            Powering Premium{' '}
+            <em className="not-italic text-brand-orange">
+              Hospitality Experiences
+            </em>{' '}
+            in Turkana
+          </h1>
+          <p className="text-base sm:text-lg text-white/55 leading-relaxed max-w-[680px] mb-8">
+            {study.heroParagraph}
+          </p>
+
+          {/* Hero CTA Button */}
+          <a
+            href="#overview"
+            className="inline-flex items-center gap-2 bg-brand-orange hover:bg-brand-orange-light text-white text-[13px] font-medium tracking-wide uppercase px-6 py-3 rounded-lg transition-all duration-200"
+          >
+            Explore Project
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
+      </section>
+
+      {/* ══════════════════════════
+          2. PROJECT OVERVIEW SECTION
+          ══════════════════════════ */}
+      <section id="overview" className="scroll-mt-20 px-7 py-16 bg-[var(--color-background-secondary)] border-b border-[var(--color-border-tertiary)]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center max-w-xl mx-auto mb-12">
+            <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-blue mb-2">
+              Key Details
+            </p>
+            <h2 className="text-2xl font-medium text-[var(--color-text-primary)]">
+              Project Parameters
+            </h2>
+            <div className="h-0.5 w-12 bg-brand-orange mx-auto mt-4" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Card 1: Client */}
+            <div className="p-6 bg-[var(--color-background-primary)] border border-[var(--color-border-tertiary)] rounded-xl transition-all duration-200 hover:border-brand-blue/30">
+              <div className="w-10 h-10 rounded-lg bg-brand-blue/10 flex items-center justify-center text-brand-blue mb-4">
+                <Building2 className="w-5 h-5" />
+              </div>
+              <h3 className="text-xs font-bold tracking-wider text-[var(--color-text-secondary)] uppercase mb-1">
+                Client
+              </h3>
+              <p className="text-base font-semibold text-[var(--color-text-primary)]">
+                Lake Turkana Wind Power Limited
+              </p>
+            </div>
+
+            {/* Card 2: Location */}
+            <div className="p-6 bg-[var(--color-background-primary)] border border-[var(--color-border-tertiary)] rounded-xl transition-all duration-200 hover:border-brand-blue/30">
+              <div className="w-10 h-10 rounded-lg bg-brand-blue/10 flex items-center justify-center text-brand-blue mb-4">
+                <MapPin className="w-5 h-5" />
+              </div>
+              <h3 className="text-xs font-bold tracking-wider text-[var(--color-text-secondary)] uppercase mb-1">
+                Location
+              </h3>
+              <p className="text-base font-semibold text-[var(--color-text-primary)]">
+                Turkana, Kenya (East Africa)
+              </p>
+            </div>
+
+            {/* Card 3: Industry */}
+            <div className="p-6 bg-[var(--color-background-primary)] border border-[var(--color-border-tertiary)] rounded-xl transition-all duration-200 hover:border-brand-blue/30">
+              <div className="w-10 h-10 rounded-lg bg-brand-blue/10 flex items-center justify-center text-brand-blue mb-4">
+                <Layers className="w-5 h-5" />
+              </div>
+              <h3 className="text-xs font-bold tracking-wider text-[var(--color-text-secondary)] uppercase mb-1">
+                Industry
+              </h3>
+              <p className="text-base font-semibold text-[var(--color-text-primary)]">
+                5-Star Luxury Hospitality & Energy
+              </p>
+            </div>
+
+            {/* Card 4: Technology Supplied */}
+            <div className="p-6 bg-[var(--color-background-primary)] border border-[var(--color-border-tertiary)] rounded-xl transition-all duration-200 hover:border-brand-blue/30">
+              <div className="w-10 h-10 rounded-lg bg-brand-blue/10 flex items-center justify-center text-brand-blue mb-4">
+                <Tv className="w-5 h-5" />
+              </div>
+              <h3 className="text-xs font-bold tracking-wider text-[var(--color-text-secondary)] uppercase mb-1">
+                Technology Supplied
+              </h3>
+              <p className="text-base font-semibold text-[var(--color-text-primary)]">
+                158 x LG Hospitality TVs (55UK660H) & Mounting Systems
+              </p>
+            </div>
+
+            {/* Card 5: Project Scale */}
+            <div className="p-6 bg-[var(--color-background-primary)] border border-[var(--color-border-tertiary)] rounded-xl transition-all duration-200 hover:border-brand-blue/30">
+              <div className="w-10 h-10 rounded-lg bg-brand-blue/10 flex items-center justify-center text-brand-blue mb-4">
+                <ShieldCheck className="w-5 h-5" />
+              </div>
+              <h3 className="text-xs font-bold tracking-wider text-[var(--color-text-secondary)] uppercase mb-1">
+                Project Scale
+              </h3>
+              <p className="text-base font-semibold text-[var(--color-text-primary)]">
+                Full-Property In-Room Entertainment Deployments
+              </p>
+            </div>
+
+            {/* Card 6: System Integrator */}
+            <div className="p-6 bg-[var(--color-background-primary)] border border-[var(--color-border-tertiary)] rounded-xl transition-all duration-200 hover:border-brand-blue/30">
+              <div className="w-10 h-10 rounded-lg bg-brand-blue/10 flex items-center justify-center text-brand-blue mb-4">
+                <Users className="w-5 h-5" />
+              </div>
+              <h3 className="text-xs font-bold tracking-wider text-[var(--color-text-secondary)] uppercase mb-1">
+                Integration Partner
+              </h3>
+              <p className="text-base font-semibold text-[var(--color-text-primary)]">
+                Bakyson Enterprises LTD
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════
+          STATS STRIP
+          ══════════════════════════ */}
+      <div className="flex flex-wrap items-stretch bg-brand-navy border-b border-white/6 text-white text-center">
+        {study.stats.map((stat, i, arr) => (
+          <div
+            key={stat.label}
+            className={[
+              'flex-1 min-w-[150px] flex flex-col items-center justify-center py-6 px-4',
+              i < arr.length - 1 ? 'border-r border-white/6' : '',
+            ].join(' ')}
+          >
+            <span className="text-3xl font-semibold text-brand-orange block mb-1">
+              {stat.value}
+            </span>
+            <span className="text-[10px] text-white/40 uppercase tracking-widest leading-tight">
+              {stat.label}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      {/* ══════════════════════════
+          3. THE CHALLENGE SECTION
+          ══════════════════════════ */}
+      <section className="px-7 py-16 lg:py-24 max-w-7xl mx-auto border-b border-[var(--color-border-tertiary)]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div>
+            <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-blue mb-2">
+              The Challenge
+            </p>
+            <h2 className="text-2xl sm:text-3xl font-medium text-[var(--color-text-primary)] mb-6 leading-tight">
+              Maintaining Enterprise Standards in Remote Regions
+            </h2>
+            <div className="h-0.5 w-12 bg-brand-orange mb-6" />
+            <p className="text-base text-[var(--color-text-secondary)] leading-relaxed mb-6">
+              {study.challenge}
+            </p>
+            <ul className="space-y-3.5 text-sm text-[var(--color-text-secondary)]">
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" />
+                <span>Navigating rough terrains and remote environments of Turkana, Kenya.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" />
+                <span>Safeguarding sensitive commercial hardware during transportation.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" />
+                <span>Adhering to strict hotel launch timelines and engineering benchmarks.</span>
+              </li>
+            </ul>
+          </div>
+          <div className="relative h-[320px] sm:h-[400px] rounded-xl overflow-hidden border border-[var(--color-border-tertiary)] bg-brand-navy">
+            <Image
+              src="/images/case-studies/turkana-hospitality-challenge.png"
+              alt="Perlogy Technologies AV Logistics Coordination and Project Planning"
+              fill
+              className="object-cover opacity-90 hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════
+          4. THE SOLUTION SECTION
+          ══════════════════════════ */}
+      <section className="px-7 py-16 lg:py-24 bg-[var(--color-background-secondary)] border-b border-[var(--color-border-tertiary)]">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="order-2 lg:order-1 relative h-[320px] sm:h-[400px] rounded-xl overflow-hidden border border-[var(--color-border-tertiary)] bg-brand-navy">
+            <Image
+              src="/images/case-studies/turkana-hospitality-solution.png"
+              alt="LG 55UK660H Hospitality TV installation by Perlogy Technologies"
+              fill
+              className="object-cover opacity-90 hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div className="order-1 lg:order-2">
+            <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-blue mb-2">
+              The Solution
+            </p>
+            <h2 className="text-2xl sm:text-3xl font-medium text-[var(--color-text-primary)] mb-6 leading-tight">
+              Sleek Hospitality Displays & Engineering Precision
+            </h2>
+            <div className="h-0.5 w-12 bg-brand-orange mb-6" />
+            <p className="text-base text-[var(--color-text-secondary)] leading-relaxed mb-6">
+              {study.ourRole}
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="p-4 bg-[var(--color-background-primary)] rounded-lg border border-[var(--color-border-tertiary)]">
+                <span className="text-xs font-bold text-brand-orange uppercase block mb-1">
+                  LG 55UK660H TVs
+                </span>
+                <p className="text-xs text-[var(--color-text-secondary)]">
+                  Ultra-slim 4K HDR display, custom hotel UI, IPTV & Pro:Centric hospitality management.
+                </p>
+              </div>
+              <div className="p-4 bg-[var(--color-background-primary)] rounded-lg border border-[var(--color-border-tertiary)]">
+                <span className="text-xs font-bold text-brand-orange uppercase block mb-1">
+                  Secure Mounting
+                </span>
+                <p className="text-xs text-[var(--color-text-secondary)]">
+                  Heavy-duty profile wall brackets, flush alignment, and integrated routing solutions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════
+          5. RESULTS & IMPACT SECTION
+          ══════════════════════════ */}
+      <section className="px-7 py-16 lg:py-24 max-w-7xl mx-auto border-b border-[var(--color-border-tertiary)]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div>
+            <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-blue mb-2">
+              Results & Impact
+            </p>
+            <h2 className="text-2xl sm:text-3xl font-medium text-[var(--color-text-primary)] mb-6 leading-tight">
+              Elevating Hospitality Operations and Guest Satisfaction
+            </h2>
+            <div className="h-0.5 w-12 bg-brand-orange mb-6" />
+            <p className="text-base text-[var(--color-text-secondary)] leading-relaxed mb-6">
+              {study.result}
+            </p>
+
+            <div className="grid grid-cols-2 gap-4 mb-6">
+              <div className="border-l-2 border-brand-orange pl-4 py-1">
+                <span className="text-lg font-semibold text-[var(--color-text-primary)] block">
+                  158 Rooms
+                </span>
+                <p className="text-xs text-[var(--color-text-secondary)]">
+                  Equipped with premium display technology.
+                </p>
+              </div>
+              <div className="border-l-2 border-brand-orange pl-4 py-1">
+                <span className="text-lg font-semibold text-[var(--color-text-primary)] block">
+                  100% Secure
+                </span>
+                <p className="text-xs text-[var(--color-text-secondary)]">
+                  Heavy-duty mounts supplied for safety and aesthetics.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="relative h-[320px] sm:h-[400px] rounded-xl overflow-hidden border border-[var(--color-border-tertiary)] bg-brand-navy">
+            <Image
+              src="/images/case-studies/turkana-hospitality-results.png"
+              alt="Luxury hotel guests enjoying LG hospitality entertainment systems"
+              fill
+              className="object-cover opacity-90 hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════
+          6. PARTNERSHIP SECTION
+          ══════════════════════════ */}
+      <section className="px-7 py-16 lg:py-24 bg-[var(--color-background-secondary)] border-b border-[var(--color-border-tertiary)]">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="order-2 lg:order-1 relative h-[320px] sm:h-[400px] rounded-xl overflow-hidden border border-[var(--color-border-tertiary)] bg-brand-navy">
+            <Image
+              src="/images/case-studies/turkana-hospitality-partnership.png"
+              alt="Perlogy Technologies and Bakyson Enterprises AV systems integrator collaboration"
+              fill
+              className="object-cover opacity-90 hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div className="order-1 lg:order-2">
+            <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-blue mb-2">
+              Strategic Partnership
+            </p>
+            <h2 className="text-2xl sm:text-3xl font-medium text-[var(--color-text-primary)] mb-6 leading-tight">
+              Synergy with Bakyson Enterprises LTD
+            </h2>
+            <div className="h-0.5 w-12 bg-brand-orange mb-6" />
+            <p className="text-base text-[var(--color-text-secondary)] leading-relaxed mb-6">
+              The project demonstrates the synergy between Perlogy Technologies and Bakyson Enterprises LTD. As a premier distributor, Perlogy provides high-level hardware logistics and technical parameters, while Bakyson offers high-touch local integration expertise on the ground. Together, we deliver flawless enterprise-grade ProAV and hospitality technology integration solutions.
+            </p>
+            <div className="p-6 bg-brand-navy rounded-xl border-l-[3px] border-brand-orange text-white">
+              <p className="text-sm italic opacity-80 mb-4 leading-relaxed">
+                &ldquo;{study.directorQuote}&rdquo;
+              </p>
+              <div>
+                <p className="text-xs font-semibold">{study.directorName}</p>
+                <p className="text-[10px] text-white/45 mt-0.5">{study.directorTitle}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════
+          7. LOGISTICS & DEPLOYMENT SECTION
+          ══════════════════════════ */}
+      <section className="px-7 py-16 lg:py-24 max-w-7xl mx-auto border-b border-[var(--color-border-tertiary)]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div>
+            <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-blue mb-2">
+              Logistics & Deployment
+            </p>
+            <h2 className="text-2xl sm:text-3xl font-medium text-[var(--color-text-primary)] mb-6 leading-tight">
+              Commercial Hardware Transportation & Safety
+            </h2>
+            <div className="h-0.5 w-12 bg-brand-orange mb-6" />
+            <p className="text-base text-[var(--color-text-secondary)] leading-relaxed mb-6">
+              Shipping delicate display systems across large distances requires a specialized logistics protocol. From our primary distribution centers in Nairobi to the project site in Turkana, Perlogy Technologies oversaw the packaging, freight, and secure offloading of all 158 commercial TV cartons. Every unit arrived without damage, fully cataloged, and ready for immediate deployment.
+            </p>
+            <div className="flex gap-4">
+              <div className="flex items-center gap-2">
+                <Truck className="w-5 h-5 text-brand-orange" />
+                <span className="text-xs font-bold text-[var(--color-text-primary)] uppercase">
+                  Nairobi to Turkana Freight
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Lock className="w-5 h-5 text-brand-orange" />
+                <span className="text-xs font-bold text-[var(--color-text-primary)] uppercase">
+                  Zero Transit Loss
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="relative h-[320px] sm:h-[400px] rounded-xl overflow-hidden border border-[var(--color-border-tertiary)] bg-brand-navy">
+            <Image
+              src="/images/case-studies/turkana-hospitality-logistics.png"
+              alt="Kenyan enterprise logistics and TV display delivery operations"
+              fill
+              className="object-cover opacity-90 hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════
+          8. CALL TO ACTION SECTION
+          ══════════════════════════ */}
+      <section className="px-7 py-16 sm:py-24 max-w-7xl mx-auto">
+        <div className="bg-brand-navy text-white rounded-2xl p-8 sm:p-12 relative overflow-hidden">
+          <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-brand-blue/10 pointer-events-none" />
+          <div className="absolute -bottom-16 -left-16 w-64 h-64 rounded-full bg-brand-orange/5 pointer-events-none" />
+          <div className="relative z-10 max-w-3xl">
+            <p className="text-[9px] font-bold tracking-[0.25em] uppercase text-brand-orange mb-3">
+              Get in Touch
+            </p>
+            <h2 className="text-2xl sm:text-3xl font-medium mb-4">
+              Planning a Hospitality Technology Project?
+            </h2>
+            <p className="text-sm text-white/55 leading-relaxed mb-8 max-w-xl">
+              Partner with Perlogy Technologies for reliable commercial display and hospitality technology solutions across Africa.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+              <a
+                href="https://perlogy.africa"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-brand-orange hover:bg-brand-orange-light text-white text-xs font-bold tracking-wider uppercase px-6 py-3 rounded-lg transition-colors text-center w-full sm:w-auto"
+              >
+                Inquire via Perlogy Africa
+              </a>
+              <Link
+                href="/contact"
+                className="border border-white/25 hover:border-white/50 text-white text-xs font-bold tracking-wider uppercase px-6 py-3 rounded-lg transition-colors text-center w-full sm:w-auto"
+              >
+                Contact Our Team
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════
+          BACK NAVIGATION & BREADCRUMB BARS
+          ══════════════════════════ */}
+      <div className="px-7 pb-12 text-center max-w-7xl mx-auto">
+        <Link
+          href="/resources/case-studies"
+          className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-blue hover:text-brand-blue-dark transition-colors"
+        >
+          &larr; Back to all case studies
+        </Link>
+      </div>
+    </main>
+  )
+}
