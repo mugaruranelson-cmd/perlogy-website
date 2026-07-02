@@ -173,7 +173,7 @@ export default function UhuruGardensCaseStudyPage() {
       <section className="px-7 py-12">
         <p className="text-[10px] font-semibold tracking-[0.2em]
           uppercase text-[#1635D4] mb-2">
-          {localizedStudy.ui.technicalSpecs}
+          {tData('ui.technicalSpecs')}
         </p>
         <h2 className="text-[20px] font-medium
           text-[var(--color-text-primary)] mb-8">
@@ -218,9 +218,9 @@ export default function UhuruGardensCaseStudyPage() {
           <div className="col-span-2 flex flex-col gap-8">
 
             {[
-              { label: localizedStudy.ui.theChallenge, body: localizedStudy.challenge  },
-              { label: localizedStudy.ui.ourRole,      body: localizedStudy.ourRole    },
-              { label: localizedStudy.ui.theResult,    body: localizedStudy.result     },
+              { label: tData('ui.theChallenge'), body: localizedStudy.challenge  },
+              { label: tData('ui.ourRole'),      body: localizedStudy.ourRole    },
+              { label: tData('ui.theResult'),    body: localizedStudy.result     },
             ].map((section) => (
               <div key={section.label}>
                 <p className="text-[10px] font-semibold tracking-[0.2em]
@@ -262,7 +262,7 @@ export default function UhuruGardensCaseStudyPage() {
               rounded-xl p-5">
               <p className="text-[9px] font-bold tracking-[0.18em]
                 uppercase text-[var(--color-text-secondary)] mb-4">
-                {localizedStudy.ui.technologyPartners}
+                {tData('ui.technologyPartners')}
               </p>
               <div className="flex flex-col gap-3">
                 {localizedStudy.partners.map((partner: any, i: number) => (
@@ -381,7 +381,7 @@ export default function UhuruGardensCaseStudyPage() {
             hover:text-[#1635D4] transition-colors duration-150
             flex items-center gap-1.5"
         >
-          {localizedStudy.ui.backToAll}
+          {tData('ui.backToAll')}
         </Link>
       </div>
     </main>

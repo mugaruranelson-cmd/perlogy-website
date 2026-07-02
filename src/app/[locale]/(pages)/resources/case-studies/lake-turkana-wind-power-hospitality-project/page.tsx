@@ -159,7 +159,7 @@ export default function TurkanaHospitalityCaseStudyPage() {
           {/* Tags */}
           <div className="flex items-center gap-2 flex-wrap mb-6">
             <span className="bg-brand-orange text-white text-[9px] font-bold tracking-[0.2em] uppercase px-3 py-1 rounded-full">
-              {localizedStudy.ui.caseStudy}
+              {tData('ui.caseStudy')}
             </span>
             <span className="bg-white/6 border border-white/12 text-white/65 text-[9px] font-semibold tracking-[0.15em] uppercase px-3 py-1 rounded-full">
               {localizedStudy.sector}
@@ -182,7 +182,7 @@ export default function TurkanaHospitalityCaseStudyPage() {
             href="#overview"
             className="inline-flex items-center gap-2 bg-brand-orange hover:bg-brand-orange-light text-white text-[13px] font-medium tracking-wide uppercase px-6 py-3 rounded-lg transition-all duration-200"
           >
-            {localizedStudy.ui.exploreProject}
+            {tData('ui.exploreProject')}
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>
@@ -314,10 +314,10 @@ export default function TurkanaHospitalityCaseStudyPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-blue mb-2">
-              {localizedStudy.ui.theChallenge}
+              {tData('ui.theChallenge')}
             </p>
             <h2 className="text-2xl sm:text-3xl font-medium text-[var(--color-text-primary)] mb-6 leading-tight">
-              {localizedStudy.ui.challengeTitle || "Maintaining Enterprise Standards in Remote Regions"}
+              {localizedStudy.challengeTitle || "Maintaining Enterprise Standards in Remote Regions"}
             </h2>
             <div className="h-0.5 w-12 bg-brand-orange mb-6" />
             <p className="text-base text-[var(--color-text-secondary)] leading-relaxed mb-6">
@@ -364,10 +364,10 @@ export default function TurkanaHospitalityCaseStudyPage() {
           </div>
           <div className="order-1 lg:order-2">
             <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-blue mb-2">
-              {localizedStudy.ui.theSolution}
+              {tData('ui.theSolution')}
             </p>
             <h2 className="text-2xl sm:text-3xl font-medium text-[var(--color-text-primary)] mb-6 leading-tight">
-              {localizedStudy.ui.solutionTitle || "Sleek Hospitality Displays & Engineering Precision"}
+              {localizedStudy.solutionTitle || "Sleek Hospitality Displays & Engineering Precision"}
             </h2>
             <div className="h-0.5 w-12 bg-brand-orange mb-6" />
             <p className="text-base text-[var(--color-text-secondary)] leading-relaxed mb-6">
@@ -402,10 +402,10 @@ export default function TurkanaHospitalityCaseStudyPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-blue mb-2">
-              {localizedStudy.ui.theResult}
+              {tData('ui.theResult')}
             </p>
             <h2 className="text-2xl sm:text-3xl font-medium text-[var(--color-text-primary)] mb-6 leading-tight">
-              {localizedStudy.ui.resultTitle || "Elevating Hospitality Operations and Guest Satisfaction"}
+              {localizedStudy.resultTitle || "Elevating Hospitality Operations and Guest Satisfaction"}
             </h2>
             <div className="h-0.5 w-12 bg-brand-orange mb-6" />
             <p className="text-base text-[var(--color-text-secondary)] leading-relaxed mb-6">
@@ -457,7 +457,7 @@ export default function TurkanaHospitalityCaseStudyPage() {
           </div>
           <div className="order-1 lg:order-2">
             <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-blue mb-2">
-              {localizedStudy.ui.technologyPartners}
+              {tData('ui.technologyPartners')}
             </p>
             <h2 className="text-2xl sm:text-3xl font-medium text-[var(--color-text-primary)] mb-6 leading-tight">
               Synergy with Bakyson Enterprises LTD
@@ -566,7 +566,7 @@ export default function TurkanaHospitalityCaseStudyPage() {
           href="/resources/case-studies"
           className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-blue hover:text-brand-blue-dark transition-colors"
         >
-          {localizedStudy.ui.backToAll}
+          {tData('ui.backToAll')}
         </Link>
       </div>
     </main>

@@ -139,7 +139,9 @@
     "labelMessage": "Comment pouvons-nous vous aider ?",
     "errorMsg": "Un problème est survenu. Veuillez réessayer.",
     "btnSending": "Envoi en cours...",
-    "btnSend": "Envoyer le message →"
+    "phoneDisplay": "+254 703 621 030",
+    "phoneRaw": "+254703621030",
+    "whatsappRaw": "254703621030"
   },
   "Privacy": {
     "title": "Politique de Confidentialité",
@@ -497,7 +499,7 @@
     }
   },
   "CaseStudyData": {
-    "uhuru-gardens": {
+    "uhuru-gardens-museum": {
       "name": "Musée des Jardins d'Uhuru",
       "fullName": "Système Audiovisuel du Musée des Jardins d'Uhuru",
       "location": "Nairobi, Kenya",
@@ -883,6 +885,8 @@
       "cardBody": "Conversion d'écrans domestiques LG NanoCell en un réseau IPTV hôtelier professionnel via des décodeurs LG STB-6500 avec support à distance."
     },
     "ui": {
+      "caseStudy": "Étude de cas",
+      "exploreProject": "Explorer le projet",
       "theChallenge": "Le Défi",
       "ourRole": "Notre Rôle",
       "theResult": "Le Résultat",

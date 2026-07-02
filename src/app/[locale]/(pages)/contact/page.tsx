@@ -83,8 +83,8 @@ function ContactPageContent() {
                   </a>
                 </div>
                 <div>
-                  <a href="https://wa.me/254792651241" className="hover:text-brand-blue transition-colors" target="_blank" rel="noopener noreferrer">
-                    WhatsApp: +254 792 651 241
+                  <a href={`https://wa.me/${t('whatsappRaw')}`} className="hover:text-brand-blue transition-colors" target="_blank" rel="noopener noreferrer">
+                    WhatsApp: {t('phoneDisplay')}
                   </a>
                 </div>
               </div>
@@ -106,8 +106,8 @@ function ContactPageContent() {
                   </a>
                 </div>
                 <div>
-                  <a href="https://wa.me/254792651241" className="hover:text-brand-blue transition-colors" target="_blank" rel="noopener noreferrer">
-                    WhatsApp: +254 792 651 241
+                  <a href={`https://wa.me/${t('whatsappRaw')}`} className="hover:text-brand-blue transition-colors" target="_blank" rel="noopener noreferrer">
+                    WhatsApp: {t('phoneDisplay')}
                   </a>
                 </div>
               </div>

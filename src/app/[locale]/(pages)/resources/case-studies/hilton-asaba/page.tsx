@@ -124,7 +124,7 @@ export default function HiltonAsabaCaseStudyPage() {
           <div className="lg:col-span-2 space-y-12">
             <div>
               <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[#1635D4] mb-4">
-                {localizedStudy.ui.theChallenge}
+                {tData('ui.theChallenge')}
               </p>
               <p className="text-lg text-[var(--color-text-secondary)] leading-relaxed">
                 {localizedStudy.challenge}
@@ -132,7 +132,7 @@ export default function HiltonAsabaCaseStudyPage() {
             </div>
             <div>
               <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[#1635D4] mb-4">
-                {localizedStudy.ui.theSolution}
+                {tData('ui.theSolution')}
               </p>
               <p className="text-lg text-[var(--color-text-secondary)] leading-relaxed">
                 {localizedStudy.ourRole}
@@ -140,7 +140,7 @@ export default function HiltonAsabaCaseStudyPage() {
             </div>
             <div>
               <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[#1635D4] mb-4">
-                {localizedStudy.ui.theResult}
+                {tData('ui.theResult')}
               </p>
               <p className="text-lg text-[var(--color-text-secondary)] leading-relaxed">
                 {localizedStudy.result}
@@ -180,7 +180,7 @@ export default function HiltonAsabaCaseStudyPage() {
             {/* Partners */}
             <div className="bg-[var(--color-background-secondary)] border border-[var(--color-border-tertiary)] rounded-2xl p-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[var(--color-text-secondary)] mb-6">
-                {localizedStudy.ui.technologyPartners}
+                {tData('ui.technologyPartners')}
               </p>
               <div className="space-y-4">
                 {localizedStudy.partners.map((partner: any) => (
@@ -204,7 +204,7 @@ export default function HiltonAsabaCaseStudyPage() {
           href="/resources/case-studies" 
           className="inline-flex items-center gap-2 text-sm font-semibold text-[#1635D4] hover:gap-3 transition-all"
         >
-          {localizedStudy.ui.backToAll}
+          {tData('ui.backToAll')}
         </Link>
       </div>
     </main>

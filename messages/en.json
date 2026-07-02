@@ -139,7 +139,10 @@
     "labelMessage": "How can we help?",
     "errorMsg": "Something went wrong. Please try again.",
     "btnSending": "Sending...",
-    "btnSend": "Send message →"
+    "btnSend": "Send Message →",
+    "phoneDisplay": "+254 792 651 241",
+    "phoneRaw": "+254792651241",
+    "whatsappRaw": "254792651241"
   },
   "Privacy": {
     "title": "Privacy Policy",
@@ -836,6 +839,8 @@
       ]
     },
     "ui": {
+      "caseStudy": "Case Study",
+      "exploreProject": "Explore Project",
       "theChallenge": "The Challenge",
       "ourRole": "Our Role",
       "theResult": "The Result",

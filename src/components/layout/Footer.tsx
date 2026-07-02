@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Logo from "@/components/ui/Logo";
+import { useTranslations } from "next-intl";
 
 const footerSolutions = [
   { label: "Hospitality", href: "/solutions/hospitality" },
@@ -17,6 +18,7 @@ const footerPartners = [
 const year = new Date().getFullYear();
 
 export default function Footer() {
+  const t = useTranslations("Contact");
   return (
     <footer className="border-t border-brand-gray-border bg-white">
       {/* ── Main grid ── */}
@@ -87,10 +89,10 @@ export default function Footer() {
               <li>
                 <span className="block text-[11px] font-semibold uppercase tracking-wider text-brand-navy/70">Telephone</span>
                 <a
-                  href="tel:+254792651241"
+                  href={`tel:${t('phoneRaw')}`}
                   className="transition-colors hover:text-brand-blue"
                 >
-                  +254 792 651 241
+                  {t('phoneDisplay')}
                 </a>
               </li>
               <li>
