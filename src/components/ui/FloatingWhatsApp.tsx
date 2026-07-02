@@ -2,18 +2,20 @@
 
 import React from "react";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 export default function FloatingWhatsApp() {
   const pathname = usePathname();
+  const t = useTranslations("Contact");
 
   // Hide on application form to avoid distraction
-  if (pathname === "/partners/apply") {
+  if (pathname === "/partners/apply" || pathname.endsWith("/partners/apply")) {
     return null;
   }
 
   return (
     <a
-      href="https://wa.me/254792651241"
+      href={`https://wa.me/${t('whatsappRaw')}`}
       target="_blank"
       rel="noopener noreferrer"
       className="group fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#25D366]/50"
