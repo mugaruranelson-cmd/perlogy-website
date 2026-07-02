@@ -334,26 +334,9 @@ export default function AboutPage() {
             The visionary leaders driving Perlogy's mission across Africa.
           </p>
 
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {/* Nelson Mugarura */}
-            <div className="flex flex-col items-center text-center">
-              <div className="relative h-48 w-48 rounded-full border border-brand-blue/10 mb-4 overflow-hidden shadow-sm">
-                <Image 
-                  src="/images/people/nelson.JPG" 
-                  alt="Nelson Mugarura, Founder & Shareholder" 
-                  fill 
-                  className="object-cover" 
-                />
-              </div>
-              <h3 className="text-xl font-bold text-brand-navy">Nelson Mugarura</h3>
-              <p className="text-brand-blue font-medium mt-1">Founder & Shareholder</p>
-              <p className="mt-3 text-sm text-brand-gray-text leading-relaxed">
-                As the Founder of Perlogy Technologies, Nelson provides strategic direction, corporate governance, and long-term business development, ensuring the company remains Africa's trusted value-added distributor.
-              </p>
-            </div>
-            
+          <div className="mt-12 flex flex-col items-center justify-center">
             {/* Franklin Ogonji Omondi */}
-            <div className="flex flex-col items-center text-center">
+            <div className="flex flex-col items-center text-center max-w-sm mx-auto">
               <div className="relative h-48 w-48 rounded-full border border-brand-blue/10 mb-4 overflow-hidden shadow-sm">
                 <Image 
                   src="/images/people/frank.jpeg" 
@@ -367,6 +350,72 @@ export default function AboutPage() {
               <p className="mt-3 text-sm text-brand-gray-text leading-relaxed">
                 With 14+ years of experience in enterprise technology across Africa, Franklin leads Perlogy's commercial operations, customer engagement, and strategic execution to drive sustainable business growth.
               </p>
+            </div>
+          </div>
+
+          {/* Organizational Chart */}
+          <div className="mt-20">
+            <SectionTag>Structure</SectionTag>
+            <h3 className="mt-4 text-2xl font-extrabold text-brand-navy text-center">Organizational Structure</h3>
+            
+            <div className="mt-12 flex flex-col items-center overflow-x-auto pb-8">
+              {/* Founder Level */}
+              <div className="flex flex-col items-center">
+                <div className="border border-brand-blue/20 bg-brand-light-blue-bg rounded-lg px-6 py-3 text-center min-w-[200px]">
+                  <p className="text-brand-navy font-bold">Nelson Mugarura</p>
+                  <p className="text-brand-blue text-xs font-medium uppercase tracking-wide mt-1">Founder & Shareholder</p>
+                </div>
+                {/* Vertical Line */}
+                <div className="w-px h-8 bg-brand-blue/30 my-2"></div>
+                <div className="border border-brand-blue/20 bg-white shadow-sm rounded-lg px-6 py-2 text-center text-xs text-brand-gray-text min-w-[220px]">
+                  Strategic Direction & Governance
+                </div>
+                {/* Vertical Line */}
+                <div className="w-px h-8 bg-brand-blue/30 my-2"></div>
+              </div>
+
+              {/* MD Level */}
+              <div className="flex flex-col items-center">
+                <div className="border-2 border-brand-blue bg-white shadow-md rounded-lg px-8 py-4 text-center min-w-[250px]">
+                  <p className="text-brand-navy font-bold text-lg">Franklin Ogonji Omondi</p>
+                  <p className="text-brand-orange text-sm font-bold uppercase tracking-wide mt-1">Managing Director</p>
+                </div>
+                {/* Vertical Line */}
+                <div className="w-px h-10 bg-brand-blue/30"></div>
+              </div>
+
+              {/* Departments Level */}
+              <div className="flex flex-col items-center w-full max-w-3xl">
+                {/* Horizontal Connecting Line */}
+                <div className="w-[85%] sm:w-[90%] border-t border-brand-blue/30"></div>
+                
+                {/* Departments */}
+                <div className="flex justify-between w-[90%] sm:w-full mt-0 relative">
+                  {/* Department 1 */}
+                  <div className="flex flex-col items-center w-1/3">
+                    <div className="w-px h-6 bg-brand-blue/30"></div>
+                    <div className="border border-brand-gray-border bg-white rounded-lg px-4 py-3 text-center w-full max-w-[160px] shadow-sm">
+                      <p className="text-brand-navy text-sm font-semibold">Sales & BD</p>
+                    </div>
+                  </div>
+                  
+                  {/* Department 2 */}
+                  <div className="flex flex-col items-center w-1/3">
+                    <div className="w-px h-6 bg-brand-blue/30"></div>
+                    <div className="border border-brand-gray-border bg-white rounded-lg px-4 py-3 text-center w-full max-w-[160px] shadow-sm">
+                      <p className="text-brand-navy text-sm font-semibold">Technical Support</p>
+                    </div>
+                  </div>
+                  
+                  {/* Department 3 */}
+                  <div className="flex flex-col items-center w-1/3">
+                    <div className="w-px h-6 bg-brand-blue/30"></div>
+                    <div className="border border-brand-gray-border bg-white rounded-lg px-4 py-3 text-center w-full max-w-[160px] shadow-sm">
+                      <p className="text-brand-navy text-sm font-semibold">Operations & Finance</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
