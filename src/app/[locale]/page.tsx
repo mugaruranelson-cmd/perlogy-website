@@ -32,21 +32,17 @@ import type { Metadata } from "next";
 import { buildCanonical, SEO } from '@/lib/seo-config'
 import { StructuredData } from '@/components/seo/StructuredData'
 
-export const metadata: Metadata = {
-  title: 'Perlogy | ProAV & LED Display Distributor Kenya & Africa',
-  description:
-    'Perlogy Technologies — B2B ProAV & LED display distributor based in ' +
-    'Nairobi, Kenya. Authorised LG & Unilumin supplier for East, West & ' +
-    'Southern Africa. Exclusively through system integrators. 24hr response.',
-  alternates: { canonical: buildCanonical('/') },
-  openGraph: {
-    title: 'Perlogy | ProAV & LED Display Distributor Kenya & Africa',
-    description:
-      'Perlogy Technologies — B2B ProAV & LED display distributor based in ' +
-      'Nairobi, Kenya. Authorised LG & Unilumin supplier for East, West & ' +
-      'Southern Africa. Exclusively through system integrators. 24hr response.',
-    url: buildCanonical('/'),
-  },
+import { getTranslations } from 'next-intl/server';
+
+export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
+  const params = await props.params;
+  const { locale } = params;
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+  return {
+    title: t('home.title'),
+    description: t('home.description'),
+  };
 }
 
 const websiteSchema = {

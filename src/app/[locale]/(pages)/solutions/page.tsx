@@ -8,21 +8,23 @@ import { CustomBanner }    from '@/components/solutions/CustomBanner'
 import { buildCanonical, SEO } from '@/lib/seo-config'
 import { StructuredData } from '@/components/seo/StructuredData'
 
-export const metadata: Metadata = {
-  title: 'ProAV Solutions Nairobi | LED, Hotel TV & Boardroom AV | Perlogy',
-  description:
-    'ProAV and ICT solutions for hospitality, digital signage, airports, and ' +
-    'corporate AV across Kenya and English-speaking Africa. LG & Unilumin ' +
-    'authorised supply through specialist SI partners in Nairobi & East Africa.',
-  alternates: { canonical: buildCanonical('/solutions') },
-  openGraph: {
-    title: 'Perlogy ProAV Solutions — LED, Hotel TV & Boardroom AV Across Africa',
-    description:
-      'From hotel IPTV to LED video walls and airport displays — the complete ' +
-      'AV stack across East, West, and Southern Africa.',
-    url: buildCanonical('/solutions'),
-    images: [{ url: '/opengraph-image.png', width: 1200, height: 630 }],
-  },
+import { getTranslations } from 'next-intl/server';
+
+export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
+  const params = await props.params;
+  const { locale } = params;
+  const t = await getTranslations({ locale, namespace: 'Metadata.solutions' });
+  return {
+    title: t('title'),
+    description: t('description'),
+    alternates: { canonical: buildCanonical('/solutions') },
+    openGraph: {
+      title: t('title'),
+      description: t('description'),
+      url: buildCanonical('/solutions'),
+      images: [{ url: '/opengraph-image.png', width: 1200, height: 630 }],
+    },
+  }
 }
 
 const solutionsBreadcrumb = {

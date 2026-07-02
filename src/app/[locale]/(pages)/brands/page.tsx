@@ -1,5 +1,6 @@
 import React from 'react'
 import type { Metadata } from 'next'
+import { buildTitle } from '@/lib/seo-config';
 import { BrandGrid } from '@/components/brands/BrandGrid'
 import { BrandLogo } from '@/components/ui/BrandLogo'
 import { AuthorityBadge } from '@/components/ui/AuthorityBadge'
@@ -12,21 +13,17 @@ import { useTranslations } from 'next-intl'
 import { buildCanonical, SEO } from '@/lib/seo-config'
 import { StructuredData } from '@/components/seo/StructuredData'
 
-export const metadata: Metadata = {
-  title: 'LG & Unilumin Authorised Distributor Kenya | 14 ProAV Brands | Perlogy',
-  description:
-    'Perlogy distributes 14 world-class ProAV and ICT brands across Kenya and ' +
-    'Africa. Authorised LG, Unilumin & Lampro representative in Nairobi. ' +
-    'Supporting system integrators with genuine stock and technical expertise.',
-  alternates: { canonical: buildCanonical('/brands') },
-  openGraph: {
-    title: 'Perlogy Brand Portfolio — 14 Leading ProAV & ICT Brands',
-    description:
-      'The complete technology stack from screens to control systems. ' +
-      'Authorised distribution for LG, Unilumin and Lampro in Kenya & Africa.',
-    url: buildCanonical('/brands'),
-    images: [{ url: '/opengraph-image.png', width: 1200, height: 630 }],
-  },
+import { getTranslations } from 'next-intl/server';
+
+export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
+  const params = await props.params;
+  const { locale } = params;
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+  return {
+    title: buildTitle(t('brands.title')),
+    description: t('brands.description'),
+  };
 }
 
 const brandsBreadcrumb = {

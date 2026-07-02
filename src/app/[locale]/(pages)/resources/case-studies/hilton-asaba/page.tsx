@@ -9,33 +9,41 @@ import { StructuredData } from '@/components/seo/StructuredData'
 // Images (using existing placeholders or fallback)
 import hotelLobbyImg from "../../../../../../../public/images/case-studies/hotel-lobby.webp";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const study = getCaseStudyBySlug('hilton-asaba')
-  if (!study) return {}
+import { getTranslations } from 'next-intl/server'
+
+export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
+  const params = await props.params;
+  const { locale } = params;
+  const tData = await getTranslations({ locale, namespace: 'CaseStudyData' });
+  const studySlug = 'hilton-asaba';
+  const localizedStudy = tData.raw(studySlug) as any;
 
   return {
-    title:       study.seoTitle,
-    description: study.seoDescription,
-    alternates: { canonical: buildCanonical(`/resources/case-studies/${study.slug}`) },
+    title:       localizedStudy.seoTitle,
+    description: localizedStudy.seoDescription,
+    alternates: { canonical: buildCanonical(`/resources/case-studies/${studySlug}`) },
     openGraph: {
-      title:       study.seoTitle,
-      description: study.seoDescription,
-      url:         buildCanonical(`/resources/case-studies/${study.slug}`),
+      title:       localizedStudy.seoTitle,
+      description: localizedStudy.seoDescription,
+      url:         buildCanonical(`/resources/case-studies/${studySlug}`),
       images: [
         {
           url:    '/images/case-studies/hotel-lobby.webp',
           width:  1200,
           height: 630,
-          alt:    study.fullName,
+          alt:    localizedStudy.fullName,
         },
       ],
     },
   }
 }
 
+import { useTranslations } from 'next-intl'
+
 export default function HiltonAsabaCaseStudyPage() {
-  const study = getCaseStudyBySlug('hilton-asaba')
-  if (!study) return null
+  const tData = useTranslations('CaseStudyData');
+  const studySlug = 'hilton-asaba';
+  const localizedStudy = tData.raw(studySlug) as any;
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -43,16 +51,16 @@ export default function HiltonAsabaCaseStudyPage() {
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: SEO.siteUrl },
       { '@type': 'ListItem', position: 2, name: 'Resources', item: `${SEO.siteUrl}/resources/case-studies` },
-      { '@type': 'ListItem', position: 3, name: study.fullName, item: buildCanonical(`/resources/case-studies/${study.slug}`) },
+      { '@type': 'ListItem', position: 3, name: localizedStudy.fullName, item: buildCanonical(`/resources/case-studies/${studySlug}`) },
     ],
   }
 
   const caseStudySchema = {
     '@context': 'https://schema.org',
     '@type':    'CreativeWork',
-    name:       study.fullName,
-    headline:   study.seoTitle,
-    description: study.seoDescription,
+    name:       localizedStudy.fullName,
+    headline:   localizedStudy.seoTitle,
+    description: localizedStudy.seoDescription,
     author:     { '@id': `${SEO.siteUrl}/#organization` },
   }
 
@@ -73,24 +81,24 @@ export default function HiltonAsabaCaseStudyPage() {
         <div className="relative z-10 mx-auto max-w-4xl">
           <div className="flex items-center gap-2 flex-wrap mb-6">
             <span className="bg-[#1635D4]/20 border border-[#1635D4]/35 text-[#7B9AFF] text-[9px] font-bold tracking-[0.2em] uppercase px-2.5 py-1 rounded-full">
-              Hospitality · Nigeria
+              {localizedStudy.sector}
             </span>
             <span className="bg-white/6 border border-white/12 text-white/55 text-[9px] font-semibold tracking-[0.15em] uppercase px-2.5 py-1 rounded-full">
-              LG Pro:Centric
+              {localizedStudy.recordClaim}
             </span>
           </div>
           <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl mb-6">
-            {study.headline}
+            {localizedStudy.headline}
           </h1>
           <p className="max-w-2xl text-lg text-white/50 leading-relaxed">
-            {study.heroParagraph}
+            {localizedStudy.heroParagraph}
           </p>
         </div>
       </section>
 
       {/* Stats Row */}
       <div className="flex border-t border-b border-[var(--color-border-tertiary)] bg-[var(--color-background-secondary)]">
-        {study.stats.map((stat, i, arr) => (
+        {localizedStudy.stats.map((stat: any, i: number, arr: any[]) => (
           <div
             key={stat.label}
             className={[
@@ -116,26 +124,26 @@ export default function HiltonAsabaCaseStudyPage() {
           <div className="lg:col-span-2 space-y-12">
             <div>
               <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[#1635D4] mb-4">
-                The Challenge
+                {localizedStudy.ui.theChallenge}
               </p>
               <p className="text-lg text-[var(--color-text-secondary)] leading-relaxed">
-                {study.challenge}
+                {localizedStudy.challenge}
               </p>
             </div>
             <div>
               <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[#1635D4] mb-4">
-                Our Role
+                {localizedStudy.ui.theSolution}
               </p>
               <p className="text-lg text-[var(--color-text-secondary)] leading-relaxed">
-                {study.ourRole}
+                {localizedStudy.ourRole}
               </p>
             </div>
             <div>
               <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[#1635D4] mb-4">
-                The Result
+                {localizedStudy.ui.theResult}
               </p>
               <p className="text-lg text-[var(--color-text-secondary)] leading-relaxed">
-                {study.result}
+                {localizedStudy.result}
               </p>
             </div>
           </div>
@@ -145,11 +153,11 @@ export default function HiltonAsabaCaseStudyPage() {
             {/* Quote */}
             <div className="bg-brand-navy rounded-2xl p-8 border-l-4 border-[#F25C1A] text-white">
               <p className="text-lg italic mb-6 leading-relaxed opacity-90">
-                &ldquo;{study.directorQuote}&rdquo;
+                &ldquo;{localizedStudy.directorQuote}&rdquo;
               </p>
               <div>
-                <p className="font-semibold text-lg">{study.directorName}</p>
-                <p className="text-sm opacity-50">{study.directorTitle}</p>
+                <p className="font-semibold text-lg">{localizedStudy.directorName}</p>
+                <p className="text-sm opacity-50">{localizedStudy.directorTitle}</p>
               </div>
             </div>
 
@@ -159,7 +167,7 @@ export default function HiltonAsabaCaseStudyPage() {
                 Technical Specifications
               </p>
               <div className="space-y-6">
-                {study.specs.map(spec => (
+                {localizedStudy.specs.map((spec: any) => (
                   <div key={spec.label}>
                     <p className="text-[11px] font-bold text-[#F25C1A] uppercase tracking-wider mb-1">{spec.label}</p>
                     <p className="text-lg font-semibold text-[var(--color-text-primary)] mb-1">{spec.value}</p>
@@ -172,10 +180,10 @@ export default function HiltonAsabaCaseStudyPage() {
             {/* Partners */}
             <div className="bg-[var(--color-background-secondary)] border border-[var(--color-border-tertiary)] rounded-2xl p-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[var(--color-text-secondary)] mb-6">
-                Technology Partners
+                {localizedStudy.ui.technologyPartners}
               </p>
               <div className="space-y-4">
-                {study.partners.map(partner => (
+                {localizedStudy.partners.map((partner: any) => (
                   <div key={partner.name} className="flex items-center gap-4">
                     <div className="w-2.5 h-2.5 rounded-full" style={{ background: partner.dotColor }} />
                     <div>
@@ -196,7 +204,7 @@ export default function HiltonAsabaCaseStudyPage() {
           href="/resources/case-studies" 
           className="inline-flex items-center gap-2 text-sm font-semibold text-[#1635D4] hover:gap-3 transition-all"
         >
-          ← Back to all case studies
+          {localizedStudy.ui.backToAll}
         </Link>
       </div>
     </main>

@@ -2,21 +2,24 @@ import type { Metadata } from 'next'
 import { buildCanonical, SEO } from '@/lib/seo-config'
 import { StructuredData } from '@/components/seo/StructuredData'
 
-export const metadata: Metadata = {
-  title: 'Apply for Perlogy Partner Programme | SI Registration Africa',
-  description:
-    'Official application form for Perlogy\'s system integrator partner ' +
-    'programme. Authorized LG and Unilumin distribution for registered SIs ' +
-    'across East, West, and Southern Africa.',
-  alternates: { canonical: buildCanonical('/partners/apply') },
-  openGraph: {
-    title: 'SI Partner Application | Perlogy Technologies Africa',
-    description:
-      'Join our network of elite system integrators and access premium ProAV ' +
-      'brands with full technical and margin support.',
-    url: buildCanonical('/partners/apply'),
-    images: [{ url: '/og/partners.png', width: 1200, height: 630 }],
-  },
+import { getTranslations } from 'next-intl/server';
+
+export async function generateMetadata(props: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const params = await props.params;
+  const { locale } = params;
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+  return {
+    title: t('partnerApply.title'),
+    description: t('partnerApply.description'),
+    alternates: { canonical: buildCanonical('/partners/apply') },
+    openGraph: {
+      title: t('partnerApply.title'),
+      description: t('partnerApply.description'),
+      url: buildCanonical('/partners/apply'),
+      images: [{ url: '/og/partners.png', width: 1200, height: 630 }],
+    },
+  };
 }
 
 const applyBreadcrumb = {

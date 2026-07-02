@@ -24,91 +24,104 @@ import {
 const study = getCaseStudyBySlug('cameroon-lg-procentric-hospitality-iptv-project')!
 const pageUrl = buildCanonical('/resources/case-studies/cameroon-lg-procentric-hospitality-iptv-project')
 
-// ── METADATA ─────────────────────────────────────────────────
-export const metadata: Metadata = {
-  title: 'LG Pro:Centric Africa | Cameroon Hotel IPTV Integration | Perlogy',
-  description: 'Perlogy Technologies remotely supported ROOT IT in Cameroon to deploy an LG Pro:Centric IPTV hospitality solution for 170 hotel TVs using LG STB-6500 set-top boxes.',
-  alternates: { canonical: pageUrl },
-  openGraph: {
-    title: 'LG Pro:Centric Africa | Cameroon Hotel IPTV Integration | Perlogy',
-    description: 'Perlogy Technologies remotely supported ROOT IT in Cameroon to deploy an LG Pro:Centric IPTV hospitality solution for 170 hotel TVs using LG STB-6500 set-top boxes.',
-    url: pageUrl,
-    type: 'article',
-    images: [{
-      url: '/images/case-studies/cameroon-iptv-hero.png',
-      width: 1200,
-      height: 630,
-      alt: 'Cameroon Hospitality IPTV Transformation with LG Pro:Centric',
-    }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'LG Pro:Centric Africa | Cameroon Hotel IPTV Integration | Perlogy',
-    description: 'Perlogy Technologies remotely supported ROOT IT in Cameroon to deploy an LG Pro:Centric IPTV hospitality solution for 170 hotel TVs using LG STB-6500 set-top boxes.',
-    images: ['/images/case-studies/cameroon-iptv-hero.png'],
-  },
-}
+import { getTranslations } from 'next-intl/server'
 
-// ── STRUCTURED DATA ───────────────────────────────────────────
-const caseStudySchema = {
-  '@context': 'https://schema.org',
-  '@type': 'CreativeWork',
-  '@id': `${pageUrl}#casestudy`,
-  additionalType: 'https://schema.org/Report',
-  name: study.fullName,
-  headline: study.headline,
-  description: study.heroParagraph,
-  url: pageUrl,
-  datePublished: '2026-05-20',
-  dateModified: new Date().toISOString().split('T')[0],
-  image: `${SEO.siteUrl}/images/case-studies/cameroon-iptv-hero.png`,
-  author: {
-    '@type': 'Person',
-    '@id': `${SEO.siteUrl}/#person-nmm`,
-    name: study.directorName,
-  },
-  publisher: { '@id': `${SEO.siteUrl}/#organization` },
-  about: [
-    { '@type': 'Place', name: 'Yaoundé, Cameroon' },
-    { '@type': 'Organization', name: 'ROOT IT' },
-    { '@type': 'Organization', name: 'LG Electronics Gulf' },
-    { '@type': 'Organization', name: 'Perlogy Technologies' },
-  ],
-  offers: {
-    '@type': 'Offer',
-    priceSpecification: {
-      '@type': 'PriceSpecification',
-      priceCurrency: 'USD',
-      description: 'Project value: Confidential',
+export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
+  const params = await props.params;
+  const { locale } = params;
+  const tData = await getTranslations({ locale, namespace: 'CaseStudyData' });
+  const localizedStudy = tData.raw(study.slug) as any;
+
+  return {
+    title: localizedStudy.seoTitle,
+    description: localizedStudy.seoDescription,
+    alternates: { canonical: pageUrl },
+    openGraph: {
+      title: localizedStudy.seoTitle,
+      description: localizedStudy.seoDescription,
+      url: pageUrl,
+      type: 'article',
+      images: [{
+        url: '/images/case-studies/cameroon-iptv-hero.png',
+        width: 1200,
+        height: 630,
+        alt: localizedStudy.fullName,
+      }],
     },
-  },
-  keywords: [
-    'LG Pro:Centric Africa',
-    'Hospitality IPTV solutions Africa',
-    'LG hospitality solutions Cameroon',
-    'IPTV hotel systems Africa',
-    'LG STB-6500 deployment',
-    'Hotel IPTV integration',
-    'Commercial hospitality displays',
-    'Hospitality technology Africa',
-    'Perlogy Technologies',
-    'LG hospitality integration partner',
-    'Interactive hotel TV systems',
-    'Hospitality AV integration Africa'
-  ].join(', '),
+    twitter: {
+      card: 'summary_large_image',
+      title: localizedStudy.seoTitle,
+      description: localizedStudy.seoDescription,
+      images: ['/images/case-studies/cameroon-iptv-hero.png'],
+    },
+  }
 }
 
-const breadcrumbSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SEO.siteUrl },
-    { '@type': 'ListItem', position: 2, name: 'Case Studies', item: `${SEO.siteUrl}/resources/case-studies` },
-    { '@type': 'ListItem', position: 3, name: study.fullName, item: pageUrl },
-  ],
-}
+import { useTranslations } from 'next-intl'
 
 export default function CameroonIPTVCaseStudyPage() {
+  const tData = useTranslations('CaseStudyData');
+  const localizedStudy = tData.raw(study.slug) as any;
+
+  // ── STRUCTURED DATA ───────────────────────────────────────────
+  const caseStudySchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    '@id': `${pageUrl}#casestudy`,
+    additionalType: 'https://schema.org/Report',
+    name: localizedStudy.fullName,
+    headline: localizedStudy.headline,
+    description: localizedStudy.heroParagraph,
+    url: pageUrl,
+    datePublished: '2026-05-20',
+    dateModified: new Date().toISOString().split('T')[0],
+    image: `${SEO.siteUrl}/images/case-studies/cameroon-iptv-hero.png`,
+    author: {
+      '@type': 'Person',
+      '@id': `${SEO.siteUrl}/#person-nmm`,
+      name: localizedStudy.directorName,
+    },
+    publisher: { '@id': `${SEO.siteUrl}/#organization` },
+    about: [
+      { '@type': 'Place', name: 'Yaoundé, Cameroon' },
+      { '@type': 'Organization', name: 'ROOT IT' },
+      { '@type': 'Organization', name: 'LG Electronics Gulf' },
+      { '@type': 'Organization', name: 'Perlogy Technologies' },
+    ],
+    offers: {
+      '@type': 'Offer',
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        priceCurrency: 'USD',
+        description: 'Project value: Confidential',
+      },
+    },
+    keywords: [
+      'LG Pro:Centric Africa',
+      'Hospitality IPTV solutions Africa',
+      'LG hospitality solutions Cameroon',
+      'IPTV hotel systems Africa',
+      'LG STB-6500 deployment',
+      'Hotel IPTV integration',
+      'Commercial hospitality displays',
+      'Hospitality technology Africa',
+      'Perlogy Technologies',
+      'LG hospitality integration partner',
+      'Interactive hotel TV systems',
+      'Hospitality AV integration Africa'
+    ].join(', '),
+  }
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SEO.siteUrl },
+      { '@type': 'ListItem', position: 2, name: 'Case Studies', item: `${SEO.siteUrl}/resources/case-studies` },
+      { '@type': 'ListItem', position: 3, name: localizedStudy.fullName, item: pageUrl },
+    ],
+  }
+
   return (
     <main className="min-h-screen bg-[var(--color-background-primary)] text-[var(--color-text-primary)]">
       <AccentBar />
@@ -142,33 +155,29 @@ export default function CameroonIPTVCaseStudyPage() {
             </Link>
             <span>/</span>
             <span className="text-white/60 truncate max-w-[200px] sm:max-w-none">
-              Cameroon IPTV Transformation
+              {localizedStudy.fullName}
             </span>
           </nav>
 
           {/* Tags */}
           <div className="flex items-center gap-2 flex-wrap mb-6">
             <span className="bg-brand-orange text-white text-[9px] font-bold tracking-[0.2em] uppercase px-3 py-1 rounded-full">
-              Case study
+              {localizedStudy.ui.caseStudy}
             </span>
             <span className="bg-white/6 border border-white/12 text-white/65 text-[9px] font-semibold tracking-[0.15em] uppercase px-3 py-1 rounded-full">
-              LG Pro:Centric Africa
+              {localizedStudy.sector}
             </span>
             <span className="bg-brand-blue/30 border border-brand-blue/40 text-[#7B9AFF] text-[9px] font-semibold tracking-[0.12em] uppercase px-3 py-1 rounded-full">
-              170 IPTV Displays
+              {localizedStudy.recordClaim}
             </span>
           </div>
 
           {/* Title & Subhead */}
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium leading-[1.15] max-w-[780px] mb-6">
-            Transforming{' '}
-            <em className="not-italic text-brand-orange">
-              Hospitality IPTV Experiences
-            </em>{' '}
-            in Cameroon
+            {localizedStudy.headline}
           </h1>
           <p className="text-base sm:text-lg text-white/55 leading-relaxed max-w-[700px] mb-8">
-            {study.heroParagraph}
+            {localizedStudy.heroParagraph}
           </p>
 
           {/* Hero CTA Button */}
@@ -176,7 +185,7 @@ export default function CameroonIPTVCaseStudyPage() {
             href="#overview"
             className="inline-flex items-center gap-2 bg-brand-orange hover:bg-brand-orange-light text-white text-[13px] font-medium tracking-wide uppercase px-6 py-3 rounded-lg transition-all duration-200"
           >
-            Explore Project
+            {localizedStudy.ui.exploreProject}
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>
@@ -309,7 +318,7 @@ export default function CameroonIPTVCaseStudyPage() {
           STATS STRIP
           ══════════════════════════ */}
       <div className="flex flex-wrap items-stretch bg-brand-navy border-b border-white/6 text-white text-center">
-        {study.stats.map((stat, i, arr) => (
+        {localizedStudy.stats.map((stat: any, i: number, arr: any[]) => (
           <div
             key={stat.label}
             className={[
@@ -334,14 +343,14 @@ export default function CameroonIPTVCaseStudyPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-blue mb-2">
-              The Challenge
+              {localizedStudy.ui.theChallenge}
             </p>
             <h2 className="text-2xl sm:text-3xl font-medium text-[var(--color-text-primary)] mb-6 leading-tight">
-              Upgrading Domestic Deployments to Enterprise Specs
+              {localizedStudy.ui.challengeTitle || "Upgrading Domestic Deployments to Enterprise Specs"}
             </h2>
             <div className="h-0.5 w-12 bg-brand-orange mb-6" />
             <p className="text-base text-[var(--color-text-secondary)] leading-relaxed mb-6">
-              {study.challenge}
+              {localizedStudy.challenge}
             </p>
             <ul className="space-y-3.5 text-sm text-[var(--color-text-secondary)]">
               <li className="flex items-start gap-2.5">
@@ -384,14 +393,14 @@ export default function CameroonIPTVCaseStudyPage() {
           </div>
           <div className="order-1 lg:order-2">
             <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-blue mb-2">
-              The Solution
+              {localizedStudy.ui.theSolution}
             </p>
             <h2 className="text-2xl sm:text-3xl font-medium text-[var(--color-text-primary)] mb-6 leading-tight">
-              LG Pro:Centric IPTV Platform & LG STB-6500 Integration
+              {localizedStudy.ui.solutionTitle || "LG Pro:Centric IPTV Platform & LG STB-6500 Integration"}
             </h2>
             <div className="h-0.5 w-12 bg-brand-orange mb-6" />
             <p className="text-base text-[var(--color-text-secondary)] leading-relaxed mb-6">
-              {study.ourRole}
+              {localizedStudy.ourRole}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="p-4 bg-[var(--color-background-primary)] rounded-lg border border-[var(--color-border-tertiary)]">
@@ -472,14 +481,14 @@ export default function CameroonIPTVCaseStudyPage() {
           </div>
           <div className="order-1 lg:order-2">
             <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-blue mb-2">
-              Results & Impact
+              {localizedStudy.ui.theResult}
             </p>
             <h2 className="text-2xl sm:text-3xl font-medium text-[var(--color-text-primary)] mb-6 leading-tight">
-              Enhanced Guest Interactivity & Admin Efficiencies
+              {localizedStudy.ui.resultTitle || "Enhanced Guest Interactivity & Admin Efficiencies"}
             </h2>
             <div className="h-0.5 w-12 bg-brand-orange mb-6" />
             <p className="text-base text-[var(--color-text-secondary)] leading-relaxed mb-6">
-              {study.result}
+              {localizedStudy.result}
             </p>
 
             <div className="grid grid-cols-2 gap-4">
@@ -511,7 +520,7 @@ export default function CameroonIPTVCaseStudyPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-blue mb-2">
-              Technology Partnership
+              {localizedStudy.ui.technologyPartners}
             </p>
             <h2 className="text-2xl sm:text-3xl font-medium text-[var(--color-text-primary)] mb-6 leading-tight">
               Strategic Ecosystem Across Africa
@@ -522,11 +531,11 @@ export default function CameroonIPTVCaseStudyPage() {
             </p>
             <div className="p-6 bg-brand-navy rounded-xl border-l-[3px] border-brand-orange text-white">
               <p className="text-sm italic opacity-80 mb-4 leading-relaxed">
-                &ldquo;{study.directorQuote}&rdquo;
+                &ldquo;{localizedStudy.directorQuote}&rdquo;
               </p>
               <div>
-                <p className="text-xs font-semibold">{study.directorName}</p>
-                <p className="text-[10px] text-white/45 mt-0.5">{study.directorTitle}</p>
+                <p className="text-xs font-semibold">{localizedStudy.directorName}</p>
+                <p className="text-[10px] text-white/45 mt-0.5">{localizedStudy.directorTitle}</p>
               </div>
             </div>
           </div>
@@ -586,7 +595,7 @@ export default function CameroonIPTVCaseStudyPage() {
           href="/resources/case-studies"
           className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-blue hover:text-brand-blue-dark transition-colors"
         >
-          &larr; Back to all case studies
+          {localizedStudy.ui.backToAll}
         </Link>
       </div>
     </main>

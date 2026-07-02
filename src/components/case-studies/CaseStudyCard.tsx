@@ -17,6 +17,9 @@ export function CaseStudyCard({
   highlighted = false,
 }: CaseStudyCardProps) {
   const t = useTranslations('CaseStudies')
+  const tData = useTranslations('CaseStudyData')
+  const localizedStudy = tData.raw(study.slug) as any
+  
   const thumbnail = videoId
     ? getYouTubeThumbnail(videoId, 'hq')
     : null
@@ -52,13 +55,13 @@ export function CaseStudyCard({
             <span className="text-[9px] font-semibold tracking-[0.15em]
               uppercase text-white/50 bg-white/6 border border-white/12
               px-2.5 py-1 rounded-full">
-              {study.sector} · {study.locationShort}
+              {localizedStudy.sector} · {localizedStudy.locationShort}
             </span>
-            {study.recordClaim && (
+            {localizedStudy.recordClaim && (
               <span className="text-[9px] font-semibold tracking-[0.12em]
                 uppercase text-[#7B9AFF] bg-[#1635D4]/20
                 border border-[#1635D4]/35 px-2.5 py-1 rounded-full">
-                {study.recordClaim}
+                {localizedStudy.recordClaim}
               </span>
             )}
           </div>
@@ -66,17 +69,17 @@ export function CaseStudyCard({
           {/* Headline */}
           <h3 className="text-[20px] font-semibold text-white
             leading-[1.3] max-w-[520px] mb-2">
-            {study.cardHeadline}
+            {localizedStudy.cardHeadline}
           </h3>
           <p className="text-[13px] text-white/50 leading-[1.65]
             max-w-[480px]">
-            {study.cardBody}
+            {localizedStudy.cardBody}
           </p>
         </div>
 
         {/* Stats row */}
         <div className="flex border-t border-white/6 bg-[#0a1630]">
-          {study.stats.slice(0, 4).map((stat, i, arr) => (
+          {localizedStudy.stats.slice(0, 4).map((stat: any, i: number, arr: any[]) => (
             <div
               key={stat.label}
               className={[
@@ -101,7 +104,7 @@ export function CaseStudyCard({
           bg-[var(--color-background-secondary)]
           border-t border-[var(--color-border-tertiary)]">
           <p className="text-[12px] text-[var(--color-text-secondary)]">
-            {study.location} · {study.completedYear}
+            {localizedStudy.location} · {study.completedYear}
           </p>
           <span className="text-[12px] font-medium text-[#1635D4]
             group-hover:translate-x-0.5 transition-transform duration-150">
@@ -139,7 +142,7 @@ export function CaseStudyCard({
           <div className="absolute bottom-3 left-3">
             <span className="text-[9px] font-bold tracking-widest
               uppercase text-[#F25C1A]">
-              {study.sector}
+              {localizedStudy.sector}
             </span>
           </div>
         </div>
@@ -153,16 +156,16 @@ export function CaseStudyCard({
         )}
         <h3 className="text-[14px] font-semibold
           text-[var(--color-text-primary)] mb-2 leading-[1.35]">
-          {study.cardHeadline}
+          {localizedStudy.cardHeadline}
         </h3>
         <p className="text-[12px] text-[var(--color-text-secondary)]
           leading-[1.6] mb-4">
-          {study.cardBody}
+          {localizedStudy.cardBody}
         </p>
 
         {/* Stats */}
         <div className="flex gap-4">
-          {study.stats.slice(0, 3).map((s) => (
+          {localizedStudy.stats.slice(0, 3).map((s: any) => (
             <div key={s.label}>
               <span className="text-[13px] font-medium
                 text-[#1635D4] block">
@@ -182,7 +185,7 @@ export function CaseStudyCard({
         flex items-center justify-between">
         <span className="text-[11px]
           text-[var(--color-text-secondary)]">
-          {study.location}
+          {localizedStudy.location}
         </span>
         <span className="text-[11px] font-medium text-[#1635D4]
           group-hover:translate-x-0.5 transition-transform duration-150">

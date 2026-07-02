@@ -433,5 +433,462 @@
     "step4": "Vous accédez aux prix, aux stocks et au support.",
     "guaranteeTitle": "Garantie 24 heures",
     "guaranteeDesc": "Chaque candidature reçoit une réponse personnelle dans un délai d'un jour ouvrable. Si nous ne sommes pas le bon partenaire, nous vous le dirons honnêtement."
+  },
+  "Metadata": {
+    "home": {
+      "title": "Perlogy Technologies | Distribution ProAV & TIC à travers l'Afrique",
+      "description": "Perlogy Technologies distribue des technologies ProAV et TIC de classe mondiale à travers l'Afrique anglophone et francophone — via des partenariats autorisés avec LG Electronics et Unilumin. Exclusivement via des partenaires intégrateurs."
+    },
+    "about": {
+      "title": "À Propos de Nous",
+      "description": "Un pont entre la technologie mondiale et l'ambition de l'Afrique. Découvrez comment Perlogy donne les moyens aux intégrateurs systèmes à travers le continent."
+    },
+    "brands": {
+      "title": "Portefeuille de Marques",
+      "description": "Explorez notre portefeuille de 14 marques ProAV et TIC mondiales, incluant la distribution autorisée de LG Electronics, Unilumin, et Lampro."
+    },
+    "contact": {
+      "title": "Contactez-Nous",
+      "description": "Entrez en contact avec Perlogy Technologies. Nous répondons à toutes les demandes de projets et d'intégrateurs systèmes dans les 24 heures."
+    },
+    "news": {
+      "title": "Actualités de la Direction",
+      "description": "Perlogy Technologies nomme Franklin Ogonji au poste de Directeur Général, marquant une étape importante dans la croissance continue de l'entreprise."
+    },
+    "partners": {
+      "title": "Programme Partenaire",
+      "description": "Rejoignez le Programme Partenaire Perlogy. Bénéficiez de prix compétitifs, d'un support technique et d'un approvisionnement fiable pour vos projets ProAV en Afrique."
+    },
+    "partnerApply": {
+      "title": "Postuler au Programme Partenaire",
+      "description": "Postulez pour devenir Partenaire SI Perlogy et accédez à l'ensemble de notre portefeuille de marques ainsi qu'à nos avantages par niveau."
+    },
+    "caseStudies": {
+      "title": "Études de Cas",
+      "description": "Explorez nos projets de référence à travers l'Afrique. De véritables installations ProAV et TIC réalisées par nos partenaires intégrateurs."
+    },
+    "solutions": {
+      "title": "Solutions",
+      "description": "Découvrez nos solutions ProAV pour les secteurs de l'Hôtellerie, de l'Entreprise, de l'Affichage Dynamique et des Aéroports en Afrique."
+    },
+    "solutionsAirports": {
+      "title": "Solutions pour Aéroports & Transports",
+      "description": "Affichages d'informations sur les vols, signalétique des portes et médias numériques destinés aux passagers pour les terminaux et les gares."
+    },
+    "solutionsCorporate": {
+      "title": "Solutions AV pour Entreprises",
+      "description": "Écrans pour salles de conférence, visioconférence et infrastructure AV d'entreprise pour les environnements de travail modernes en Afrique."
+    },
+    "solutionsSignage": {
+      "title": "Solutions d'Affichage Dynamique",
+      "description": "Murs d'images LED, écrans commerciaux et écrans extérieurs alimentés par Unilumin, LG et Samsung."
+    },
+    "solutionsHospitality": {
+      "title": "Solutions AV pour l'Hôtellerie",
+      "description": "Téléviseurs d'hôtel professionnels, systèmes IPTV et solutions d'automatisation pour les complexes de luxe à travers l'Afrique."
+    },
+    "privacy": {
+      "title": "Politique de Confidentialité",
+      "description": "Lisez la Politique de Confidentialité de Perlogy Technologies concernant la manière dont nous collectons, utilisons et protégeons vos données."
+    },
+    "terms": {
+      "title": "Conditions de Service",
+      "description": "Lisez les Conditions de Service de Perlogy Technologies régissant l'utilisation de notre site web et de nos services de distribution B2B."
+    }
+  },
+  "CaseStudyData": {
+    "uhuru-gardens": {
+      "name": "Musée des Jardins d'Uhuru",
+      "fullName": "Système Audiovisuel du Musée des Jardins d'Uhuru",
+      "location": "Nairobi, Kenya",
+      "locationShort": "Kenya",
+      "sector": "Patrimoine & Culture",
+      "client": "Monument National des Jardins d'Uhuru",
+      "headline": "Musée des Jardins d'Uhuru — L'installation AV culturelle la plus importante d'Afrique de l'Est.",
+      "heroTagline": "★ Projet Phare · 1,4M USD · Les plus grands murs vidéo LCD d'Afrique de l'Est",
+      "recordClaim": "Les plus grands murs vidéo LCD d'Afrique de l'Est",
+      "heroParagraph": "La conception et la mise en œuvre d'un système audiovisuel historique d'une valeur de 1,4 million de dollars au site du patrimoine national des Jardins d'Uhuru, Nairobi — comprenant les plus grands murs vidéo LCD d'Afrique de l'Est, un film LED transparent de 100 m² et la technologie tactile interactive Displax pour une narration patrimoniale immersive.",
+      "challenge": "Les Jardins d'Uhuru constituent le site du patrimoine national le plus important du Kenya — le lieu où l'indépendance a été proclamée le 12 décembre 1963. Le cahier des charges exigeait un système audiovisuel capable de répondre simultanément à des demandes multiples et concurrentes : des expériences d'exposition immersives pour les visiteurs quotidiens, une infrastructure pour les cérémonies d'État nationales et une plateforme permanente de narration du patrimoine qui perdurerait des décennies. L'ampleur des exigences en matière de LED et de LCD, combinée à la sensibilité architecturale d'un monument national protégé, a fait de ce projet l'un des plus techniquement exigeants jamais entrepris en Afrique de l'Est.",
+      "ourRole": "Perlogy Technologies a dirigé la conception et la spécification technologique de l'ensemble du système audiovisuel, travaillant en partenariat autorisé avec LG Electronics et exécutant le projet aux côtés de Digital Mara Kenya. Sous la direction du Directeur Nelson Mandela Mugarura MBA, MSc, BSc, Perlogy a spécifié et fourni l'ensemble de la technologie d'affichage LG — y compris la configuration 12×5 des écrans commerciaux LG de 55 pouces (pas de pixel de 1,8 mm) formant le plus grand mur vidéo LCD d'Afrique de l'Est, l'installation de film LED transparent LG de 100 m², et l'intégration de la technologie tactile capacitive Displax sur la surface du mur vidéo pour des expériences d'exposition interactives.",
+      "result": "Le système achevé offre un environnement visuel moderne et totalement immersif, capable de soutenir des expositions permanentes, des programmes culturels temporaires et des événements nationaux d'envergure. Le mur vidéo LCD 12×5 — le plus grand de son genre en Afrique de l'Est — ancre l'espace d'exposition principal, tandis que le film LED transparent de 100 m² crée une caractéristique architecturale emblématique visible à la fois de l'intérieur et de l'extérieur du bâtiment. L'intégration tactile Displax transforme le mur vidéo en une plateforme patrimoniale interactive, permettant aux visiteurs de s'engager directement dans l'histoire de l'indépendance du Kenya. Cette installation établit une nouvelle référence pour ce qui est possible en matière d'audiovisuel culturel sur le continent africain.",
+      "directorQuote": "Les Jardins d'Uhuru sont l'endroit où vit l'histoire de l'indépendance du Kenya. Notre responsabilité était de construire un système technologique digne de cette histoire — un système qui inspirerait les visiteurs pendant des générations et démontrerait que les institutions culturelles d'Afrique méritent une technologie de classe mondiale.",
+      "directorName": "Nelson Mandela Mugarura",
+      "directorTitle": "Directeur, Perlogy Technologies LLC · MBA, MSc, BSc",
+      "stats": [
+        {
+          "value": "1,4M USD",
+          "label": "Valeur du projet"
+        },
+        {
+          "value": "12×5",
+          "label": "Mur vidéo LCD (LG 1.8mm)"
+        },
+        {
+          "value": "100m²",
+          "label": "Film LED transparent"
+        },
+        {
+          "value": "55\"",
+          "label": "Modules d'affichage"
+        },
+        {
+          "value": "#1",
+          "label": "Le plus grand en Afrique de l'Est"
+        }
+      ],
+      "specs": [
+        {
+          "label": "Mur Vidéo LCD",
+          "value": "12×5 LG · Pas de pixel de 1.8mm",
+          "detail": "60 écrans commerciaux LG de 55 pouces dans une configuration de 12 de large par 5 de haut. Avec un pas de pixel de 1,8 mm, il s'agit de l'installation de mur vidéo LCD grand format à la plus haute résolution en Afrique de l'Est."
+        },
+        {
+          "label": "Film LED Transparent",
+          "value": "100m² Film LED Transparent LG",
+          "detail": "Film LED transparent pleine surface permettant la superposition de contenu numérique transparent sur le verre architectural — créant un repère visuel emblématique visible à la fois de l'intérieur et de l'extérieur du bâtiment."
+        },
+        {
+          "label": "Technologie Interactive",
+          "value": "Tactile Capacitif Displax",
+          "detail": "Le mur vidéo LCD est amélioré avec la technologie de feuille tactile capacitive Displax, permettant des expériences d'exposition interactives multi-touch directement sur la surface du mur."
+        },
+        {
+          "label": "Chef de Projet",
+          "value": "Nelson Mandela Mugarura",
+          "detail": "Directeur, Perlogy Technologies LLC · MBA, MSc, BSc. A dirigé l'ensemble du processus de conception, de spécification et de mise en œuvre."
+        },
+        {
+          "label": "Application & Utilisation",
+          "value": "Expositions · Événements nationaux · Narration patrimoniale",
+          "detail": "Site du patrimoine national des Jardins d'Uhuru, Nairobi, Kenya — Mémorial national de l'indépendance du Kenya. Le système sert les expositions permanentes, les cérémonies d'État et la programmation patrimoniale publique."
+        }
+      ],
+      "partners": [
+        {
+          "name": "LG Electronics",
+          "role": "Partenaire de technologie d'affichage (autorisé)"
+        },
+        {
+          "name": "Displax",
+          "role": "Intégration de technologie tactile"
+        },
+        {
+          "name": "Digital Mara Kenya",
+          "role": "Partenaire de mise en œuvre & de mise en service"
+        }
+      ],
+      "seoTitle": "Système AV du Musée des Jardins d'Uhuru | 1.4M USD | Perlogy",
+      "seoDescription": "Perlogy Technologies a conçu et mis en œuvre la plus grande installation de mur vidéo LCD d'Afrique de l'Est au Musée des Jardins d'Uhuru, un projet de 1,4 million de dollars.",
+      "cardHeadline": "1,4M USD · Les plus grands murs vidéo LCD d'Afrique de l'Est — Musée des Jardins d'Uhuru, Nairobi.",
+      "cardBody": "Une installation AV emblématique sur le site du patrimoine national du Kenya — mur vidéo LG 1.8mm 12x5, 100m² de film LED transparent et technologie tactile Displax."
+    },
+    "hilton-asaba": {
+      "name": "DoubleTree by Hilton Asaba",
+      "fullName": "DoubleTree by Hilton — Système de Divertissement en Chambre",
+      "location": "Asaba, Nigéria",
+      "locationShort": "Nigéria",
+      "sector": "Hôtellerie",
+      "client": "DoubleTree by Hilton",
+      "headline": "220 téléviseurs LG Hospitality. DoubleTree by Hilton Asaba. À temps. Approuvé par Hilton.",
+      "heroTagline": "Hôtellerie · Nigéria · LG Pro:Centric",
+      "recordClaim": "",
+      "heroParagraph": "Fourniture complète d'écrans dans les chambres et support technique pour le DoubleTree by Hilton à Asaba, au Nigéria. 220 téléviseurs d'hôtellerie LG Pro:Centric livrés, mis en service et certifiés selon les normes de la marque Hilton.",
+      "challenge": "Le DoubleTree by Hilton à Asaba nécessitait un système de divertissement en chambre cohérent et standardisé à l'international dans 220 chambres, selon un calendrier correspondant à l'ouverture de l'établissement. L'intégrateur partenaire avait besoin d'un partenaire fournisseur capable de garantir les stocks, de soutenir les spécifications techniques et de fournir des délais de livraison fiables pour un déploiement de marque internationale de premier plan.",
+      "ourRole": "Perlogy a fourni l'ensemble des téléviseurs d'hôtellerie LG Pro:Centric et a assuré un rôle de conseil technique tout au long de la phase de spécification. Nous avons travaillé directement avec l'intégrateur partenaire — et non avec l'hôtel — en veillant à ce que l'intégrateur conserve la pleine propriété de la relation client de bout en bout.",
+      "result": "220 téléviseurs LG Hospitality livrés à temps. Mis en service avec succès dans les 220 chambres. L'établissement a ouvert ses portes conformément aux normes de la marque Hilton, et l'intégrateur partenaire a consolidé un bilan qui lui a ouvert les portes d'autres projets du groupe Hilton en Afrique de l'Ouest.",
+      "directorQuote": "Ce projet a démontré exactement le fonctionnement du modèle Perlogy — nous avons fourni, nous avons soutenu, et nous sommes restés en dehors de la relation client. L'intégrateur a remporté le projet, l'a livré et a développé ses activités en conséquence.",
+      "directorName": "Nelson Mandela Mugarura",
+      "directorTitle": "Directeur, Perlogy Technologies LLC",
+      "stats": [
+        {
+          "value": "220",
+          "label": "TV LG Pro:Centric"
+        },
+        {
+          "value": "100%",
+          "label": "Livraison à temps"
+        },
+        {
+          "value": "Hilton",
+          "label": "Norme de marque respectée"
+        },
+        {
+          "value": "Nigéria",
+          "label": "Afrique de l'Ouest"
+        }
+      ],
+      "specs": [
+        {
+          "label": "Produit",
+          "value": "Série LG Pro:Centric",
+          "detail": "Plateforme de télévision d'hôtellerie professionnelle de LG, conçue pour les environnements hôteliers avec intégration IPTV et gestion centralisée."
+        },
+        {
+          "label": "Quantité",
+          "value": "220 unités",
+          "detail": "Fourniture complète de l'établissement — toutes les chambres et suites."
+        }
+      ],
+      "partners": [
+        {
+          "name": "LG Electronics",
+          "role": "Technologie d'affichage (autorisé)"
+        }
+      ],
+      "seoTitle": "DoubleTree by Hilton Asaba — Fourniture de TV Hospitality LG | Perlogy",
+      "seoDescription": "220 téléviseurs d'hôtellerie LG Pro:Centric fournis et mis en service pour le DoubleTree by Hilton Asaba, au Nigéria.",
+      "cardHeadline": "220 téléviseurs Hospitality LG. DoubleTree by Hilton Asaba. Livrés à temps.",
+      "cardBody": "Fourniture complète d'écrans dans les chambres pour le DoubleTree by Hilton à Asaba, au Nigéria. Livré dans les délais selon les normes de la marque Hilton."
+    },
+    "embassy-nairobi": {
+      "name": "Ambassade à Nairobi",
+      "fullName": "Ambassade à Nairobi — Écran LED Extérieur Unilumin LSK P2.9",
+      "location": "Nairobi, Kenya",
+      "locationShort": "Kenya",
+      "sector": "Affichage Dynamique",
+      "client": "Ambassade à Nairobi, Kenya",
+      "headline": "Ambassade à Nairobi — Le premier écran LED extérieur incurvé ultra-fin du Kenya.",
+      "heroTagline": "Affichage Dynamique · Kenya · Unilumin LSK P2.9",
+      "recordClaim": "La première installation LED extérieure incurvée Unilumin LSK P2.9 au Kenya",
+      "heroParagraph": "La conception et la fourniture du premier écran LED extérieur incurvé Unilumin P2.9 du Kenya — installé dans un auditorium extérieur d'une ambassade à Nairobi. 28 mètres carrés, 7 000 mm × 4 000 mm, 150 000 USD. Fourni par Perlogy Technologies et installé par un intégrateur système kényan local.",
+      "challenge": "Le cahier des charges exigeait un écran LED extérieur grand format capable de fonctionner de manière fiable dans l'environnement extérieur de Nairobi — exposé à la lumière directe du soleil, à la pluie, à la poussière et aux variations de température — tout en offrant une qualité d'image haute définition digne d'une installation diplomatique prestigieuse. La configuration incurvée ajoutait un défi de conception supplémentaire, nécessitant une approche d'ingénierie personnalisée pour assurer l'alignement parfait des panneaux sur toute la surface de 28 m².",
+      "ourRole": "Perlogy Technologies, agissant en tant que distributeur agréé Unilumin pour l'Afrique subsaharienne, a conçu la solution d'affichage et a spécifié l'Unilumin LSK P2.9 comme étant le modèle adéquat pour cette installation. Perlogy a fourni l'ensemble du matériel directement à l'intégrateur système kényan local et a fourni un soutien consultatif technique complet tout au long des phases de spécification, d'approvisionnement et de mise en service.",
+      "result": "L'écran LED extérieur incurvé Unilumin LSK P2.9 a été installé et mis en service avec succès dans l'auditorium extérieur de l'ambassade à Nairobi — la première installation de ce produit à cette échelle au Kenya. L'écran de 28 m² offre une imagerie ultra-haute définition avec un taux de rafraîchissement de 3 840 Hz et des niveaux de gris de 14 bits, avec une protection étanche IP69K garantissant un fonctionnement fiable dans toutes les conditions météorologiques.",
+      "directorQuote": "Nous sommes fiers d'avoir livré la première installation de ce calibre au Kenya — un projet qui démontre exactement ce qui est possible lorsque les bons partenaires technologiques, le bon fabricant et un intégrateur local qualifié travaillent ensemble sur le marché africain.",
+      "directorName": "Nelson Mandela Mugarura",
+      "directorTitle": "Directeur, Perlogy Technologies LLC · MBA, MSc, BSc",
+      "stats": [
+        {
+          "value": "150K USD",
+          "label": "Valeur du projet"
+        },
+        {
+          "value": "28 m²",
+          "label": "Surface de l'écran"
+        },
+        {
+          "value": "7000×4000mm",
+          "label": "Dimensions"
+        },
+        {
+          "value": "P2.9",
+          "label": "Pas de pixel"
+        },
+        {
+          "value": "IP69K",
+          "label": "Indice de protection"
+        }
+      ],
+      "specs": [
+        {
+          "label": "Modèle d'écran",
+          "value": "Unilumin Série LSK — P2.9",
+          "detail": "LED HD extérieur de la série LSK. Le P2.9 a été sélectionné pour cette installation pour sa combinaison de haute résolution, de durabilité en extérieur et de support de configuration incurvée."
+        },
+        {
+          "label": "Dimensions de l'écran",
+          "value": "7 000 mm × 4 000 mm — 28 m²",
+          "detail": "Configuration incurvée sur mesure conçue selon les exigences architecturales du cadre de l'auditorium extérieur."
+        },
+        {
+          "label": "Cabinet",
+          "value": "500×1,000mm · 82mm d'épaisseur · 14.2 kg/panneau",
+          "detail": "Cabinet ultra-fin et ultra-léger. La série LSK réduit considérablement les coûts de transport et de main-d'œuvre."
+        },
+        {
+          "label": "Qualité d'image",
+          "value": "Taux de rafraîchissement de 3 840 Hz · Niveaux de gris 14 bits",
+          "detail": "Une imagerie extérieure de qualité cinéma, sans aucun scintillement visible."
+        },
+        {
+          "label": "Indice de protection",
+          "value": "IP69K — le plus élevé disponible",
+          "detail": "Protection complète contre la poussière, l'infiltration d'eau et les lavages à haute pression dans toutes les conditions."
+        },
+        {
+          "label": "Application",
+          "value": "Auditorium extérieur · Terrains de l'ambassade · Nairobi, Kenya",
+          "detail": "Installation extérieure permanente servant aux présentations officielles, aux événements et à la programmation publique."
+        }
+      ],
+      "partners": [
+        {
+          "name": "Unilumin Group",
+          "role": "Fabricant d'écrans LED · Série LSK"
+        },
+        {
+          "name": "Perlogy Technologies LLC",
+          "role": "Distributeur agréé Unilumin · Conception & fourniture"
+        },
+        {
+          "name": "Intégrateur Kényan Local",
+          "role": "Partenaire d'installation & de mise en service"
+        }
+      ],
+      "seoTitle": "Écran LED Ambassade de Nairobi | Unilumin LSK P2.9 | Perlogy",
+      "seoDescription": "Perlogy a fourni le premier écran LED extérieur incurvé Unilumin LSK P2.9 du Kenya pour une ambassade à Nairobi — 28 m², IP69K.",
+      "cardHeadline": "Le premier LED extérieur Unilumin LSK P2.9 du Kenya — Ambassade à Nairobi.",
+      "cardBody": "150 000 USD · IP69K · 3 840 Hz · conçu et fourni par Perlogy."
+    },
+    "lake-turkana-wind-power-hospitality-project": {
+      "name": "Lake Turkana Wind Power",
+      "fullName": "Lake Turkana Wind Power — Déploiement Technologique Hôtelier",
+      "location": "Turkana, Kenya",
+      "locationShort": "Kenya",
+      "sector": "Hôtellerie",
+      "client": "Lake Turkana Wind Power Limited",
+      "headline": "Alimenter des Expériences d'Accueil Premium à Turkana",
+      "heroTagline": "Hôtellerie · Kenya · Commercial LG",
+      "recordClaim": "158 TV Hospitality LG Fournies",
+      "heroParagraph": "Perlogy Technologies a fourni et soutenu 158 téléviseurs d'hôtellerie LG pour le prestigieux développement hôtelier Lake Turkana Wind Power, en partenariat avec Bakyson Enterprises LTD.",
+      "challenge": "Le déploiement de technologies de niveau entreprise dans des régions éloignées comme Turkana présente d'importants défis logistiques. Pour un prestigieux développement hôtelier cinq étoiles, l'exigence était d'établir un réseau de divertissement en chambre haut de gamme. En raison de l'emplacement isolé, la coordination d'écrans commerciaux délicats sur des terrains accidentés nécessitait une planification méticuleuse. Le client exigeait une technologie d'affichage fiable de qualité hôtelière.",
+      "ourRole": "En tant que distributeur principal d'écrans commerciaux et AV, Perlogy Technologies a fourni avec succès 158 téléviseurs d'hôtellerie LG 55UK660H d'origine. Travaillant en étroite collaboration avec Bakyson Enterprises LTD, nous avons assuré une logistique de projet complète et un soutien consultatif technique, livrant une intégration technologique hôtelière inégalée sans concurrencer notre partenaire d'intégration.",
+      "result": "Le déploiement réussi de 158 écrans commerciaux LG établit une infrastructure numérique premium robuste pour le nouveau complexe hôtelier cinq étoiles, améliorant considérablement l'expérience des clients à Turkana. Grâce à la collaboration transparente entre Perlogy et Bakyson, l'installation a été réalisée dans les délais.",
+      "directorQuote": "Ce déploiement majeur à Turkana démontre la capacité de Perlogy à réaliser des déploiements de technologie hôtelière commerciale à grande échelle dans les régions les plus reculées du Kenya.",
+      "directorName": "Nelson Mandela Mugarura",
+      "directorTitle": "Directeur, Perlogy Technologies LLC · MBA, MSc, BSc",
+      "stats": [
+        {
+          "value": "158",
+          "label": "TV Hospitality LG"
+        },
+        {
+          "value": "158",
+          "label": "Supports Muraux"
+        },
+        {
+          "value": "5 Étoiles",
+          "label": "Standard du Projet"
+        },
+        {
+          "value": "Turkana",
+          "label": "Région de Déploiement"
+        }
+      ],
+      "specs": [
+        {
+          "label": "Modèle d'affichage",
+          "value": "LG 55UK660H",
+          "detail": "Téléviseur Hospitality Commercial Smart LG avec écrans d'accueil personnalisés, capacité de gestion Pro:Centric et résolution 4K UHD."
+        },
+        {
+          "label": "Système de Fixation",
+          "value": "Supports Muraux Robustes",
+          "detail": "158 supports muraux personnalisés assurant une installation sécurisée et un profil épuré."
+        },
+        {
+          "label": "Intégrateur Système",
+          "value": "Bakyson Enterprises LTD",
+          "detail": "Partenaire d'intégration de systèmes AV de haut niveau désigné."
+        },
+        {
+          "label": "Emplacement",
+          "value": "Turkana, Kenya",
+          "detail": "Lodge pour invités et complexe d'accueil de luxe cinq étoiles de Lake Turkana Wind Power Limited."
+        }
+      ],
+      "partners": [
+        {
+          "name": "LG Electronics",
+          "role": "Fabricant de Technologie d'Affichage"
+        },
+        {
+          "name": "Bakyson Enterprises LTD",
+          "role": "Intégrateur de Systèmes AV & Partenaire"
+        },
+        {
+          "name": "Perlogy Technologies LLC",
+          "role": "Distributeur Technologique & Partenaire Logistique"
+        }
+      ],
+      "seoTitle": "TV Hospitality LG Kenya | Solutions Hôtelières Turkana | Perlogy",
+      "seoDescription": "Perlogy Technologies a fourni 158 téléviseurs d'hôtellerie LG pour le développement de l'hôtel 5 étoiles de Lake Turkana Wind Power, intégré par Bakyson.",
+      "cardHeadline": "158 TV d'Hôtellerie LG fournies pour un Développement Hôtelier 5 Étoiles à Turkana",
+      "cardBody": "Déploiement réussi de technologie hôtelière à grande échelle à Turkana, au Kenya, en partenariat avec Bakyson Enterprises LTD."
+    },
+    "cameroon-lg-procentric-hospitality-iptv-project": {
+      "name": "Transformation IPTV Cameroun",
+      "fullName": "Transformation IPTV Hôtelière au Cameroun avec LG Pro:Centric",
+      "location": "Yaoundé, Cameroun",
+      "locationShort": "Cameroun",
+      "sector": "Technologie Hôtelière",
+      "client": "Partenaire de l'Industrie Hôtelière",
+      "headline": "Transformer les Expériences IPTV Hôtelières au Cameroun",
+      "heroTagline": "Solutions IPTV · Cameroun · LG Pro:Centric",
+      "recordClaim": "170 Écrans Soutenus à Distance",
+      "heroParagraph": "Perlogy Technologies a soutenu à distance l'intégrateur système local ROOT IT dans le déploiement d'une solution IPTV LG Pro:Centric entièrement interactive pour 170 écrans d'hôtel en utilisant les technologies d'hôtellerie commerciales LG.",
+      "challenge": "L'hôtel avait initialement déployé des téléviseurs domestiques LG NanoCell, dépourvus des fonctionnalités IPTV d'entreprise essentielles. La conversion d'un déploiement d'écrans domestiques en un réseau hôtelier géré et sécurisé constituait un défi unique. De plus, la coordination du projet à distance sur plusieurs pays — le Cameroun, le Kenya et Dubaï — a ajouté une complexité technique et logistique.",
+      "ourRole": "Perlogy Technologies a conseillé la mise en œuvre d'une architecture IPTV hôtelière professionnelle en intégrant des décodeurs commerciaux LG STB-6500 aux téléviseurs domestiques LG NanoCell existants. Tout au long de la phase d'exécution, nous avons fourni une assistance à distance à l'intégrateur système local ROOT IT, incluant des conseils détaillés sur le déploiement de la plateforme Pro:Centric, l'activation des licences avec le bureau LG de Dubaï et le support serveur.",
+      "result": "Le déploiement a transformé les systèmes de divertissement en chambre de l'hôtel en une plateforme d'accueil entièrement interactive sur les 170 écrans. L'intégration des boîtiers LG STB-6500 a permis de mettre en place des services interactifs premium pour les clients. Ce projet démontre la capacité avancée de Perlogy à soutenir à distance des installations de technologie hôtelière complexes et transfrontalières en Afrique.",
+      "directorQuote": "En palliant les limites du matériel domestique grâce aux décodeurs commerciaux LG et à l'ingénierie système à distance, nous avons réussi à livrer une plateforme IPTV interactive de premier ordre à Yaoundé, démontrant la portée technique à distance de Perlogy sur le continent africain.",
+      "directorName": "Nelson Mandela Mugarura",
+      "directorTitle": "Directeur, Perlogy Technologies LLC · MBA, MSc, BSc",
+      "stats": [
+        {
+          "value": "170",
+          "label": "TV d'Hôtel Prises en Charge"
+        },
+        {
+          "value": "STB-6500",
+          "label": "Matériel Commercial"
+        },
+        {
+          "value": "Dubaï",
+          "label": "Partenaire de Licence"
+        },
+        {
+          "value": "À distance",
+          "label": "Support Technique"
+        }
+      ],
+      "specs": [
+        {
+          "label": "Matériel Commercial",
+          "value": "LG STB-6500",
+          "detail": "Décodeur Commercial Smart LG Pro:Centric transformant les écrans domestiques en écrans d'hôtellerie interactifs complets."
+        },
+        {
+          "label": "Plateforme IPTV",
+          "value": "LG Pro:Centric IPTV",
+          "detail": "Système centralisé d'interactivité client permettant une personnalisation complète et une administration côté serveur."
+        },
+        {
+          "label": "Intégrateur Système",
+          "value": "ROOT IT",
+          "detail": "Le partenaire d'intégration de systèmes local désigné au Cameroun qui s'est occupé du déploiement sur site."
+        },
+        {
+          "label": "Écrans d'Origine",
+          "value": "TV Domestiques LG NanoCell",
+          "detail": "170 écrans de télévision domestiques LG mis à niveau avec succès selon les spécifications commerciales à l'aide du matériel décodeur."
+        }
+      ],
+      "partners": [
+        {
+          "name": "LG Electronics Gulf",
+          "role": "Bureau de Dubaï - Licences & Support Tech"
+        },
+        {
+          "name": "ROOT IT Cameroun",
+          "role": "Intégrateur Système Local"
+        },
+        {
+          "name": "Perlogy Technologies LLC",
+          "role": "Architecte Principal & Support à Distance"
+        }
+      ],
+      "seoTitle": "LG Pro:Centric Afrique | Intégration IPTV Hôtel Cameroun | Perlogy",
+      "seoDescription": "Perlogy Technologies a aidé ROOT IT au Cameroun à déployer une solution hôtelière IPTV LG Pro:Centric pour 170 téléviseurs d'hôtel en utilisant des décodeurs LG STB-6500.",
+      "cardHeadline": "IPTV LG Pro:Centric mise en service pour 170 écrans d'hôtel au Cameroun",
+      "cardBody": "Conversion d'écrans domestiques LG NanoCell en un réseau IPTV hôtelier professionnel via des décodeurs LG STB-6500 avec support à distance."
+    },
+    "ui": {
+      "theChallenge": "Le Défi",
+      "ourRole": "Notre Rôle",
+      "theResult": "Le Résultat",
+      "technicalSpecs": "Spécifications Techniques",
+      "technologyPartners": "Partenaires Technologiques",
+      "backToAll": "← Retour à toutes les études de cas"
+    }
   }
 }

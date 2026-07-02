@@ -4,9 +4,14 @@ import { useTranslations } from 'next-intl'
 import { AccentBar } from '@/components/ui/AccentBar'
 import { StructuredData } from '@/components/seo/StructuredData'
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+import { getTranslations } from 'next-intl/server';
+
+export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
+  const params = await props.params;
+  const { locale } = params;
+  const t = await getTranslations({ locale, namespace: 'Metadata.terms' });
   return {
-    title: 'Terms of Service | Perlogy Technologies LLC',
+    title: t('title'),
     description: 'Terms and conditions for using Perlogy Technologies LLC services and participating in the Perlogy Partner Programme.',
     alternates: { canonical: buildCanonical('/terms') },
   }

@@ -10,58 +10,70 @@ const video  = PROJECT_VIDEOS.uhuruGardens
 
 import { buildCanonical, SEO } from '@/lib/seo-config'
 import { StructuredData } from '@/components/seo/StructuredData'
+import { getTranslations } from 'next-intl/server'
 
-export const metadata: Metadata = {
-  title:       study.seoTitle,
-  description: study.seoDescription,
-  alternates: { canonical: buildCanonical(`/resources/case-studies/${study.slug}`) },
-  openGraph: {
-    title:       study.seoTitle,
-    description: study.seoDescription,
-    url:         buildCanonical(`/resources/case-studies/${study.slug}`),
-    images: [
-      {
-        url:   `https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`,
-        width:  1280,
-        height: 720,
-        alt:    study.fullName,
-      },
-    ],
-  },
+export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
+  const params = await props.params;
+  const { locale } = params;
+  const tData = await getTranslations({ locale, namespace: 'CaseStudyData' });
+  const localizedStudy = tData.raw(study.slug) as any;
+
+  return {
+    title: localizedStudy.seoTitle,
+    description: localizedStudy.seoDescription,
+    alternates: { canonical: buildCanonical(`/resources/case-studies/${study.slug}`) },
+    openGraph: {
+      title: localizedStudy.seoTitle,
+      description: localizedStudy.seoDescription,
+      url: buildCanonical(`/resources/case-studies/${study.slug}`),
+      images: [
+        {
+          url: `https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`,
+          width: 1280,
+          height: 720,
+          alt: localizedStudy.fullName,
+        },
+      ],
+    },
+  };
 }
 
-const uhuruVideoSchema = {
-  '@context':   'https://schema.org',
-  '@type':      'VideoObject',
-  name:         video.title,
-  description:  video.description,
-  thumbnailUrl: `https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`,
-  uploadDate:   '2024-02-15', // Approximate
-  embedUrl:     `https://www.youtube.com/embed/${video.youtubeId}`,
-  publisher:    { '@id': `${SEO.siteUrl}/#organization` },
-}
-
-const uhuruCaseStudySchema = {
-  '@context': 'https://schema.org',
-  '@type':    'CreativeWork',
-  name:       study.fullName,
-  headline:   study.seoTitle,
-  description: study.seoDescription,
-  image:      `https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`,
-  author:     { '@id': `${SEO.siteUrl}/#organization` },
-}
-
-const uhuruBreadcrumb = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SEO.siteUrl },
-    { '@type': 'ListItem', position: 2, name: 'Resources', item: `${SEO.siteUrl}/resources/case-studies` },
-    { '@type': 'ListItem', position: 3, name: study.fullName, item: buildCanonical(`/resources/case-studies/${study.slug}`) },
-  ],
-}
+import { useTranslations } from 'next-intl';
 
 export default function UhuruGardensCaseStudyPage() {
+  const tData = useTranslations('CaseStudyData');
+  const localizedStudy = tData.raw(study.slug) as any;
+
+  const uhuruVideoSchema = {
+    '@context':   'https://schema.org',
+    '@type':      'VideoObject',
+    name:         video.title,
+    description:  video.description,
+    thumbnailUrl: `https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`,
+    uploadDate:   '2024-02-15', // Approximate
+    embedUrl:     `https://www.youtube.com/embed/${video.youtubeId}`,
+    publisher:    { '@id': `${SEO.siteUrl}/#organization` },
+  }
+
+  const uhuruCaseStudySchema = {
+    '@context': 'https://schema.org',
+    '@type':    'CreativeWork',
+    name:       localizedStudy.fullName,
+    headline:   localizedStudy.seoTitle,
+    description: localizedStudy.seoDescription,
+    image:      `https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`,
+    author:     { '@id': `${SEO.siteUrl}/#organization` },
+  }
+
+  const uhuruBreadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SEO.siteUrl },
+      { '@type': 'ListItem', position: 2, name: 'Resources', item: `${SEO.siteUrl}/resources/case-studies` },
+      { '@type': 'ListItem', position: 3, name: localizedStudy.fullName, item: buildCanonical(`/resources/case-studies/${study.slug}`) },
+    ],
+  }
   return (
     <main>
       <StructuredData data={[uhuruVideoSchema, uhuruCaseStudySchema, uhuruBreadcrumb]} />
@@ -87,41 +99,37 @@ export default function UhuruGardensCaseStudyPage() {
             <span className="bg-[#F25C1A] text-white text-[9px]
               font-bold tracking-[0.2em] uppercase
               px-2.5 py-1 rounded-full">
-              ★ Flagship project
+              ★ {localizedStudy.heroTagline.split('·')[0]}
             </span>
             <span className="bg-white/6 border border-white/12
               text-white/55 text-[9px] font-semibold
               tracking-[0.15em] uppercase px-2.5 py-1 rounded-full">
-              Heritage & Culture · Kenya
+              {localizedStudy.sector} · {localizedStudy.locationShort}
             </span>
             <span className="bg-[#1635D4]/20 border border-[#1635D4]/35
               text-[#7B9AFF] text-[9px] font-semibold
               tracking-[0.12em] uppercase px-2.5 py-1 rounded-full">
-              Largest LCD video walls in East Africa
+              {localizedStudy.recordClaim}
             </span>
           </div>
 
           {/* H1 */}
           <h1 className="text-[28px] sm:text-[32px] font-semibold
             text-white leading-[1.18] max-w-[640px] mb-4">
-            Uhuru Gardens Museum —{' '}
-            <em className="not-italic text-[#F25C1A]">
-              East Africa&apos;s most significant
-            </em>{' '}
-            cultural AV installation.
+            {localizedStudy.headline}
           </h1>
 
           {/* Subtext */}
           <p className="text-[14px] text-white/50 leading-[1.75]
             max-w-[580px] mb-8">
-            {study.heroParagraph}
+            {localizedStudy.heroParagraph}
           </p>
         </div>
 
         {/* STATS ROW — below headline, above video */}
         <div className="flex border-t border-b border-white/6
           relative z-10">
-          {study.stats.map((stat, i, arr) => (
+          {localizedStudy.stats.map((stat: any, i: number, arr: any[]) => (
             <div
               key={stat.label}
               className={[
@@ -165,7 +173,7 @@ export default function UhuruGardensCaseStudyPage() {
       <section className="px-7 py-12">
         <p className="text-[10px] font-semibold tracking-[0.2em]
           uppercase text-[#1635D4] mb-2">
-          Technical specifications
+          {localizedStudy.ui.technicalSpecs}
         </p>
         <h2 className="text-[20px] font-medium
           text-[var(--color-text-primary)] mb-8">
@@ -173,7 +181,7 @@ export default function UhuruGardensCaseStudyPage() {
         </h2>
 
         <div className="grid grid-cols-2 gap-3.5">
-          {study.specs.map((spec) => (
+          {localizedStudy.specs.map((spec: any) => (
             <div
               key={spec.label}
               className={[
@@ -210,9 +218,9 @@ export default function UhuruGardensCaseStudyPage() {
           <div className="col-span-2 flex flex-col gap-8">
 
             {[
-              { label: 'The challenge', body: study.challenge  },
-              { label: 'Our role',      body: study.ourRole    },
-              { label: 'The result',    body: study.result     },
+              { label: localizedStudy.ui.theChallenge, body: localizedStudy.challenge  },
+              { label: localizedStudy.ui.ourRole,      body: localizedStudy.ourRole    },
+              { label: localizedStudy.ui.theResult,    body: localizedStudy.result     },
             ].map((section) => (
               <div key={section.label}>
                 <p className="text-[10px] font-semibold tracking-[0.2em]
@@ -235,15 +243,15 @@ export default function UhuruGardensCaseStudyPage() {
               border-l-[3px] border-[#F25C1A]">
               <p className="text-[13px] text-white/75 leading-[1.7]
                 italic mb-5">
-                &ldquo;{study.directorQuote}&rdquo;
+                &ldquo;{localizedStudy.directorQuote}&rdquo;
               </p>
               <div>
                 <p className="text-[12px] font-medium text-white">
-                  {study.directorName}
+                  {localizedStudy.directorName}
                 </p>
                 <p className="text-[10px] text-white/35 mt-0.5
                   leading-[1.5]">
-                  {study.directorTitle}
+                  {localizedStudy.directorTitle}
                 </p>
               </div>
             </div>
@@ -254,17 +262,17 @@ export default function UhuruGardensCaseStudyPage() {
               rounded-xl p-5">
               <p className="text-[9px] font-bold tracking-[0.18em]
                 uppercase text-[var(--color-text-secondary)] mb-4">
-                Delivered with
+                {localizedStudy.ui.technologyPartners}
               </p>
               <div className="flex flex-col gap-3">
-                {study.partners.map((partner) => (
+                {localizedStudy.partners.map((partner: any, i: number) => (
                   <div
                     key={partner.name}
                     className="flex items-start gap-3"
                   >
                     <div
                       className="w-2 h-2 rounded-full mt-1.5 flex-shrink-0"
-                      style={{ background: partner.dotColor }}
+                      style={{ background: study.partners[i]?.dotColor || '#000' }}
                     />
                     <div>
                       <p className="text-[13px] font-medium
@@ -290,10 +298,10 @@ export default function UhuruGardensCaseStudyPage() {
                 Project details
               </p>
               {[
-                { label: 'Client',    value: study.client        },
-                { label: 'Location',  value: study.location      },
+                { label: 'Client',    value: localizedStudy.client        },
+                { label: 'Location',  value: localizedStudy.location      },
                 { label: 'Value',     value: study.projectValue  },
-                { label: 'Sector',    value: study.sector        },
+                { label: 'Sector',    value: localizedStudy.sector        },
                 { label: 'Completed', value: study.completedYear },
               ].map((row) => (
                 <div key={row.label}
@@ -373,7 +381,7 @@ export default function UhuruGardensCaseStudyPage() {
             hover:text-[#1635D4] transition-colors duration-150
             flex items-center gap-1.5"
         >
-          ← All case studies
+          {localizedStudy.ui.backToAll}
         </Link>
       </div>
     </main>

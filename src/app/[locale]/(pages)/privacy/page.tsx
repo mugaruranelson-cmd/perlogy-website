@@ -4,10 +4,14 @@ import { useTranslations } from 'next-intl'
 import { AccentBar } from '@/components/ui/AccentBar'
 import { StructuredData } from '@/components/seo/StructuredData'
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
-  // We can load translations for metadata if needed, but for now we'll keep it simple
+import { getTranslations } from 'next-intl/server';
+
+export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
+  const params = await props.params;
+  const { locale } = params;
+  const t = await getTranslations({ locale, namespace: 'Metadata.privacy' });
   return {
-    title: 'Privacy Policy | Perlogy Technologies LLC',
+    title: t('title'),
     description: 'How we collect and protect your data at Perlogy Technologies LLC. Information on data collection, use, and user rights.',
     alternates: { canonical: buildCanonical('/privacy') },
   }

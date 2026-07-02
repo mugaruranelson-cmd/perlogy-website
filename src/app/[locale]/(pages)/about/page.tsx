@@ -37,24 +37,21 @@ const milestones = [
 ];
 
 import type { Metadata } from "next";
+import { buildTitle } from '@/lib/seo-config';
 import { buildCanonical, SEO } from '@/lib/seo-config'
 import { StructuredData } from '@/components/seo/StructuredData'
 
-export const metadata: Metadata = {
-  title: 'About Perlogy Technologies | B2B AV Distributor Nairobi, Kenya',
-  description:
-    'Perlogy Technologies is a B2B ProAV distribution company based in ' +
-    'Nairobi, Kenya. Founded to serve Africa\'s system integrators with ' +
-    'authorised LG & Unilumin supply, technical support, and zero direct sales. ' +
-    'Director: Nelson Mandela Mugarura MBA MSc.',
-  alternates: { canonical: buildCanonical('/about') },
-  openGraph: {
-    title: 'About Perlogy Technologies | ProAV Distributor Built for Africa',
-    description:
-      'Based in Nairobi, Kenya — focused on all of Africa. The story behind ' +
-      'East Africa\'s most significant ProAV distribution partner.',
-    url: buildCanonical('/about'),
-  },
+import { getTranslations } from 'next-intl/server';
+
+export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
+  const params = await props.params;
+  const { locale } = params;
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+  return {
+    title: buildTitle(t('about.title')),
+    description: t('about.description'),
+  };
 }
 
 const personSchema = {

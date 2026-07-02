@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { buildCanonical, SEO } from '@/lib/seo-config'
+import { buildCanonical, buildTitle, SEO } from '@/lib/seo-config'
 import { StructuredData } from '@/components/seo/StructuredData'
 import Image from "next/image";
 import SectionTag from "@/components/ui/SectionTag";
@@ -8,22 +8,24 @@ import SIBanner from "@/components/ui/SIBanner";
 import Button from "@/components/ui/Button";
 import airportHeroImg from "../../../../../../public/images/solutions/airport-fids.webp";
 
-// ── Metadata ────────────────────────────────────────────────────────────────
-export const metadata: Metadata = {
-  title: 'Airport FIDS & Terminal Display Systems Africa | Perlogy',
-  description:
-    'Perlogy supplies Flight Information Display Systems (FIDS), passenger ' +
-    'wayfinding, and terminal AV for international airports across Kenya, ' +
-    'Nigeria, Ethiopia, and East Africa. Authorised Unilumin & LG distributor.',
-  alternates: { canonical: buildCanonical('/solutions/airports') },
-  openGraph: {
-    title: 'Airport FIDS & Terminal Display Systems Africa | Perlogy',
-    description:
-      'High-visibility FIDS, wayfinding, and passenger information displays ' +
-      'for Africa\'s fastest-growing international airports.',
-    url: buildCanonical('/solutions/airports'),
-    images: [{ url: '/opengraph-image.png', width: 1200, height: 630 }],
-  },
+import { getTranslations } from 'next-intl/server';
+
+export async function generateMetadata(props: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const params = await props.params;
+  const { locale } = params;
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+  return {
+    title: buildTitle(t('solutionsAirports.title')),
+    description: t('solutionsAirports.description'),
+    alternates: { canonical: buildCanonical('/solutions/airports') },
+    openGraph: {
+      title: buildTitle(t('solutionsAirports.title')),
+      description: t('solutionsAirports.description'),
+      url: buildCanonical('/solutions/airports'),
+      images: [{ url: '/opengraph-image.png', width: 1200, height: 630 }],
+    },
+  };
 }
 
 // ── Structured Data ─────────────────────────────────────────────────────────
