@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
 import Logo from "@/components/ui/Logo";
+import AnnouncementBanner from "@/components/layout/AnnouncementBanner";
 
 /* ── Nav data ───────────────────────────────────── */
 const solutions = [
@@ -63,6 +64,7 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 accent-bar">
+      <AnnouncementBanner />
       {/* ── Main bar ── */}
       <nav
         className={`backdrop-blur-md border-b transition-all duration-300 ${

@@ -323,6 +323,55 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ─── Leadership Team (Placeholder) ─── */}
+      <section className="bg-white px-4 py-16 lg:px-8">
+        <div className="mx-auto max-w-5xl">
+          <SectionTag>Leadership</SectionTag>
+          <h2 className="mt-4 text-2xl font-extrabold text-brand-navy sm:text-3xl">
+            Meet the Team
+          </h2>
+          <p className="mt-4 max-w-2xl text-brand-gray-muted leading-relaxed">
+            The visionary leaders driving Perlogy's mission across Africa.
+          </p>
+
+          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {/* Nelson Mugarura */}
+            <div className="flex flex-col items-center text-center">
+              <div className="relative h-48 w-48 rounded-full border border-brand-blue/10 mb-4 overflow-hidden shadow-sm">
+                <Image 
+                  src="/images/people/nelson.JPG" 
+                  alt="Nelson Mugarura, Founder & Shareholder" 
+                  fill 
+                  className="object-cover" 
+                />
+              </div>
+              <h3 className="text-xl font-bold text-brand-navy">Nelson Mugarura</h3>
+              <p className="text-brand-blue font-medium mt-1">Founder & Shareholder</p>
+              <p className="mt-3 text-sm text-brand-gray-text leading-relaxed">
+                As the Founder of Perlogy Technologies, Nelson provides strategic direction, corporate governance, and long-term business development, ensuring the company remains Africa's trusted value-added distributor.
+              </p>
+            </div>
+            
+            {/* Franklin Ogonji Omondi */}
+            <div className="flex flex-col items-center text-center">
+              <div className="relative h-48 w-48 rounded-full border border-brand-blue/10 mb-4 overflow-hidden shadow-sm">
+                <Image 
+                  src="/images/people/frank.jpeg" 
+                  alt="Franklin Ogonji Omondi, Managing Director" 
+                  fill 
+                  className="object-cover" 
+                />
+              </div>
+              <h3 className="text-xl font-bold text-brand-navy">Franklin Ogonji Omondi</h3>
+              <p className="text-brand-blue font-medium mt-1">Managing Director</p>
+              <p className="mt-3 text-sm text-brand-gray-text leading-relaxed">
+                With 14+ years of experience in enterprise technology across Africa, Franklin leads Perlogy's commercial operations, customer engagement, and strategic execution to drive sustainable business growth.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ─── SIBanner ─── */}
       <div className="mx-auto max-w-5xl px-4 py-16 lg:px-8">
         <SIBanner
