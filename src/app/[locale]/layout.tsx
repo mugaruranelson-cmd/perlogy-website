@@ -44,10 +44,6 @@ export const metadata: Metadata = {
 
   description: SEO.defaultDescription,
 
-  alternates: {
-    canonical: '/',
-  },
-
   openGraph: {
     type:        'website',
     locale:      SEO.locale,

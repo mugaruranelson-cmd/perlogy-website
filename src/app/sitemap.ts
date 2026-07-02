@@ -9,105 +9,68 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = SEO.siteUrl
   const cases = getAllCaseStudies()
 
-  const staticPages: MetadataRoute.Sitemap = [
-    // Tier 1: Homepage
-    {
-      url:             `${base}/`,
-      lastModified:    SITE_LAST_UPDATED,
-      changeFrequency: 'weekly',
-      priority:        1.0,
-    },
-    // Tier 2: Core sections
-    {
-      url:             `${base}/about`,
-      lastModified:    SITE_LAST_UPDATED,
-      changeFrequency: 'monthly',
-      priority:        0.9,
-    },
-    {
-      url:             `${base}/solutions`,
-      lastModified:    SITE_LAST_UPDATED,
-      changeFrequency: 'monthly',
-      priority:        0.9,
-    },
-    {
-      url:             `${base}/brands`,
-      lastModified:    SITE_LAST_UPDATED,
-      changeFrequency: 'monthly',
-      priority:        0.9,
-    },
-    {
-      url:             `${base}/partners`,
-      lastModified:    SITE_LAST_UPDATED,
-      changeFrequency: 'monthly',
-      priority:        0.9,
-    },
-    {
-      url:             `${base}/resources/case-studies`,
-      lastModified:    SITE_LAST_UPDATED,
-      changeFrequency: 'weekly',
-      priority:        0.9,
-    },
-    // Tier 3: Solution verticals
-    {
-      url:             `${base}/solutions/hospitality`,
-      lastModified:    SITE_LAST_UPDATED,
-      changeFrequency: 'monthly',
-      priority:        0.8,
-    },
-    {
-      url:             `${base}/solutions/digital-signage`,
-      lastModified:    SITE_LAST_UPDATED,
-      changeFrequency: 'monthly',
-      priority:        0.8,
-    },
-    {
-      url:             `${base}/solutions/airports`,
-      lastModified:    SITE_LAST_UPDATED,
-      changeFrequency: 'monthly',
-      priority:        0.7,
-    },
-    {
-      url:             `${base}/solutions/corporate-av`,
-      lastModified:    SITE_LAST_UPDATED,
-      changeFrequency: 'monthly',
-      priority:        0.7,
-    },
-    // Tier 4: Partner and contact
-    {
-      url:             `${base}/partners/apply`,
-      lastModified:    SITE_LAST_UPDATED,
-      changeFrequency: 'monthly',
-      priority:        0.8,
-    },
-    {
-      url:             `${base}/contact`,
-      lastModified:    SITE_LAST_UPDATED,
-      changeFrequency: 'yearly',
-      priority:        0.7,
-    },
-    // Tier 5: Legal
-    {
-      url:             `${base}/privacy`,
-      lastModified:    SITE_LAST_UPDATED,
-      changeFrequency: 'yearly',
-      priority:        0.3,
-    },
-    {
-      url:             `${base}/terms`,
-      lastModified:    SITE_LAST_UPDATED,
-      changeFrequency: 'yearly',
-      priority:        0.3,
-    },
+  const staticRoutes = [
+    { path: '/', freq: 'weekly', priority: 1.0 },
+    { path: '/about', freq: 'monthly', priority: 0.9 },
+    { path: '/solutions', freq: 'monthly', priority: 0.9 },
+    { path: '/brands', freq: 'monthly', priority: 0.9 },
+    { path: '/partners', freq: 'monthly', priority: 0.9 },
+    { path: '/resources/case-studies', freq: 'weekly', priority: 0.9 },
+    { path: '/solutions/hospitality', freq: 'monthly', priority: 0.8 },
+    { path: '/solutions/digital-signage', freq: 'monthly', priority: 0.8 },
+    { path: '/solutions/airports', freq: 'monthly', priority: 0.7 },
+    { path: '/solutions/corporate-av', freq: 'monthly', priority: 0.7 },
+    { path: '/partners/apply', freq: 'monthly', priority: 0.8 },
+    { path: '/contact', freq: 'yearly', priority: 0.7 },
+    { path: '/privacy', freq: 'yearly', priority: 0.3 },
+    { path: '/terms', freq: 'yearly', priority: 0.3 },
   ]
 
-  // Dynamic case study pages
-  const caseStudyPages: MetadataRoute.Sitemap = cases.map((study) => ({
-    url:             `${base}/resources/case-studies/${study.slug}`,
-    lastModified:    SITE_LAST_UPDATED,
-    changeFrequency: 'monthly' as const,
-    priority:        study.isFlagship ? 0.95 : 0.85,
-  }))
+  const sitemapEntries: MetadataRoute.Sitemap = []
 
-  return [...staticPages, ...caseStudyPages]
+  // Helper to push both en and fr entries for a given path
+  const addRoute = (path: string, freq: string, priority: number) => {
+    const isRoot = path === '/'
+    const enUrl = `${base}${isRoot ? '' : path}`
+    const frUrl = `${base}/fr${isRoot ? '' : path}`
+
+    const alternates = {
+      languages: {
+        en: enUrl,
+        fr: frUrl,
+      },
+    }
+
+    sitemapEntries.push({
+      url: enUrl,
+      lastModified: SITE_LAST_UPDATED,
+      changeFrequency: freq as any,
+      priority,
+      alternates,
+    })
+
+    sitemapEntries.push({
+      url: frUrl,
+      lastModified: SITE_LAST_UPDATED,
+      changeFrequency: freq as any,
+      priority,
+      alternates,
+    })
+  }
+
+  // Add static routes
+  staticRoutes.forEach((route) => {
+    addRoute(route.path, route.freq, route.priority)
+  })
+
+  // Add dynamic case study routes
+  cases.forEach((study) => {
+    addRoute(
+      `/resources/case-studies/${study.slug}`,
+      'monthly',
+      study.isFlagship ? 0.95 : 0.85
+    )
+  })
+
+  return sitemapEntries
 }
