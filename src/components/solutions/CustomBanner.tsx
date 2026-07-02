@@ -1,6 +1,8 @@
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 export function CustomBanner() {
+  const t = useTranslations('Solutions')
   return (
     <div className="max-w-7xl mx-auto px-7">
       <div
@@ -28,12 +30,10 @@ export function CustomBanner() {
         {/* Left: copy */}
         <div className="relative z-10 w-full md:max-w-[440px] text-center md:text-left">
           <h2 className="text-[20px] font-semibold text-white mb-2">
-            Need a custom solution?
+            {t('bannerTitle')}
           </h2>
           <p className="text-[13px] text-white/50 leading-[1.7]">
-            Our team designs and delivers end-to-end AV and signage
-            systems tailored to your sector — working with you and your
-            SI partner from specification through commissioning.
+            {t('bannerDesc')}
           </p>
         </div>
 
@@ -46,10 +46,10 @@ export function CustomBanner() {
           <div className="hidden md:block text-right mb-1">
             <span className="text-[28px] font-medium text-white
               leading-none block">
-              24h
+              {t('bannerStatNum')}
             </span>
             <span className="text-[10px] text-white/35 block mt-0.5">
-              Response guaranteed on every enquiry
+              {t('bannerStatDesc')}
             </span>
           </div>
 
@@ -64,7 +64,7 @@ export function CustomBanner() {
                 'transition-all duration-150 whitespace-nowrap',
               ].join(' ')}
             >
-              Talk to our team →
+              {t('bannerBtnPrimary')}
             </Link>
 
             {/* Secondary CTA */}
@@ -77,7 +77,7 @@ export function CustomBanner() {
                 'transition-all duration-150 whitespace-nowrap',
               ].join(' ')}
             >
-              Find an SI partner
+              {t('bannerBtnSecondary')}
             </Link>
           </div>
         </div>

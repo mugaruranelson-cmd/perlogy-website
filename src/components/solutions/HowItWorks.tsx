@@ -1,3 +1,5 @@
+import { useTranslations } from 'next-intl'
+
 const STEPS = [
   {
     num:   '01',
@@ -30,17 +32,19 @@ const STEPS = [
 ] as const
 
 export function HowItWorks() {
+  const t = useTranslations('Solutions')
+
   return (
     <section className="max-w-7xl mx-auto px-7 pb-12">
 
       {/* Section header */}
       <p className="text-[10px] font-semibold tracking-[0.2em] uppercase
         text-[#1635D4] mb-2">
-        How it works
+        {t('hiwTag')}
       </p>
       <h2 className="text-[20px] font-medium
         text-brand-navy mb-6">
-        From specification to commissioning — through your SI partner.
+        {t('hiwTitle')}
       </h2>
 
       {/* Steps grid */}
@@ -69,13 +73,13 @@ export function HowItWorks() {
             {/* Title */}
             <h4 className="text-[13px] font-semibold
               text-brand-navy mb-1.5">
-              {step.title}
+              {t(`hiwStep${i + 1}Title`)}
             </h4>
 
             {/* Body */}
             <p className="text-[11px] text-brand-gray-text
               leading-[1.65]">
-              {step.body}
+              {t(`hiwStep${i + 1}Desc`)}
             </p>
 
             {/* Arrow connector between steps (not after last). Hidden below lg. */}

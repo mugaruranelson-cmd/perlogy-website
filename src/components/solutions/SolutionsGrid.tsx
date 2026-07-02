@@ -9,12 +9,15 @@ import {
 import { FeaturedSolutionCard } from './FeaturedSolutionCard'
 import { StandardSolutionCard } from './StandardSolutionCard'
 import { MiniSolutionCard } from './MiniSolutionCard'
+import { useTranslations } from 'next-intl'
 
 interface SolutionsGridProps {
   activeFilter: string
 }
 
 export function SolutionsGrid({ activeFilter }: SolutionsGridProps) {
+  const t = useTranslations('Solutions')
+  
   const featured  = getFeaturedSolution()
   const standards = getStandardSolutions()
   const minis     = getMiniSolutions()
@@ -30,16 +33,15 @@ export function SolutionsGrid({ activeFilter }: SolutionsGridProps) {
       <div className="mb-7">
         <p className="text-[10px] font-semibold tracking-[0.2em] uppercase
           text-[#1635D4] mb-2">
-          Our verticals
+          {t('gridTag')}
         </p>
         <h2 className="text-[20px] font-medium
           text-brand-navy mb-1.5">
-          Choose a sector to explore.
+          {t('gridTitle')}
         </h2>
         <p className="text-[13px] text-brand-gray-text
           leading-[1.65] max-w-[480px]">
-          Each vertical has dedicated brands, proven projects,
-          and SI partners who specialise in it.
+          {t('gridDesc')}
         </p>
       </div>
 

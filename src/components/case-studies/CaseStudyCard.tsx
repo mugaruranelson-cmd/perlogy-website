@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { getYouTubeThumbnail } from '@/lib/project-videos'
 import type { CaseStudy } from '@/lib/case-studies-data'
+import { useTranslations } from 'next-intl'
 
 interface CaseStudyCardProps {
   study:       CaseStudy
@@ -15,6 +16,7 @@ export function CaseStudyCard({
   featured = false,
   highlighted = false,
 }: CaseStudyCardProps) {
+  const t = useTranslations('CaseStudies')
   const thumbnail = videoId
     ? getYouTubeThumbnail(videoId, 'hq')
     : null
@@ -45,7 +47,7 @@ export function CaseStudyCard({
           <div className="flex items-center gap-2 flex-wrap mb-4">
             <span className="text-[9px] font-bold tracking-[0.18em]
               uppercase text-white bg-[#F25C1A] px-2.5 py-1 rounded-full">
-              ★ Flagship project
+              {t('cardFlagshipTag')}
             </span>
             <span className="text-[9px] font-semibold tracking-[0.15em]
               uppercase text-white/50 bg-white/6 border border-white/12
@@ -103,7 +105,7 @@ export function CaseStudyCard({
           </p>
           <span className="text-[12px] font-medium text-[#1635D4]
             group-hover:translate-x-0.5 transition-transform duration-150">
-            Read case study →
+            {t('cardReadCaseStudy')}
           </span>
         </div>
       </Link>
@@ -146,7 +148,7 @@ export function CaseStudyCard({
       <div className="p-5">
         {highlighted && (
           <span className="inline-block bg-brand-orange text-white text-[8px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full mb-3 shadow-sm">
-            Landmark Remote Support
+            {t('cardLandmark')}
           </span>
         )}
         <h3 className="text-[14px] font-semibold
@@ -184,7 +186,7 @@ export function CaseStudyCard({
         </span>
         <span className="text-[11px] font-medium text-[#1635D4]
           group-hover:translate-x-0.5 transition-transform duration-150">
-          Read →
+          {t('cardRead')}
         </span>
       </div>
     </Link>

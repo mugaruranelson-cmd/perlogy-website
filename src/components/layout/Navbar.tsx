@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
 import Logo from "@/components/ui/Logo";
 import AnnouncementBanner from "@/components/layout/AnnouncementBanner";
+import { useTranslations } from "next-intl";
 
 /* ── Nav data ───────────────────────────────────── */
 const solutions = [
@@ -15,22 +16,23 @@ const solutions = [
   { label: "Corporate AV", href: "/solutions/corporate-av" },
 ];
 
-const navLinks = [
-  { label: "About", href: "/about" },
-  { label: "Solutions", href: "/solutions", children: solutions },
-  { label: "Brands", href: "/brands" },
-  { label: "Partners", href: "/partners" },
-  { label: "Case Studies", href: "/resources/case-studies" },
-  { label: "Contact", href: "/contact" },
-];
 
 /* ── Component ──────────────────────────────────── */
 export default function Navbar() {
   const pathname = usePathname();
+  const t = useTranslations("Navbar");
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const dropdownRef = useRef<HTMLLIElement>(null);
+
+  const navLinks = [
+    { label: t("home"), href: "/" },
+    { label: t("about"), href: "/about" },
+    { label: t("services"), href: "/solutions", children: solutions },
+    { label: t("news"), href: "/news/leadership-update" },
+    { label: t("contact"), href: "/contact" },
+  ];
 
   // Track scroll position for floating nav effect
   useEffect(() => {

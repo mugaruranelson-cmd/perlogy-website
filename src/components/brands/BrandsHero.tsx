@@ -2,8 +2,10 @@
 
 import { Suspense } from 'react'
 import { LogoWall } from './LogoWall'
+import { useTranslations } from 'next-intl'
 
 export function BrandsHero() {
+  const t = useTranslations('Brands')
   return (
     <section className="relative bg-brand-navy overflow-hidden">
 
@@ -43,33 +45,31 @@ export function BrandsHero() {
             rounded-full px-3 py-1">
             <div className="w-1.5 h-1.5 rounded-full bg-[#F25C1A]" />
             <span className="text-[10px] text-[#7B9AFF] tracking-[0.15em] uppercase font-medium">
-              Brand portfolio
+              {t('heroTag')}
             </span>
           </div>
 
           {/* H1 */}
           <h1 className="text-[24px] sm:text-[28px] lg:text-[32px] font-medium text-white
             leading-[1.18] mb-3 max-w-[500px]">
-            14 world-class brands.{' '}
+            {t('heroTitle1')}{' '}
             <em className="not-italic text-[#7B9AFF]">
-              One trusted African distribution partner.
+              {t('heroTitle2')}
             </em>
           </h1>
 
           {/* Subtext */}
           <p className="text-[13px] text-white/50 leading-[1.75] mb-5 max-w-full lg:max-w-[420px]">
-            Authorised distribution of LG Electronics, Unilumin and Lampro, plus 11 leading
-            ProAV and ICT brands — available exclusively through Perlogy&apos;s SI
-            partner network across English-speaking Africa.
+            {t('heroDesc')}
           </p>
 
           {/* Geographic scope pills */}
           <div className="flex flex-wrap gap-2 mb-7">
             {[
-              { label: 'East Africa',     accent: false },
-              { label: 'West Africa',     accent: false },
-              { label: 'Southern Africa', accent: false },
-              { label: 'English-speaking only', accent: true },
+              { label: t('geoEastAfrica'),     accent: false },
+              { label: t('geoWestAfrica'),     accent: false },
+              { label: t('geoSouthernAfrica'), accent: false },
+              { label: t('geoEnglishSpeaking'), accent: true },
             ].map(({ label, accent }) => (
               <div
                 key={label}
@@ -102,7 +102,7 @@ export function BrandsHero() {
                 text-white text-[13px] font-medium w-full sm:w-auto
                 px-5 py-2.5 rounded-lg transition-all duration-150"
             >
-              Become a partner
+              {t('btnBecomePartner')}
               <span className="text-white/70">→</span>
             </a>
             <a
@@ -112,7 +112,7 @@ export function BrandsHero() {
                 text-white/70 hover:text-white text-[13px] font-medium
                 px-5 py-2.5 rounded-lg transition-all duration-150"
             >
-              Ask about a brand
+              {t('btnAskAboutBrand')}
             </a>
           </div>
         </div>

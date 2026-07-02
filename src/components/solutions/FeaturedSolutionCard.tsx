@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { SolutionIcon } from './SolutionIcon'
 import type { SolutionVertical } from '@/lib/solutions-data'
+import { useTranslations } from 'next-intl'
 
 interface FeaturedSolutionCardProps {
   solution: SolutionVertical
@@ -11,6 +12,7 @@ export function FeaturedSolutionCard({
   solution,
   visible,
 }: FeaturedSolutionCardProps) {
+  const t = useTranslations('Solutions')
   if (!visible) return null
 
   return (
@@ -42,7 +44,7 @@ export function FeaturedSolutionCard({
         {/* Vertical tag */}
         <p className="text-[9px] font-bold tracking-[0.2em] uppercase
           text-[#F25C1A] mb-4 relative z-10">
-          {solution.tagline}
+          {t(`${solution.id}Tagline`)}
         </p>
 
         {/* Icon */}
@@ -58,13 +60,13 @@ export function FeaturedSolutionCard({
         {/* Headline */}
         <h3 className="text-[22px] font-semibold text-white
           mb-3 relative z-10">
-          {solution.headline}
+          {t(`${solution.id}Headline`)}
         </h3>
 
         {/* Description */}
         <p className="text-[13px] text-white/50 leading-[1.7]
           mb-6 max-w-[340px] relative z-10">
-          {solution.description}
+          {t(`${solution.id}Desc`)}
         </p>
 
         {/* CTA */}
@@ -79,7 +81,7 @@ export function FeaturedSolutionCard({
             'hover:bg-[#1635D4]/20 hover:border-[#1635D4]/60',
           ].join(' ')}
         >
-          Explore {solution.headline}
+          {t('gridExplore', { headline: t(`${solution.id}Headline`) })}
           <span
             className="transition-transform duration-150
               group-hover:translate-x-0.5"
@@ -96,7 +98,7 @@ export function FeaturedSolutionCard({
         {/* Panel label */}
         <p className="text-[9px] font-bold tracking-[0.2em] uppercase
           text-[#F25C1A] mb-1">
-          What we supply
+          {t('gridWhatWeSupply')}
         </p>
 
         {/* Product rows */}
@@ -136,7 +138,7 @@ export function FeaturedSolutionCard({
             'bg-[#F25C1A]/10 border border-[#F25C1A]/25',
             'rounded-full px-2.5 py-1',
           ].join(' ')}>
-            {solution.authorityNote}
+            {t(`${solution.id}AuthorityNote`)}
           </div>
         )}
       </div>

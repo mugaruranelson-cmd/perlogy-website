@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { SolutionIcon } from './SolutionIcon'
 import type { SolutionVertical } from '@/lib/solutions-data'
+import { useTranslations } from 'next-intl'
 
 interface StandardSolutionCardProps {
   solution: SolutionVertical
@@ -11,6 +12,7 @@ export function StandardSolutionCard({
   solution,
   visible,
 }: StandardSolutionCardProps) {
+  const t = useTranslations('Solutions')
   if (!visible) return null
 
   return (
@@ -27,7 +29,7 @@ export function StandardSolutionCard({
         {/* Category tag */}
         <p className="text-[9px] font-semibold tracking-[0.18em] uppercase
           text-brand-gray-muted mb-3">
-          {solution.tagline}
+          {t(`${solution.id}Tagline`)}
         </p>
 
         {/* Icon */}
@@ -43,13 +45,13 @@ export function StandardSolutionCard({
         {/* Headline */}
         <h3 className="text-[16px] font-semibold
           text-brand-navy mb-2">
-          {solution.headline}
+          {t(`${solution.id}Headline`)}
         </h3>
 
         {/* Description */}
         <p className="text-[12px] text-brand-gray-text
           leading-[1.65] mb-4">
-          {solution.description}
+          {t(`${solution.id}Desc`)}
         </p>
       </div>
 
@@ -88,7 +90,7 @@ export function StandardSolutionCard({
             'flex-shrink-0 transition-transform duration-150',
             'group-hover:translate-x-0.5',
           ].join(' ')}
-          aria-label={`Explore ${solution.headline} solutions`}
+          aria-label={`Explore ${t(`${solution.id}Headline`)} solutions`}
         >
           →
         </Link>

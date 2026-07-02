@@ -1,15 +1,18 @@
 // Server component — no interactivity needed
 import React from 'react'
-
-const STATS = [
-  { num: '11',     label: 'Partner brands'        },
-  { num: '3',      label: 'Authorised reps'        },
-  { num: '5',      label: 'Tech categories'        },
-  { num: '3',      label: 'African regions'        },
-  { num: 'SI only', label: 'No direct sales, ever' },
-] as const
+import { useTranslations } from 'next-intl'
 
 export function BrandsStatsBar() {
+  const t = useTranslations('Brands')
+
+  const STATS = [
+    { num: t('stat1Num'),     label: t('stat1Label')        },
+    { num: t('stat2Num'),     label: t('stat2Label')        },
+    { num: t('stat3Num'),     label: t('stat3Label')        },
+    { num: t('stat4Num'),     label: t('stat4Label')        },
+    { num: t('stat5Num'),     label: t('stat5Label')        },
+  ]
+
   return (
     <div className="flex items-stretch bg-[#0a1630] border-b border-white/6 overflow-x-auto sm:overflow-x-visible">
       {STATS.map((stat, i) => (

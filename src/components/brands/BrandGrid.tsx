@@ -8,9 +8,11 @@ import Button from '@/components/ui/Button'
 import { clsx } from 'clsx'
 import { useRouter } from 'next/navigation'
 import { PROJECT_VIDEOS } from '@/lib/project-videos'
+import { useTranslations } from 'next-intl'
 
 export function BrandGrid() {
   const router = useRouter()
+  const t = useTranslations('Brands')
   const [activeFilter, setActiveFilter] = useState<BrandCategory | 'all'>('all')
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null)
 
@@ -56,7 +58,7 @@ export function BrandGrid() {
                 : "bg-transparent text-brand-gray-text border-brand-gray-border hover:border-brand-blue hover:text-brand-blue"
             )}
           >
-            All brands (13)
+            {t('gridAllBrands', { count: BRANDS.length })}
           </button>
           
           {ALL_CATEGORIES.map((cat) => (
@@ -70,7 +72,7 @@ export function BrandGrid() {
                   : "bg-transparent text-brand-gray-text border-brand-gray-border hover:border-brand-blue hover:text-brand-blue"
               )}
             >
-              {cat.label} ({cat.count})
+              {t(`cat${cat.id === 'displays-led' ? 'Displays' : cat.id === 'hospitality-tech' ? 'Hospitality' : cat.id === 'audio' ? 'Audio' : cat.id === 'av-connectivity' ? 'AV' : 'Software'}`)} ({cat.count})
             </button>
           ))}
         </div>
@@ -128,7 +130,7 @@ export function BrandGrid() {
                   ))}
                   {brand.products.length > 3 && (
                     <span className="inline-flex rounded-md border border-brand-gray-border bg-gray-50 px-2 py-1 text-[10px] text-brand-gray-text">
-                      +{brand.products.length - 3} more
+                      {t('modalMore', { count: brand.products.length - 3 })}
                     </span>
                   )}
                 </div>
@@ -139,7 +141,7 @@ export function BrandGrid() {
 
         {visibleBrands.length === 0 && (
           <div className="py-20 text-center text-sm text-brand-gray-muted border border-dashed rounded-2xl bg-gray-50">
-            No brands found in this category.
+            {t('gridNoBrands')}
           </div>
         )}
       </section>
@@ -199,14 +201,14 @@ export function BrandGrid() {
                 </div>
               )}
 
-              <h4 className="text-xs font-bold uppercase tracking-wider text-brand-gray-muted mb-2">About the brand</h4>
+              <h4 className="text-xs font-bold uppercase tracking-wider text-brand-gray-muted mb-2">{t('modalAbout')}</h4>
               <p className="text-sm leading-relaxed text-brand-gray-text">
                 {activeBrandData.fullDescription}
               </p>
 
               <div className="mt-8 grid gap-6 sm:grid-cols-2">
                 <div>
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-brand-gray-muted mb-3">Key Technologies</h4>
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-brand-gray-muted mb-3">{t('modalKeyTech')}</h4>
                   <ul className="flex flex-col gap-2">
                     {activeBrandData.products.map((p) => (
                       <li key={p} className="flex items-center gap-2 text-sm text-brand-gray-text">
@@ -220,7 +222,7 @@ export function BrandGrid() {
                     <div className="mt-6 mb-2">
                       <p className="text-[10px] font-bold tracking-[0.18em] uppercase
                         text-brand-orange mb-3">
-                        Flagship reference project
+                        {t('modalFlagship')}
                       </p>
                       <a
                         href="/resources/case-studies/uhuru-gardens-museum"
@@ -246,10 +248,10 @@ export function BrandGrid() {
                         {/* Details */}
                         <div className="flex-1 min-w-0">
                           <p className="text-[11px] font-bold text-white truncate">
-                            Uhuru Gardens Museum, Nairobi
+                            {t('modalProjectName')}
                           </p>
                           <p className="text-[10px] text-white/50 mt-1">
-                            USD 1.4M · Largest LCD video walls in East Africa
+                            {t('modalProjectDesc')}
                           </p>
                         </div>
 
@@ -264,7 +266,7 @@ export function BrandGrid() {
                 </div>
                 
                 <div>
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-brand-gray-muted mb-3">Availability</h4>
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-brand-gray-muted mb-3">{t('modalAvail')}</h4>
                   <div className="rounded-lg border-l-4 border-brand-blue bg-brand-light-blue-bg p-4 flex flex-col h-full justify-center">
                     <p className="text-sm text-brand-navy">
                       {activeBrandData.geoScope}
@@ -280,7 +282,7 @@ export function BrandGrid() {
                 variant="outline-dark" 
                 onClick={() => setSelectedBrand(null)}
               >
-                Close
+                {t('modalClose')}
               </Button>
               <Button 
                 variant="primary" 
@@ -289,7 +291,7 @@ export function BrandGrid() {
                   router.push(`/contact?brand=${activeBrandData.id}`);
                 }}
               >
-                Enquire about {activeBrandData.name} →
+                {t('modalEnquire', { brand: activeBrandData.name })}
               </Button>
             </div>
           </div>

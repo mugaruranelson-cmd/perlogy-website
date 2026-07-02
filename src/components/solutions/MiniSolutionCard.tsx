@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { SolutionIcon } from './SolutionIcon'
 import type { SolutionVertical } from '@/lib/solutions-data'
+import { useTranslations } from 'next-intl'
 
 interface MiniSolutionCardProps {
   solution: SolutionVertical
@@ -11,6 +12,7 @@ export function MiniSolutionCard({
   solution,
   visible,
 }: MiniSolutionCardProps) {
+  const t = useTranslations('Solutions')
   if (!visible) return null
 
   return (
@@ -34,19 +36,19 @@ export function MiniSolutionCard({
       {/* Category tag */}
       <p className="text-[9px] font-semibold tracking-[0.18em] uppercase
         text-brand-gray-muted mb-1.5">
-        {solution.tagline}
+        {t(`${solution.id}Tagline`)}
       </p>
 
       {/* Headline */}
       <h4 className="text-[13px] font-semibold
         text-brand-navy mb-1.5">
-        {solution.headline}
+        {t(`${solution.id}Headline`)}
       </h4>
 
       {/* Description */}
       <p className="text-[11px] text-brand-gray-text
         leading-[1.6] mb-3">
-        {solution.description}
+        {t(`${solution.id}Desc`)}
       </p>
 
       {/* Link */}
@@ -57,7 +59,7 @@ export function MiniSolutionCard({
           'text-[11px] font-medium text-[#1635D4]',
         ].join(' ')}
       >
-        Explore
+        {t('gridExplore', { headline: '' }).trim()}
         <span
           className="transition-transform duration-150
             group-hover:translate-x-0.5"

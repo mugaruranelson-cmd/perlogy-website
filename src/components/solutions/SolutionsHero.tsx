@@ -2,10 +2,19 @@
 
 import { useState } from 'react'
 import { SolutionsGrid } from './SolutionsGrid'
-import { ALL_FILTER_TABS } from '@/lib/solutions-data'
+import { useTranslations } from 'next-intl'
 
 export function SolutionsHero() {
+  const t = useTranslations('Solutions')
   const [activeFilter, setActiveFilter] = useState<string>('all')
+
+  const filterTabs = [
+    { id: 'all', label: t('tabAll') },
+    { id: 'hospitality', label: t('tabHospitality') },
+    { id: 'signage', label: t('tabSignage') },
+    { id: 'airports', label: t('tabAirports') },
+    { id: 'corporate', label: t('tabCorporate') },
+  ]
 
   return (
     <>
@@ -46,7 +55,7 @@ export function SolutionsHero() {
             <div className="w-1.5 h-1.5 rounded-full bg-[#F25C1A]" />
             <span className="text-[10px] text-[#7B9AFF] tracking-[0.15em]
               uppercase font-medium">
-              Solutions
+              {t('heroTag')}
             </span>
           </div>
 
@@ -56,18 +65,15 @@ export function SolutionsHero() {
               that uses 600 weight. All other headings: 500.   */}
           <h1 className="text-[24px] sm:text-[28px] lg:text-[32px] font-semibold text-white
             leading-[1.2] max-w-[620px] mx-auto mb-4">
-            B2B ProAV & ICT Solutions for Africa&apos;s{' '}
-            <em className="not-italic text-[#F25C1A]">fastest-growing</em>{' '}
-            sectors.
+            {t.rich('heroTitle', {
+              highlight: (chunks) => <em className="not-italic text-[#F25C1A]">{chunks}</em>
+            })}
           </h1>
 
           {/* Subtext */}
           <p className="text-[14px] text-white/50 leading-[1.75]
             max-w-[500px] mx-auto mb-8">
-            From five-star hotel lobbies to national airport terminals —
-            Perlogy delivers the ProAV and digital signage infrastructure
-            that powers modern African spaces, exclusively through
-            specialist SI partners.
+            {t('heroDesc')}
           </p>
 
           {/* ── FILTER TABS ──────────────────────────── */}
@@ -77,7 +83,7 @@ export function SolutionsHero() {
             role="tablist"
             aria-label="Filter solutions by sector"
           >
-            {ALL_FILTER_TABS.map((tab) => (
+            {filterTabs.map((tab) => (
               <button
                 key={tab.id}
                 role="tab"
@@ -108,11 +114,11 @@ export function SolutionsHero() {
       <div className="flex items-stretch bg-brand-navy-mid border-b border-white/6 overflow-x-auto min-w-full">
         <div className="flex items-stretch min-w-max mx-auto px-4 sm:px-0">
           {[
-            { num: '15+',    label: 'African markets'       },
-            { num: '14',     label: 'Partner brands'        },
-            { num: '2000+',  label: 'Hotel rooms delivered' },
-            { num: '500m2+', label: 'LED supplied'          },
-            { num: 'SI only', label: 'No direct sales'     },
+            { num: t('stat1Num'), label: t('stat1Label') },
+            { num: t('stat2Num'), label: t('stat2Label') },
+            { num: t('stat3Num'), label: t('stat3Label') },
+            { num: t('stat4Num'), label: t('stat4Label') },
+            { num: t('stat5Num'), label: t('stat5Label') },
           ].map((stat, i, arr) => (
             <div
               key={stat.label}
